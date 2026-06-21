@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carbon Legacy Trees — Phoenix Tree Investment Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#030b05;--forest:#081409;--canopy:#0d2114;--mid:#142b1c;--vine:#1e4a2c;
+  --leaf:#3dbe6c;--bright:#5ae880;--gold:#c9a961;--earth:#8b6940;
+  --cream:#f0ece6;--muted:rgba(240,236,230,.55);--border:rgba(61,190,108,.15);
+  --sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono','Courier New',monospace;
+  --serif:'Playfair Display',Georgia,serif;--r:12px;--r2:20px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--dark);color:var(--cream);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+a{color:var(--leaf);text-decoration:none;transition:.3s var(--ease)}
+a:hover{color:var(--bright)}
+section{padding:100px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;font-family:var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--leaf);margin-bottom:16px}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:20px}
+.section-lead{font-size:1.1rem;color:var(--muted);max-width:640px;line-height:1.8;margin-bottom:32px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:100px;font-size:12px;font-family:var(--mono);letter-spacing:.05em;background:rgba(61,190,108,.1);border:1px solid rgba(61,190,108,.25);color:var(--leaf)}
+.pill-gold{background:rgba(201,169,97,.1);border-color:rgba(201,169,97,.25);color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--r);font-size:15px;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:.3s var(--ease)}
+.btn-primary{background:var(--leaf);color:var(--dark)}
+.btn-primary:hover{background:var(--bright);color:var(--dark);transform:translateY(-2px);box-shadow:0 12px 36px rgba(61,190,108,.35)}
+.btn-secondary{background:transparent;border:1.5px solid rgba(240,236,230,.25);color:var(--cream)}
+.btn-secondary:hover{border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--dark)}
+.btn-gold:hover{background:#d9bc7a;transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,169,97,.35)}
+.btn-sm{padding:10px 20px;font-size:13px}
+
+/* progress */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--leaf),var(--bright));width:0%;z-index:9999;transition:width .1s linear;pointer-events:none}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:background .4s,backdrop-filter .4s}
+.nav.scrolled{background:rgba(3,11,5,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:36px;height:36px;background:var(--leaf);border-radius:9px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{width:20px;height:20px}
+.nav-logo-text{font-size:14px;font-weight:700;color:var(--cream);line-height:1.2}
+.nav-logo-text span{display:block;font-size:10px;font-weight:400;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13.5px;color:var(--muted);font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--cream)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(90px)}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(61,190,108,.2),transparent);top:-100px;right:-80px;animation:drift1 12s ease-in-out infinite alternate}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(201,169,97,.15),transparent);bottom:60px;left:-50px;animation:drift2 15s ease-in-out infinite alternate}
+.orb3{width:250px;height:250px;background:radial-gradient(circle,rgba(90,232,128,.08),transparent);top:40%;left:45%;animation:drift1 10s ease-in-out infinite alternate}
+@keyframes drift1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,20px) scale(1.05)}}
+@keyframes drift2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-20px,30px) scale(1.08)}}
+.hero-bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(61,190,108,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(61,190,108,.03) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;z-index:1;max-width:820px}
+.hero-pre{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(61,190,108,.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(61,190,108,0)}}
+.hero-pre-text{font-size:12px;font-family:var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--leaf)}
+.hero-h1{font-family:var(--serif);font-size:clamp(3rem,7.5vw,6rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:28px}
+.hero-h1 em{font-style:italic;color:var(--leaf)}
+.hero-h1 .acc{color:var(--gold)}
+.hero-lead{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:600px;line-height:1.85;margin-bottom:44px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:60px}
+.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;padding-top:28px;border-top:1px solid rgba(240,236,230,.1)}
+.hero-meta-item{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.hero-meta-item strong{color:var(--cream);font-weight:600}
+.hero-meta-sep{width:1px;height:14px;background:rgba(240,236,230,.2)}
+</style>
+
+<style>
+/* metrics strip */
+.metrics-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);border-radius:var(--r2);overflow:hidden;border:1px solid var(--border)}
+.metric-cell{background:var(--forest);padding:32px 24px;text-align:center}
+.metric-val{font-family:var(--serif);font-size:2.8rem;font-weight:700;color:var(--leaf);line-height:1;margin-bottom:6px}
+.metric-val.gold{color:var(--gold)}
+.metric-label{font-size:12px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* features */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feat-card{background:var(--forest);border:1px solid var(--border);border-radius:var(--r2);padding:36px 32px;transition:.4s var(--ease);position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(61,190,108,.04),transparent);opacity:0;transition:.4s}
+.feat-card:hover{border-color:rgba(61,190,108,.35);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.feat-card:hover::before{opacity:1}
+.feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:24px;background:rgba(61,190,108,.08);border:1px solid rgba(61,190,108,.15)}
+.feat-title{font-size:1.15rem;font-weight:700;margin-bottom:12px;color:var(--cream)}
+.feat-body{font-size:.95rem;color:var(--muted);line-height:1.75}
+.feat-stat{margin-top:16px;padding:10px 14px;background:rgba(61,190,108,.07);border-radius:8px;border-left:3px solid var(--leaf)}
+.feat-stat span{font-family:var(--mono);font-size:13px;color:var(--leaf);font-weight:700}
+
+/* revenue streams */
+.revenue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.rev-card{background:var(--canopy);border:1px solid var(--border);border-radius:var(--r2);padding:36px 28px;position:relative;overflow:hidden}
+.rev-num{position:absolute;top:20px;right:24px;font-family:var(--serif);font-size:4rem;font-weight:700;color:rgba(61,190,108,.07);line-height:1;pointer-events:none}
+.rev-badge{display:inline-flex;padding:4px 10px;border-radius:6px;font-size:11px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:20px}
+.badge-green{background:rgba(61,190,108,.15);color:var(--leaf)}
+.badge-gold{background:rgba(201,169,97,.15);color:var(--gold)}
+.badge-blue{background:rgba(60,100,140,.25);color:#7ab3e0}
+.badge-earth{background:rgba(139,105,64,.2);color:#c8a870}
+.rev-title{font-size:1.2rem;font-weight:700;margin-bottom:12px;color:var(--cream)}
+.rev-body{font-size:.92rem;color:var(--muted);line-height:1.75}
+.rev-figure{margin-top:18px;font-family:var(--serif);font-size:1.8rem;font-weight:700}
+
+/* harvest timeline */
+.harvest-timeline{position:relative;padding:40px 0}
+.harvest-track{position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--leaf),var(--bright),var(--gold));opacity:.3;transform:translateY(-50%)}
+.harvest-nodes{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;gap:8px;flex-wrap:wrap}
+.harvest-node{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:80px;cursor:default}
+.h-dot{width:16px;height:16px;border-radius:50%;background:var(--leaf);border:3px solid var(--dark);box-shadow:0 0 16px rgba(61,190,108,.5);flex-shrink:0}
+.h-dot.large{width:24px;height:24px;background:var(--gold);box-shadow:0 0 20px rgba(201,169,97,.6)}
+.h-year{font-family:var(--mono);font-size:11px;color:var(--leaf);letter-spacing:.1em}
+.h-label{font-size:10px;color:var(--muted);text-align:center;max-width:80px;line-height:1.4}
+
+/* audience tabs */
+.audience-section{background:var(--forest)}
+.aud-tabs{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.aud-tab{padding:10px 22px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid rgba(240,236,230,.15);color:var(--muted);transition:.3s var(--ease);background:transparent}
+.aud-tab.active{background:var(--leaf);color:var(--dark);border-color:var(--leaf)}
+.aud-tab:hover:not(.active){border-color:rgba(61,190,108,.4);color:var(--leaf)}
+.aud-pane{display:none;animation:fadeIn .4s var(--ease)}
+.aud-pane.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.aud-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:768px){.aud-inner{grid-template-columns:1fr}}
+.aud-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;color:var(--leaf)}
+.aud-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:16px;line-height:1.2}
+.aud-lead{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:24px}
+.aud-points{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.aud-points li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--muted)}
+.aud-points li::before{content:'→';color:var(--leaf);font-size:14px;margin-top:2px;flex-shrink:0}
+.aud-visual{background:var(--canopy);border:1px solid var(--border);border-radius:var(--r2);padding:32px;display:flex;flex-direction:column;gap:18px}
+.aud-vis-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(240,236,230,.06)}
+.aud-vis-row:last-child{border-bottom:none}
+.aud-vis-label{font-size:13px;color:var(--muted)}
+.aud-vis-val{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--leaf)}
+.aud-vis-val.gold{color:var(--gold)}
+.aud-vis-val.cream{color:var(--cream)}
+
+/* stats band */
+.stats-band{background:var(--canopy);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;gap:24px;padding:40px 0}
+.stat-item{text-align:center}
+.stat-big{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--leaf);line-height:1}
+.stat-big.gold{color:var(--gold)}
+.stat-sub{font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-top:6px}
+.stat-div{width:1px;height:40px;background:rgba(240,236,230,.1)}
+
+/* process */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;position:relative}
+.process-steps::before{content:'';position:absolute;top:40px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),var(--border),transparent)}
+@media(max-width:768px){.process-steps::before{display:none}}
+.ps-item{padding:0 24px 0 0;position:relative;display:flex;flex-direction:column;gap:16px}
+.ps-num{width:56px;height:56px;border-radius:50%;background:var(--forest);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:18px;font-weight:700;color:var(--leaf);flex-shrink:0;z-index:1;position:relative}
+.ps-title{font-size:1rem;font-weight:700;color:var(--cream);margin-top:4px}
+.ps-body{font-size:.9rem;color:var(--muted);line-height:1.7}
+
+/* form */
+.contact-section{background:var(--forest)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-left h2{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin-bottom:16px}
+.contact-info{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.ci-row{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.ci-icon{width:36px;height:36px;border-radius:10px;background:rgba(61,190,108,.08);border:1px solid rgba(61,190,108,.15);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.form-card{background:var(--canopy);border:1px solid var(--border);border-radius:var(--r2);padding:40px 36px}
+.form-heading{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.form-sub{font-size:.9rem;color:var(--muted);margin-bottom:28px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:12px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.form-input,.form-select,.form-textarea{width:100%;background:rgba(240,236,230,.04);border:1.5px solid rgba(240,236,230,.12);border-radius:10px;padding:13px 16px;color:var(--cream);font-family:var(--sans);font-size:14px;outline:none;transition:.3s;resize:vertical}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(61,190,108,.5);background:rgba(61,190,108,.04)}
+.form-select option{background:var(--canopy);color:var(--cream)}
+.form-textarea{min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-submit{width:100%;padding:15px;background:var(--leaf);color:var(--dark);font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:.3s var(--ease);margin-top:8px}
+.form-submit:hover{background:var(--bright);transform:translateY(-2px);box-shadow:0 12px 36px rgba(61,190,108,.3)}
+
+/* footer */
+.site-footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand p{font-size:.9rem;color:var(--muted);line-height:1.75;margin-top:12px}
+.footer-col h4{font-size:12px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:.9rem;color:var(--muted);transition:.3s}
+.footer-col ul li a:hover{color:var(--leaf)}
+.footer-bottom{padding-top:28px;border-top:1px solid rgba(240,236,230,.07);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+.footer-bottom p{font-size:.82rem;color:rgba(240,236,230,.35)}
+.footer-legal{font-size:.78rem;color:rgba(240,236,230,.25);margin-top:10px;line-height:1.7}
+
+/* reveal animations */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.feat-card,.rev-card,.ps-item{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.feat-card.in,.rev-card.in,.ps-item.in{opacity:1;transform:none}
+
+/* separator */
+.sep{width:60px;height:3px;background:linear-gradient(90deg,var(--leaf),transparent);border-radius:4px;margin:24px 0}
+.sep-right{margin-left:auto;background:linear-gradient(90deg,transparent,var(--leaf))}
+
+/* callout card */
+.callout-card{background:var(--canopy);border:1px solid rgba(61,190,108,.2);border-radius:var(--r2);padding:48px 40px;display:flex;gap:28px;align-items:flex-start}
+@media(max-width:700px){.callout-card{flex-direction:column}}
+.callout-icon-wrap{width:64px;height:64px;border-radius:16px;background:rgba(61,190,108,.1);border:1px solid rgba(61,190,108,.2);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
+.callout-body{flex:1}
+.callout-body h3{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-bottom:10px}
+.callout-body p{font-size:.98rem;color:var(--muted);line-height:1.8}
+
+/* launch badge */
+.launch-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,169,97,.1);border:1px solid rgba(201,169,97,.3);border-radius:100px;padding:8px 16px;font-size:12px;font-family:var(--mono);letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+.launch-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+
+/* testimonial pull quote */
+.pull-quote{font-family:var(--serif);font-size:1.7rem;font-style:italic;font-weight:400;line-height:1.5;color:var(--cream);position:relative;padding-left:28px}
+.pull-quote::before{content:'"';position:absolute;top:-8px;left:0;font-size:4rem;color:rgba(61,190,108,.3);line-height:1;font-style:normal;font-family:var(--serif)}
+
+/* ROI table */
+.roi-table{width:100%;border-collapse:collapse;border-radius:var(--r2);overflow:hidden}
+.roi-table th{background:var(--vine);color:var(--cream);font-size:12px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:14px 18px;text-align:left;font-weight:600}
+.roi-table td{padding:14px 18px;font-size:.92rem;border-bottom:1px solid rgba(240,236,230,.05)}
+.roi-table tr:nth-child(even) td{background:rgba(240,236,230,.02)}
+.roi-table tr:hover td{background:rgba(61,190,108,.04)}
+.roi-table td:first-child{font-weight:600;color:var(--cream);font-family:var(--mono);font-size:.85rem}
+.roi-table .green{color:var(--leaf);font-weight:700}
+.roi-table .gold{color:var(--gold);font-weight:700}
+.roi-highlight td{background:rgba(61,190,108,.07)!important;border-top:1px solid rgba(61,190,108,.25);border-bottom:1px solid rgba(61,190,108,.25)}
+.roi-total td{background:rgba(201,169,97,.08)!important;border-top:1px solid rgba(201,169,97,.3);font-weight:700}
+.roi-total td:first-child{color:var(--gold)}
+
+@media(max-width:600px){
+  .revenue-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr}
+  .metrics-strip{grid-template-columns:1fr 1fr}
+  .harvest-nodes{justify-content:flex-start}
+  section{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2C10 2 6 6 6 10.5C6 13 7.5 15 10 16C12.5 15 14 13 14 10.5C14 6 10 2 10 2Z" fill="#030b05"/>
+          <path d="M10 8V18" stroke="#030b05" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="2" r="1.5" fill="#030b05"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">Carbon Legacy Trees<span>Phoenix Tree Initiative</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#phoenix-tree">The Tree</a></li>
+      <li><a href="#revenue">Revenue Streams</a></li>
+      <li><a href="#invest">Invest</a></li>
+      <li><a href="#land">Land Partners</a></li>
+      <li><a href="#credits">Carbon Credits</a></li>
+      <li><a href="#contact" class="btn btn-primary btn-sm" style="color:var(--dark)">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-pre">
+        <div class="hero-dot"></div>
+        <div class="hero-pre-text">South Dakota Launch — 10,000 Trees Committed</div>
+      </div>
+      <h1 class="hero-h1">
+        The Tree That<br>
+        <em>Rewrites Carbon</em><br>
+        <span class="acc">Economics</span>
+      </h1>
+      <p class="hero-lead">Carbon Legacy Trees LLC holds exclusive rights to the Phoenix Tree — an epigenetically enhanced species that sequesters 10x the carbon of conventional trees, harvests 15 times over its life, and yields graphene as a combustion byproduct. Four compounding revenue streams on every acre planted.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Buy Carbon Credits</a>
+        <a href="#invest" class="btn btn-gold">Investor Access</a>
+        <a href="#land" class="btn btn-secondary">Partner Your Land</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>10x</strong> CO₂ Sequestration</div>
+        <div class="hero-meta-sep"></div>
+        <div class="hero-meta-item"><strong>15</strong> Harvest Cycles</div>
+        <div class="hero-meta-sep"></div>
+        <div class="hero-meta-item"><strong>100%</strong> Exclusive Rights</div>
+        <div class="hero-meta-sep"></div>
+        <div class="hero-meta-item"><strong>Graphene</strong> Byproduct</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-inner hero-metrics">
+      <div class="stat-item">
+        <div class="stat-big" data-count="10000" data-suffix="">10,000</div>
+        <div class="stat-sub">Trees Committed — SD</div>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-big" data-count="10" data-suffix="x">10x</div>
+        <div class="stat-sub">Carbon vs. Standard Trees</div>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-big gold" data-count="15" data-suffix="">15</div>
+        <div class="stat-sub">Harvest Cycles Per Tree</div>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-big" data-count="4" data-suffix="">4</div>
+        <div class="stat-sub">Revenue Streams Per Acre</div>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-big gold" data-count="2" data-suffix=" yr">2 yr</div>
+        <div class="stat-sub">Self-Sustaining Water Access</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHOENIX TREE -->
+<section id="phoenix-tree">
+  <div class="container">
+    <div class="eyebrow reveal">The Technology</div>
+    <h2 class="section-title reveal">Engineered by Nature.<br>Enhanced by Science.</h2>
+    <p class="section-lead reveal">The Phoenix Tree is an epigenetically enhanced species — post-epigenetic modifications that permanently alter carbon metabolism at the cellular level. It is not GMO. It is not synthetic. It is a biological upgrade that compounds every advantage nature designed into a tree.</p>
+    <div class="sep"></div>
+
+    <div class="feature-grid" style="margin-top:48px">
+      <div class="feat-card">
+        <div class="feat-icon">🌿</div>
+        <div class="feat-title">10x Carbon Sequestration</div>
+        <div class="feat-body">Enhanced photosynthesis pathways allow the Phoenix Tree to capture and store 10 times the CO₂ of a standard tree of equivalent size. Every acre generates verified carbon credits eligible for voluntary and compliance markets.</div>
+        <div class="feat-stat"><span>~1,000 lbs CO₂/yr per tree — vs. ~100 lbs standard</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💧</div>
+        <div class="feat-title">Self-Sustaining Root System</div>
+        <div class="feat-body">Within 24 months of planting, Phoenix Tree root systems reach sub-surface water tables without irrigation. Zero ongoing water infrastructure cost after Year 2 — dramatically lowering per-acre operating expense on large plots.</div>
+        <div class="feat-stat"><span>Year 2: fully irrigation-independent</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🪵</div>
+        <div class="feat-title">Dense, Durable Hardwood</div>
+        <div class="feat-body">Phoenix Tree lumber is among the densest hardwoods commercially available. Structural-grade yield makes each harvest economically significant. Premium lumber pricing applies given its density and rot-resistance characteristics.</div>
+        <div class="feat-stat"><span>15 independent harvest cycles per tree</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Graphene Combustion Byproduct</div>
+        <div class="feat-body">When Phoenix Tree wood is combusted (co-firing, biomass energy, or controlled industrial burn), the carbon-dense byproduct yields graphene — a material valued at $100–$300/kg in industrial applications. This transforms waste into a premium commodity stream.</div>
+        <div class="feat-stat"><span>Graphene market: $1.08B+ globally, growing 38% yr.</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔬</div>
+        <div class="feat-title">Epigenetic — Not GMO</div>
+        <div class="feat-body">Post-epigenetic modification works with the tree's existing genetic expression — not foreign gene insertion. This positions the Phoenix Tree favorably under current and anticipated regulatory frameworks for USDA, EPA, and voluntary carbon registry programs.</div>
+        <div class="feat-stat"><span>Clean regulatory profile for carbon registry certification</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🌎</div>
+        <div class="feat-title">South Dakota Phase 1</div>
+        <div class="feat-body">The inaugural 10,000-tree planting in South Dakota demonstrates scale, validates carbon measurement, and generates the first vintage of verified carbon credits. SD land economics and favorable rural tax policies make this an ideal launch market.</div>
+        <div class="feat-stat"><span>S. Dakota: 10,000 trees committed — planting underway</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE STREAMS -->
+<section id="revenue" style="background:var(--forest)">
+  <div class="container">
+    <div class="eyebrow reveal">The Business Model</div>
+    <h2 class="section-title reveal">Four Revenue Streams.<br>One Planted Acre.</h2>
+    <p class="section-lead reveal">Most tree farms have one exit — sell the lumber. Phoenix Tree farms generate income across four independent channels that compound over the 15-cycle life of the planting. Carbon Legacy Trees holds exclusive commercial rights to all four.</p>
+    <div class="sep"></div>
+
+    <div class="revenue-grid" style="margin-top:48px">
+      <div class="rev-card">
+        <div class="rev-num">01</div>
+        <div class="rev-badge badge-green">Recurring</div>
+        <div class="rev-title">Voluntary Carbon Credits</div>
+        <div class="rev-body">Every Phoenix Tree acre generates verified CO₂ sequestration credits annually. With 10x the carbon capture rate, a single acre produces the credit equivalent of 10 conventional acres. Carbon Legacy Trees holds exclusive rights to sell these credits on voluntary markets.</div>
+        <div class="rev-figure" style="color:var(--leaf)">$6–$30<span style="font-size:1rem;font-weight:400;color:var(--muted)"> / tonne CO₂</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-num">02</div>
+        <div class="rev-badge badge-gold">Tax Strategy</div>
+        <div class="rev-title">Carbon Tax Credits</div>
+        <div class="rev-body">Beyond voluntary market credits, Phoenix Tree farms generate federal and state carbon tax credits. Corporations with significant tax liabilities can purchase these at a discount — eliminating tax exposure while funding reforestation. Carbon Legacy holds exclusive rights to originate and sell these tax attributes.</div>
+        <div class="rev-figure" style="color:var(--gold)">Immediate Tax Offset<span style="font-size:.85rem;font-weight:400;color:var(--muted);display:block;margin-top:4px">Institutional buyer segment</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-num">03</div>
+        <div class="rev-badge badge-earth">Harvest</div>
+        <div class="rev-title">Premium Hardwood Lumber</div>
+        <div class="rev-body">Phoenix Tree produces extremely dense, durable hardwood. Fifteen harvest cycles per tree mean the same acreage generates lumber revenue repeatedly over its life. Dense-grain Phoenix wood commands premium structural pricing. Each harvest stands alone as a meaningful revenue event.</div>
+        <div class="rev-figure" style="color:#c8a870">15 Harvests<span style="font-size:.85rem;font-weight:400;color:var(--muted);display:block;margin-top:4px">Per tree lifecycle</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-num">04</div>
+        <div class="rev-badge badge-blue">Advanced Materials</div>
+        <div class="rev-title">Graphene Byproduct</div>
+        <div class="rev-body">Combustion of Phoenix Tree wood yields graphene — one of the most valuable industrial materials on earth. While lumber goes to builders, the combustion pathway unlocks advanced materials revenue. As global graphene demand grows at 38%+ annually, this stream scales with market adoption of battery, semiconductor, and composite material applications.</div>
+        <div class="rev-figure" style="color:#7ab3e0">$100–$300/kg<span style="font-size:.85rem;font-weight:400;color:var(--muted);display:block;margin-top:4px">Graphene market price</span></div>
+      </div>
+    </div>
+
+    <!-- ROI TABLE -->
+    <div style="margin-top:64px">
+      <div class="eyebrow reveal">Projected Returns — 10,000 Tree Farm</div>
+      <h3 class="section-title reveal" style="font-size:clamp(1.4rem,3vw,2.2rem)">How the Economics Stack</h3>
+      <p class="section-lead reveal" style="margin-bottom:32px">Illustrative projections for the South Dakota 10,000-tree initial planting across all four revenue streams. Actual results depend on carbon registry certification, market pricing, and harvest timing.</p>
+      <div style="overflow-x:auto">
+        <table class="roi-table">
+          <thead>
+            <tr>
+              <th>Revenue Stream</th>
+              <th>Basis</th>
+              <th>Timeline</th>
+              <th>Est. Annual / Event</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Voluntary Carbon Credits</td>
+              <td>10x sequestration × 10,000 trees</td>
+              <td>Year 1 onward</td>
+              <td class="green">Recurring Annual</td>
+              <td>$6–$30/tonne; scaled by registry</td>
+            </tr>
+            <tr>
+              <td>Carbon Tax Credits</td>
+              <td>Federal / state tax attribute</td>
+              <td>Filing year eligible</td>
+              <td class="gold">Institutional sales</td>
+              <td>Discount-to-face-value model</td>
+            </tr>
+            <tr class="roi-highlight">
+              <td>Hardwood Lumber (Harvest 1)</td>
+              <td>Premium dense hardwood @ 10,000 trees</td>
+              <td>Year 3–5 est.</td>
+              <td class="green">Major harvest event</td>
+              <td>15 cycles — regenerative</td>
+            </tr>
+            <tr>
+              <td>Graphene Byproduct</td>
+              <td>Combustion pathway on lumber/biomass</td>
+              <td>Concurrent w/ harvest</td>
+              <td class="gold">$100–$300/kg</td>
+              <td>Industrial materials market</td>
+            </tr>
+            <tr class="roi-total">
+              <td>Combined 15-Cycle Value</td>
+              <td colspan="2">All 4 streams × 15 harvest cycles × 10,000 trees</td>
+              <td class="gold" colspan="2">Compounding multi-stream lifecycle return</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.82rem;color:rgba(240,236,230,.3);margin-top:14px;font-style:italic">Projections are illustrative. Past performance of any analogous farm does not guarantee future results. consult your advisor before making any investment decision.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HARVEST TIMELINE -->
+<section style="background:var(--dark)">
+  <div class="container">
+    <div class="eyebrow reveal">Lifecycle Economics</div>
+    <h2 class="section-title reveal">15 Harvests — One Permanent Planting</h2>
+    <p class="section-lead reveal">Unlike annual crops or single-harvest timber, Phoenix Trees regenerate after each harvest. The root system remains intact — providing self-watering, ongoing carbon sequestration, and rapid regrowth between cycles.</p>
+    <div class="sep"></div>
+
+    <div class="callout-card reveal" style="margin:48px 0">
+      <div class="callout-icon-wrap">🌳</div>
+      <div class="callout-body">
+        <h3>Plant Once. Harvest 15 Times.</h3>
+        <p>After a Phoenix Tree is harvested, the root system — now deep enough to access groundwater independently — drives rapid regeneration. Each subsequent harvest cycle draws on a more established root network. The result: costs stay fixed at planting while revenue compounds across 15 harvests plus continuous annual carbon credit income throughout the entire lifecycle.</p>
+      </div>
+    </div>
+
+    <div class="harvest-timeline">
+      <div class="harvest-track"></div>
+      <div class="harvest-nodes">
+        <div class="harvest-node"><div class="h-dot"></div><div class="h-year">Y0</div><div class="h-label">Planting / Carbon Credits Begin</div></div>
+        <div class="harvest-node"><div class="h-dot"></div><div class="h-year">Y2</div><div class="h-label">Root Self-Watering Achieved</div></div>
+        <div class="harvest-node"><div class="h-dot large"></div><div class="h-year">Y3–5</div><div class="h-label">Harvest 1 + Graphene</div></div>
+        <div class="harvest-node"><div class="h-dot large"></div><div class="h-year">H2–H5</div><div class="h-label">Harvests 2–5 (faster cycles)</div></div>
+        <div class="harvest-node"><div class="h-dot"></div><div class="h-year">H6–H10</div><div class="h-label">Mid-Life Harvests</div></div>
+        <div class="harvest-node"><div class="h-dot large"></div><div class="h-year">H11–H15</div><div class="h-label">Final Harvest Cycles</div></div>
+        <div class="harvest-node"><div class="h-dot" style="background:var(--gold);box-shadow:0 0 16px rgba(201,169,97,.5)"></div><div class="h-year" style="color:var(--gold)">Ongoing</div><div class="h-label">Carbon Credits — entire lifecycle</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE SECTION: TABS -->
+<section class="audience-section" id="invest">
+  <div class="container">
+    <div class="eyebrow reveal">Who We Work With</div>
+    <h2 class="section-title reveal">Three Ways to Participate</h2>
+    <p class="section-lead reveal">Carbon Legacy Trees is structured to serve three distinct partners: investors who want exposure to a multi-stream carbon asset, landowners who want returns from idle acreage, and corporations seeking carbon credit and tax credit solutions.</p>
+    <div class="sep"></div>
+
+    <div class="aud-tabs" style="margin-top:40px">
+      <button class="aud-tab active" data-pane="investors">Investors</button>
+      <button class="aud-tab" data-pane="land">Land Partners</button>
+      <button class="aud-tab" data-pane="credits">Credit Buyers</button>
+    </div>
+
+    <!-- INVESTORS -->
+    <div class="aud-pane active" id="pane-investors">
+      <div class="aud-inner">
+        <div>
+          <div class="launch-badge"><div class="launch-dot"></div>Investor Access Open</div>
+          <h3 class="aud-h2">Finance the Future of Carbon Agriculture</h3>
+          <p class="aud-lead">Phoenix Tree farms are a multi-decade, multi-stream asset. Capital invested today plants trees that generate four independent revenue streams for 15 harvest cycles — with carbon credit income starting Year 1 and lumber income beginning at first harvest.</p>
+          <ul class="aud-points">
+            <li>Investment finances planting, irrigation setup, and operations through Year 2 self-sufficiency threshold</li>
+            <li>Carbon credit revenue begins flowing from Year 1 — partial offset to operating cost during establishment</li>
+            <li>First harvest event (est. Year 3–5) generates significant lumber and graphene revenue</li>
+            <li>15 total harvest cycles — each harvest faster than the last as root systems mature</li>
+            <li>Exclusive commercial rights to all four revenue streams held by Carbon Legacy Trees LLC</li>
+            <li>South Dakota Phase 1 provides proof-of-scale before national expansion</li>
+          </ul>
+          <a href="#contact" class="btn btn-gold">Request Investment Deck</a>
+        </div>
+        <div class="aud-visual">
+          <div style="font-size:.85rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Investment Highlights</div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Initial Phase</div><div class="aud-vis-val">South Dakota — 10,000 Trees</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Revenue Start</div><div class="aud-vis-val">Year 1 (Carbon Credits)</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">First Harvest Est.</div><div class="aud-vis-val">Year 3–5</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Total Harvest Cycles</div><div class="aud-vis-val">15 per tree</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Water Independence</div><div class="aud-vis-val">Year 2</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Revenue Streams</div><div class="aud-vis-val">4 (credits, tax, lumber, graphene)</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Exclusive Rights</div><div class="aud-vis-val cream">Carbon Legacy Trees LLC</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Use of Funds</div><div class="aud-vis-val">Planting + Scale Expansion</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAND PARTNERS -->
+    <div class="aud-pane" id="pane-land">
+      <div class="aud-inner">
+        <div>
+          <div class="launch-badge" style="background:rgba(139,105,64,.15);border-color:rgba(139,105,64,.35);color:#c8a870"><div class="launch-dot" style="background:#c8a870"></div>Land Partner Program</div>
+          <h3 class="aud-h2" id="land">Turn Idle Land into a Producing Asset</h3>
+          <p class="aud-lead">Do you own rural acreage in the US with minimal current yield? Carbon Legacy Trees is actively seeking land partners who can host Phoenix Tree farms. We plant, operate, and manage — you receive revenue share on carbon credits and harvest events.</p>
+          <ul class="aud-points">
+            <li>No capital required from land partner — CLT provides trees, planting, and operations</li>
+            <li>After Year 2, zero irrigation or infrastructure burden — trees self-water</li>
+            <li>Revenue share on voluntary and tax carbon credits generated by your acreage</li>
+            <li>Revenue share on hardwood lumber sales from each of 15 harvest cycles</li>
+            <li>Land value appreciates as a documented, certified carbon sequestration site</li>
+            <li>Ideal parcels: 50–5,000+ acres in Midwest / Great Plains / Mountain West</li>
+            <li>No disruption to other grazing or buffer zones — Phoenix Trees work in most soil types</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Inquire About Your Land</a>
+        </div>
+        <div class="aud-visual">
+          <div style="font-size:.85rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Land Partner Terms</div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Capital Required</div><div class="aud-vis-val">None (CLT plants + operates)</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Land Types</div><div class="aud-vis-val">Rural, ag, grassland, marginal</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Min. Parcel Size</div><div class="aud-vis-val">50 acres</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Credit Revenue Share</div><div class="aud-vis-val">Negotiated per deal</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Lumber Revenue Share</div><div class="aud-vis-val cream">Negotiated per deal</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Water After Y2</div><div class="aud-vis-val">Self-sustaining (no cost)</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Target Regions</div><div class="aud-vis-val">Midwest, Plains, Mountain West</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Land Enhancements</div><div class="aud-vis-val gold">Carbon-registered asset</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREDIT BUYERS -->
+    <div class="aud-pane" id="pane-credits">
+      <div class="aud-inner">
+        <div>
+          <div class="launch-badge" style="background:rgba(60,100,140,.15);border-color:rgba(60,100,140,.35);color:#7ab3e0"><div class="launch-dot" style="background:#7ab3e0"></div>Credits Now Available</div>
+          <h3 class="aud-h2" id="credits">Credit Solutions for Corporations &amp; Advisors</h3>
+          <p class="aud-lead">Carbon Legacy Trees is the exclusive originator of Phoenix Tree carbon credits and carbon tax credits. We sell both voluntary market credits and federal tax attributes — giving your organization two tools to address climate commitments and tax liability simultaneously.</p>
+          <ul class="aud-points">
+            <li>Voluntary carbon credits: verified sequestration credits for corporate climate commitments and ESG reporting</li>
+            <li>Carbon tax credits: transferable federal tax attributes applicable against corporate tax liability</li>
+            <li>Purchase credits at a discount to face value — maximize your carbon ROI</li>
+            <li>Phoenix Tree credits carry best-in-class sequestration data: 10x conventional tree rate, verified and documented</li>
+            <li>Work with your CPA and legal team — CLT provides full disclosure documentation and registry certificates</li>
+            <li>Minimum purchase volumes available for institutional buyers</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Inquire About Credits</a>
+        </div>
+        <div class="aud-visual">
+          <div style="font-size:.85rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Credit Snapshot</div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Credit Type 1</div><div class="aud-vis-val">Voluntary Market (VCM)</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Credit Type 2</div><div class="aud-vis-val gold">Carbon Tax Credits</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">VCM Price Range</div><div class="aud-vis-val">$6–$30 / tonne CO₂</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Sequestration Rate</div><div class="aud-vis-val">10x standard trees</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Registry Documentation</div><div class="aud-vis-val cream">Provided on purchase</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Use Case</div><div class="aud-vis-val">ESG, compliance, tax offset</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Originator</div><div class="aud-vis-val">Carbon Legacy Trees LLC</div></div>
+          <div class="aud-vis-row"><div class="aud-vis-label">Exclusivity</div><div class="aud-vis-val gold">Exclusive rights holder</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:var(--dark)">
+  <div class="container">
+    <div class="eyebrow reveal">The Process</div>
+    <h2 class="section-title reveal">From Bare Land to<br>Four Revenue Streams</h2>
+    <p class="section-lead reveal">Carbon Legacy Trees manages every step — planting, irrigation, registry certification, harvest coordination, and credit sales. Partners provide land or capital. CLT provides everything else.</p>
+    <div class="sep"></div>
+
+    <div class="process-steps" style="margin-top:60px">
+      <div class="ps-item">
+        <div class="ps-num">01</div>
+        <div style="padding-top:24px">
+          <div class="ps-title">Site Assessment &amp; Partner Agreement</div>
+          <div class="ps-body">CLT evaluates land characteristics, soil composition, water depth, and sun exposure. For investors, deal structure and return waterfall are finalized. For land partners, revenue share terms are set. All agreements include exclusive rights to all four revenue streams from that acreage.</div>
+        </div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-num">02</div>
+        <div style="padding-top:24px">
+          <div class="ps-title">Planting &amp; Establishment</div>
+          <div class="ps-body">Phoenix Trees are planted at CLT's optimized density. Initial irrigation is active for Years 0–2. Carbon sequestration begins immediately upon planting. Registry baseline measurements are logged for future credit certification. Carbon credits are generated from Day 1.</div>
+        </div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-num">03</div>
+        <div style="padding-top:24px">
+          <div class="ps-title">Annual Carbon Credit Issuance</div>
+          <div class="ps-body">Each year, CLT submits verified sequestration data to registered voluntary carbon market registries. Credits are certified, serialized, and made available for sale to corporate buyers and tax credit purchasers. Carbon revenue is distributed per agreement terms.</div>
+        </div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-num">04</div>
+        <div style="padding-top:24px">
+          <div class="ps-title">Harvest &amp; Regeneration</div>
+          <div class="ps-body">At maturity, CLT coordinates harvest of dense Phoenix hardwood. Lumber is sold at premium structural rates. A portion of harvested material goes through the combustion/graphene pathway. Revenue is distributed. Trees regenerate from the established root system — cycle repeats up to 15 times.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE / VISION -->
+<section style="background:var(--canopy);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="max-width:780px;margin:0 auto;text-align:center">
+      <div class="eyebrow reveal" style="justify-content:center;display:flex">The Mission</div>
+      <div class="sep reveal" style="margin:16px auto 28px;width:40px"></div>
+      <p class="pull-quote reveal" style="text-align:center;padding:0 0 0 0;font-size:clamp(1.5rem,3.5vw,2.2rem)">We are building the most efficient carbon sequestration infrastructure on earth — and giving investors, landowners, and corporations a piece of every dollar it generates.</p>
+      <div class="sep reveal" style="margin:28px auto 0;width:40px;background:linear-gradient(90deg,transparent,var(--leaf),transparent)"></div>
+      <p style="font-size:.9rem;color:var(--muted);margin-top:20px" class="reveal">Carbon Legacy Trees LLC — South Dakota, 2025. 10,000 trees committed. Exclusive Phoenix Tree commercial rights.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section style="background:var(--forest)">
+  <div class="container">
+    <div class="eyebrow reveal">Market Timing</div>
+    <h2 class="section-title reveal">The Carbon Market Is<br>Entering Its Institutional Phase</h2>
+    <p class="section-lead reveal">Voluntary carbon markets transacted $535M in 2025. Corporate net-zero pledges are creating sustained demand for high-quality credits. Transferable tax credits have made carbon a tax strategy as much as a climate strategy. And graphene supply chains are being built right now.</p>
+    <div class="sep"></div>
+    <div class="feature-grid" style="margin-top:40px">
+      <div class="feat-card">
+        <div class="feat-icon">📈</div>
+        <div class="feat-title">VCM Growing Demand</div>
+        <div class="feat-body">Voluntary carbon credit issuances grew 8% year-over-year in 2025. Corporate ESG mandates are pushing institutional-grade buyers into the market who demand high-quality, well-documented sequestration credits.</div>
+        <div class="feat-stat"><span>$535M VCM market value — 2025</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚖️</div>
+        <div class="feat-title">Transferable Tax Credits</div>
+        <div class="feat-body">Congressional authorization of transferable tax credits has opened a new buyer class: CFOs and tax directors who want to eliminate tax liability at a discount. Carbon tax credits are no longer just a climate tool — they are a corporate finance tool.</div>
+        <div class="feat-stat"><span>Buy $1 of credit elimination for less than $1</span></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔋</div>
+        <div class="feat-title">Graphene Demand Surge</div>
+        <div class="feat-body">Graphene applications in batteries (EV), semiconductors, and advanced composites are driving the global market toward $1.08B+ and growing at 38% annually. Phoenix Tree combustion byproduct positions CLT to supply into this fast-growing industrial demand.</div>
+        <div class="feat-stat"><span>$1.08B+ global graphene market — 38% CAGR</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="eyebrow">Get Involved</div>
+        <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;line-height:1.2">Ready to Plant<br>Your Stake?</h2>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:32px">Whether you own land, have capital to deploy, need carbon credits for ESG compliance, or want to offset your corporate tax liability — Carbon Legacy Trees has a structure for you. Fill out the form and a member of our team will respond within 24 hours.</p>
+        <div class="contact-info">
+          <div class="ci-row"><div class="ci-icon">🌲</div><span>Carbon Legacy Trees LLC</span></div>
+          <div class="ci-row"><div class="ci-icon">📍</div><span>South Dakota Phase 1 — National Expansion</span></div>
+          <div class="ci-row"><div class="ci-icon">✉️</div><span>contact@carbonlegacytrees.com</span></div>
+          <div class="ci-row"><div class="ci-icon">🔒</div><span>All inquiries are confidential</span></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-heading">Start the Conversation</div>
+        <div class="form-sub">Tell us how you want to participate. Select your interest below.</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="First" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Last" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-input" placeholder="+1 (555) 000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">I Am Interested In</label>
+            <select class="form-select" required>
+              <option value="" disabled selected>Select your interest...</option>
+              <option>Investing — financing tree plantings</option>
+              <option>Land Partnership — I have acreage available</option>
+              <option>Voluntary Carbon Credits — ESG / climate commitments</option>
+              <option>Carbon Tax Credits — corporate tax offset</option>
+              <option>Graphene / Lumber off-take partnership</option>
+              <option>General inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell Us More</label>
+            <textarea class="form-textarea" placeholder="Investment size, land acreage, credit volume needs, or general questions..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="form-btn">Send Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <div style="width:32px;height:32px;background:var(--leaf);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🌿</div>
+          <span style="font-weight:700;font-size:15px">Carbon Legacy Trees LLC</span>
+        </div>
+        <p>Exclusive commercial rights to the Phoenix Tree — an epigenetically enhanced species generating four revenue streams per acre: carbon credits, tax credits, premium hardwood, and graphene byproduct.</p>
+      </div>
+      <div class="footer-col">
+        <h4>The Tree</h4>
+        <ul>
+          <li><a href="#phoenix-tree">Phoenix Tree Science</a></li>
+          <li><a href="#phoenix-tree">10x Carbon Capture</a></li>
+          <li><a href="#phoenix-tree">Self-Water System</a></li>
+          <li><a href="#phoenix-tree">15 Harvest Cycles</a></li>
+          <li><a href="#phoenix-tree">Graphene Byproduct</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Revenue</h4>
+        <ul>
+          <li><a href="#revenue">Voluntary Carbon Credits</a></li>
+          <li><a href="#revenue">Carbon Tax Credits</a></li>
+          <li><a href="#revenue">Premium Lumber</a></li>
+          <li><a href="#revenue">Graphene Stream</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Participate</h4>
+        <ul>
+          <li><a href="#invest">Investor Access</a></li>
+          <li><a href="#land">Land Partners</a></li>
+          <li><a href="#credits">Buy Credits</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Carbon Legacy Trees LLC. All rights reserved. Exclusive Phoenix Tree commercial rights holder.</p>
+      <p>South Dakota Phase 1 — National expansion ongoing</p>
+    </div>
+    <p class="footer-legal">This website is for informational purposes only and does not constitute an offer to sell or solicitation of an offer to buy any security. Carbon credit projections, harvest estimates, and revenue forecasts are illustrative. Actual results may differ materially. Voluntary carbon credit prices fluctuate with market conditions. Tax credit structures should be reviewed by qualified tax counsel. Carbon Legacy Trees LLC makes no guarantee of returns. Graphene yield projections are based on third-party research and have not been independently verified for Phoenix Tree output specifically. Consult your financial, legal, and tax advisors before making any investment decision.</p>
+  </div>
+</footer>
+
+<script>
+// Progress bar
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, {passive:true});
+
+// Nav scroll
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// Reveal animations
+document.querySelectorAll('.section-title,.section-lead,.eyebrow,.callout-card,.pull-quote,.sep,.harvest-timeline,.roi-table').forEach(el => el.classList.add('reveal'));
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);} });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// Stagger cards
+function staggerIn(wrapperSel, childSel, gap) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      e.target.querySelectorAll(childSel).forEach((el,i) => setTimeout(()=>el.classList.add('in'), i*110));
+    });
+  }, {threshold:.08});
+  document.querySelectorAll(wrapperSel).forEach(el => obs.observe(el));
+}
+staggerIn('.feature-grid', '.feat-card', 110);
+staggerIn('.revenue-grid', '.rev-card', 130);
+staggerIn('.process-steps', '.ps-item', 100);
+
+// Count-up
+function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t);}
+function countUp(el) {
+  const target = parseFloat(el.dataset.count);
+  const prefix = el.dataset.prefix||'';
+  const suffix = el.dataset.suffix||'';
+  const decimals = parseInt(el.dataset.decimals||'0');
+  const duration = target >= 1000 ? 2000 : 1200;
+  const startVal = target >= 1000 ? target - 8 : 0;
+  const start = Date.now();
+  el.style.opacity='1';
+  function tick() {
+    const p = Math.min((Date.now()-start)/duration,1);
+    el.textContent = prefix+(startVal+(target-startVal)*easeOutExpo(p)).toFixed(decimals)+suffix;
+    if(p<1) requestAnimationFrame(tick);
+    else el.textContent=prefix+target.toFixed(decimals)+suffix;
+  }
+  requestAnimationFrame(tick);
+}
+const metricObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    metricObs.unobserve(e.target);
+    e.target.querySelectorAll('[data-count]').forEach((m,i) => setTimeout(()=>countUp(m), i*160));
+  });
+}, {threshold:.3});
+document.querySelectorAll('.hero-metrics,.stats-inner').forEach(el => metricObs.observe(el));
+
+// Table row cascade
+const tableObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    tableObs.unobserve(e.target);
+    e.target.querySelectorAll('tbody tr').forEach((tr,i) => setTimeout(()=>tr.style.cssText='opacity:1;transform:none',i*80));
+  });
+}, {threshold:.1});
+document.querySelectorAll('.roi-table').forEach(t => {
+  t.querySelectorAll('tbody tr').forEach(tr => { tr.style.opacity='0'; tr.style.transform='translateX(-10px)'; tr.style.transition='opacity .4s ease,transform .4s ease'; });
+  tableObs.observe(t);
+});
+
+// Audience tabs
+document.querySelectorAll('.aud-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.aud-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.aud-pane').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('pane-'+tab.dataset.pane).classList.add('active');
+  });
+});
+
+// Form
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('form-btn');
+  btn.textContent = '✓ Inquiry Received — We\'ll be in touch within 24 hrs';
+  btn.style.background = 'var(--vine)';
+  btn.style.color = 'var(--cream)';
+  btn.disabled = true;
+}
+
+// prefers-reduced-motion guard
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.orb').forEach(o => o.style.animation='none');
+  document.querySelectorAll('.hero-dot,.launch-dot').forEach(d => d.style.animation='none');
+}
+</script>
+</body>
+</html>
