@@ -6,7 +6,7 @@
 <title>Carbon Legacy Trees — Phoenix Tree Investment Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -28,8 +28,8 @@
   --bg-alt:      #EEF0EC;
   /* ── Type ── */
   --sans:  'Inter','Segoe UI',system-ui,sans-serif;
-  --mono:  'JetBrains Mono','Courier New',monospace;
-  --serif: 'Playfair Display',Georgia,serif;
+  --mono:  'IBM Plex Mono','Roboto Mono','Courier New',monospace;
+  --serif: 'Cormorant Garamond','EB Garamond',Georgia,serif;
   /* ── Spacing ── */
   --r: 10px; --r2: 16px; --r3: 24px;
   --ease: cubic-bezier(.22,1,.36,1);
@@ -46,8 +46,8 @@ section{padding:96px 0}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:block}
 .eyebrow-gold{color:var(--gold)}
 h1,h2,h3{font-family:var(--serif);line-height:1.1;letter-spacing:-.01em;color:var(--ink)}
-h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:700}
-h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(3rem,6.5vw,5.4rem);font-weight:600;letter-spacing:-.02em}
+h2{font-size:clamp(2.1rem,4.2vw,3.2rem);font-weight:600;margin-bottom:18px}
 h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
 .lead{font-size:clamp(.97rem,1.6vw,1.15rem);color:var(--slate);line-height:1.85;max-width:640px;margin-bottom:32px}
 .sep{width:48px;height:3px;background:linear-gradient(90deg,var(--green),transparent);border-radius:2px;margin:20px 0 36px}
@@ -152,7 +152,7 @@ h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
 .img-feature-img img{width:100%;height:100%;object-fit:cover}
 .img-feature-body{background:var(--navy);padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
 .img-feature-body .eyebrow{color:#6ee8a2}
-.img-feature-body h2{color:#fff;margin-bottom:14px}
+.img-feature-body h2{color:#fff;margin-bottom:14px;font-size:clamp(1.8rem,3.5vw,2.8rem)}
 .img-feature-body .lead{color:rgba(255,255,255,.7);max-width:none}
 .img-feature-body .sep{background:linear-gradient(90deg,#6ee8a2,transparent)}
 .img-feature-stat{margin-top:8px;display:flex;flex-direction:column;gap:10px}
@@ -219,7 +219,7 @@ h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
 .ps-body{font-size:.88rem;color:var(--slate);line-height:1.7}
 
 /* ── Mission ── */
-.mission-lead{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;line-height:1.4;color:var(--ink);max-width:860px;margin-bottom:36px}
+.mission-lead{font-family:var(--serif);font-size:clamp(1.5rem,3.2vw,2.2rem);font-weight:500;line-height:1.4;color:var(--ink);max-width:860px;margin-bottom:36px}
 .mission-lead em{color:var(--green);font-style:italic}
 .mission-body{display:flex;flex-direction:column;gap:24px;max-width:860px}
 .mission-body p{font-size:clamp(.96rem,1.6vw,1.08rem);line-height:2;color:var(--slate)}
@@ -239,7 +239,7 @@ h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
 
 /* ── Pull quote (navy) ── */
 .pull-section{background:var(--navy);padding:80px 0}
-.pull-quote{font-family:var(--serif);font-size:clamp(1.4rem,3.5vw,2.1rem);font-style:italic;font-weight:400;line-height:1.5;color:#fff;max-width:820px;margin:0 auto;text-align:center;position:relative;padding:0 28px}
+.pull-quote{font-family:var(--serif);font-size:clamp(1.5rem,3.8vw,2.3rem);font-style:italic;font-weight:400;line-height:1.5;color:#fff;max-width:820px;margin:0 auto;text-align:center;position:relative;padding:0 28px}
 .pull-quote::before{content:'"';position:absolute;top:-24px;left:8px;font-size:5rem;color:rgba(184,138,34,.35);font-style:normal;line-height:1;font-family:var(--serif)}
 .pull-sub{text-align:center;margin-top:20px;font-size:.88rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 
@@ -318,6 +318,7 @@ h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
   </div>
   <div class="container">
     <div class="hero-content">
+      <img src="images/logo-primary.png" alt="Carbon Legacy Trees" style="height:80px;width:auto;margin-bottom:36px;filter:brightness(0) invert(1);opacity:.92">
       <div class="hero-badge"><span class="hero-badge-dot"></span>South Dakota Launch — 10,000 Trees Committed</div>
       <h1>The Tree That<br><em>Rewrites Carbon</em><br><span class="acc">Economics</span></h1>
       <p class="hero-lead">Carbon Legacy Trees LLC holds exclusive rights to the Phoenix Tree — an epigenetically enhanced species that sequesters 10x the CO₂ of a conventional tree, harvests 15 times, and yields graphene as a combustion byproduct. Four compounding revenue streams on every acre planted.</p>
