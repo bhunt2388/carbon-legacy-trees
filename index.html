@@ -208,6 +208,29 @@ section{padding:100px 0}
 .feat-card,.rev-card,.ps-item{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .feat-card.in,.rev-card.in,.ps-item.in{opacity:1;transform:none}
 
+/* mission / about */
+.mission-text{font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.25rem);line-height:2;color:var(--muted);max-width:860px}
+.mission-text strong{color:var(--cream);font-weight:700}
+.mission-text em{font-style:italic;color:var(--leaf)}
+.mission-lead{font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.35;color:var(--cream);max-width:900px;margin-bottom:40px}
+.mission-lead em{color:var(--leaf);font-style:italic}
+.distilled-quote{background:var(--vine);border-left:4px solid var(--leaf);border-radius:0 var(--r2) var(--r2) 0;padding:36px 40px;margin:56px 0;max-width:860px}
+.distilled-quote p{font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.4rem);font-style:italic;line-height:1.75;color:var(--cream)}
+.principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;margin-top:56px}
+.principle-card{background:var(--canopy);border:1px solid var(--border);border-radius:var(--r2);padding:40px 36px;position:relative;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.principle-card.in{opacity:1;transform:none}
+.principle-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--leaf),transparent);opacity:.4}
+.principle-card:hover{border-color:rgba(61,190,108,.35);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.35)}
+.principle-card:hover.in{transform:translateY(-3px)}
+.p-num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.p-num::after{content:'';flex:1;height:1px;background:rgba(61,190,108,.2)}
+.p-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--cream);margin-bottom:14px;line-height:1.3}
+.p-body{font-size:.93rem;color:var(--muted);line-height:1.8}
+.mission-paragraphs{display:flex;flex-direction:column;gap:28px;max-width:860px}
+.mission-paragraphs p{font-size:clamp(1rem,1.8vw,1.15rem);line-height:2;color:var(--muted)}
+.mission-paragraphs p strong{color:var(--cream)}
+.mission-paragraphs p em{color:var(--leaf);font-style:italic}
+
 /* separator */
 .sep{width:60px;height:3px;background:linear-gradient(90deg,var(--leaf),transparent);border-radius:4px;margin:24px 0}
 .sep-right{margin-left:auto;background:linear-gradient(90deg,transparent,var(--leaf))}
@@ -268,6 +291,7 @@ section{padding:100px 0}
       <div class="nav-logo-text">Carbon Legacy Trees<span>Phoenix Tree Initiative</span></div>
     </a>
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#phoenix-tree">The Tree</a></li>
       <li><a href="#revenue">Revenue Streams</a></li>
       <li><a href="#invest">Invest</a></li>
@@ -675,6 +699,62 @@ section{padding:100px 0}
   </div>
 </section>
 
+<!-- ABOUT / MISSION STATEMENT -->
+<section id="about" style="background:var(--dark)">
+  <div class="container">
+    <div class="eyebrow reveal">Who We Are</div>
+    <h2 class="section-title reveal">We Don't Extract.<br>We <em style="color:var(--leaf);font-style:italic">Partner.</em></h2>
+    <div class="sep"></div>
+
+    <p class="mission-lead reveal">At Carbon Legacy Trees, we believe the earth does not need to be conquered. <em>It needs to be understood.</em></p>
+
+    <div class="mission-paragraphs reveal">
+      <p>The Phoenix Tree is not an invention. It is a revelation — a living organism whose full potential had simply never been unlocked. When we plant one, we are not taking from the ground. <strong>We are entering into an agreement with it.</strong> The tree gives us carbon sequestration, dense hardwood, fifteen harvests, and graphene from its very combustion. In return, we give it water, land, protection, and permanence. That is not agriculture. That is partnership.</p>
+      <p>This principle extends to every relationship we build. When a landowner opens their acreage to us, they are not leasing ground — they are joining a living enterprise that pays them across decades, enhances the value of their property, and leaves their land more productive than they found it. When an investor backs a Phoenix Tree farm, they are not buying exposure to a single commodity — they are planting four revenue streams that compound across fifteen harvest cycles while the earth itself stores the carbon that the world is desperate to account for. When a corporation purchases our carbon credits or tax attributes, they are not buying a checkbox — they are funding trees in the ground and receiving a verifiable, documented return on that commitment.</p>
+      <p><strong>Every party at our table wins. Not as a strategy. As a requirement.</strong> We do not structure deals where one side captures the value and another absorbs the cost. We do not extract from the land and leave it diminished. We do not take a partner's trust and return them a transaction. The win-win-win is not a tagline for us — it is the test every deal must pass before we shake hands on it.</p>
+      <p>The earth has given us extraordinary raw material. The Phoenix Tree is proof that abundance is not the problem. <em>The problem has always been the willingness to see it</em> — to develop it with integrity and share what it produces with everyone who made it possible: the investor who believed early, the landowner who said yes, the earth that gave everything, and the atmosphere that finally gets something back.</p>
+      <p style="font-size:1.2rem;color:var(--cream);font-family:var(--serif);font-weight:700">We are building a company that honors all of them. This is what a legacy looks like.</p>
+    </div>
+
+    <!-- distilled -->
+    <div class="distilled-quote reveal">
+      <p>Carbon Legacy Trees exists to honor the full potential of the earth and the people who steward it. We plant trees that sequester carbon, harvest premium hardwood, and yield graphene — and we structure every deal so the investor, the landowner, the buyer, and the land itself all come out ahead. True abundance is not extracted. It is grown, shared, and replanted.</p>
+    </div>
+
+    <!-- principles -->
+    <div class="eyebrow reveal" style="margin-top:8px">Founding Principles</div>
+    <h3 class="section-title reveal" style="font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px">Five Commitments We<br>Don't Negotiate On</h3>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="p-num">01 — The Earth</div>
+        <div class="p-title">The Earth Is a Partner, Not a Resource</div>
+        <div class="p-body">We plant with the intent to leave every acre more productive, more documented, and more valuable than we found it. The Phoenix Tree does not deplete the land. It deepens it. Every planting is a commitment — not a transaction — with the ground it goes into.</div>
+      </div>
+      <div class="principle-card">
+        <div class="p-num">02 — Relationships</div>
+        <div class="p-title">Every Relationship Must Produce a Real Return for Every Party</div>
+        <div class="p-body">We do not do deals where one side wins at another's expense. Landowners see revenue share across fifteen harvest cycles. Investors see four compounding income streams. Carbon buyers get verified, high-quality credits backed by 10x sequestration data. If a structure cannot deliver that, we rebuild it until it can.</div>
+      </div>
+      <div class="principle-card">
+        <div class="p-num">03 — Time Horizon</div>
+        <div class="p-title">We Build for Legacy, Not Liquidity Events</div>
+        <div class="p-body">A Phoenix Tree planted today is still harvesting in a generation. The carbon it sequesters today is still documented in a registry in forty years. We think in decades. We build infrastructure that outlasts the deal that funded it — because real value does not peak at exit.</div>
+      </div>
+      <div class="principle-card">
+        <div class="p-num">04 — Full Use</div>
+        <div class="p-title">What the Earth Creates, We Refuse to Waste</div>
+        <div class="p-body">The wood becomes lumber. The combustion becomes graphene. The sequestration becomes a credit. The credit becomes capital. The capital plants more trees. Nothing the Phoenix Tree produces goes unused. That closed loop is not just good economics — it is the right way to operate on borrowed ground.</div>
+      </div>
+      <div class="principle-card">
+        <div class="p-num">05 — Integrity</div>
+        <div class="p-title">Integrity Is the Only Asset That Cannot Be Harvested and Replanted</div>
+        <div class="p-body">Our word is the foundation every partner stands on. We say what we mean, document what we commit, and deliver what we promise — or we tell you why we cannot before you find out on your own. Once broken, trust does not regenerate like a Phoenix Tree root. We guard it accordingly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PULL QUOTE / VISION -->
 <section style="background:var(--canopy);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
@@ -861,6 +941,7 @@ function staggerIn(wrapperSel, childSel, gap) {
 staggerIn('.feature-grid', '.feat-card', 110);
 staggerIn('.revenue-grid', '.rev-card', 130);
 staggerIn('.process-steps', '.ps-item', 100);
+staggerIn('.principles-grid', '.principle-card', 120);
 
 // Count-up
 function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t);}
