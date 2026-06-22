@@ -1056,7 +1056,8 @@ document.querySelectorAll('.aud-tab').forEach(tab => {
 
 /* ── "Partner Your Land" button activates the Land tab ── */
 document.querySelectorAll('a[href="#land"]').forEach(function(link) {
-  link.addEventListener('click', function() {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
     // activate the land tab
     document.querySelectorAll('.aud-tab').forEach(function(t) { t.classList.remove('active'); });
     document.querySelectorAll('.aud-pane').forEach(function(p) { p.classList.remove('active'); });
@@ -1064,6 +1065,9 @@ document.querySelectorAll('a[href="#land"]').forEach(function(link) {
     var landPane = document.getElementById('pane-land');
     if (landTab)  landTab.classList.add('active');
     if (landPane) landPane.classList.add('active');
+    // scroll to the section smoothly
+    var section = document.getElementById('land');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
