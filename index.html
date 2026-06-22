@@ -306,6 +306,140 @@ h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
   h1{font-size:2.4rem}
   h2{font-size:1.7rem}
 }
+
+/* ══ CARBON TREES LIVING CANVAS ══ */
+:root{
+    --ink: #eef2f8;
+    --dim: #9aa6bd;
+    --glass: rgba(16,22,38,0.42);
+    --glass-line: rgba(255,255,255,0.14);
+    --gold: #d8b15a;
+  }
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  html, body{ height: 100%; }
+  body{
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background: #05070d;
+    color: var(--ink);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+    cursor: default;
+  }
+  #gl{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    display: block;
+  }
+  /* subtle cinematic vignette over the canvas */
+  #vignette{
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(120% 120% at 50% 38%, transparent 52%, rgba(0,0,0,0.42) 100%);
+    z-index: 2;
+  }
+  /* switch flash */
+  #flash{
+    position: absolute; inset: 0; pointer-events: none; z-index: 5;
+    background: #05070d; opacity: 0; transition: opacity 0.42s ease;
+  }
+  #flash.on{ opacity: 0.55; transition: opacity 0.08s ease; }
+
+  .clt-ui{ position: absolute; z-index: 4; }
+
+  /* ---- clock cluster (top-left) ---- */
+  #clock{
+    top: 30px; left: 34px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  #time{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 58px; font-weight: 500; letter-spacing: -1px;
+    line-height: 1; text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    font-variant-numeric: tabular-nums;
+  }
+  #time .sec{ color: var(--dim); font-size: 30px; }
+  #meta{
+    display: flex; align-items: center; gap: 10px;
+    color: var(--dim); font-size: 13px; letter-spacing: 0.3px;
+    padding-left: 2px;
+  }
+  #meta .dot{ width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+  /* ---- system badge (top-right) ---- */
+  #sys{
+    top: 32px; right: 34px;
+    display: flex; align-items: center; gap: 14px;
+    padding: 9px 16px; border-radius: 999px;
+    background: var(--glass); border: 1px solid var(--glass-line);
+    -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+    font-size: 12px; letter-spacing: 0.5px; color: var(--dim);
+  }
+  #sys b{ color: var(--ink); font-weight: 600; }
+  #sys .pip{ display:inline-flex; gap:3px; align-items:center; }
+  #sys .bar{ width:3px; border-radius:2px; background: var(--ink); }
+
+  /* ---- now-playing name (center-ish, fades) ---- */
+  #nowName{
+    bottom: 132px; left: 50%; transform: translateX(-50%);
+    text-align: center; pointer-events: none;
+    transition: opacity 0.5s ease; opacity: 0;
+  }
+  #nowName.show{ opacity: 1; }
+  #nowName .t{ font-size: 26px; font-weight: 600; letter-spacing: 0.5px; }
+  #nowName .s{ font-size: 13px; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+
+  /* ---- dock (bottom) ---- */
+  #dock{
+    bottom: 26px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px; border-radius: 22px;
+    background: var(--glass); border: 1px solid var(--glass-line);
+    -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  }
+  .tile{
+    display: flex; align-items: center; gap: 11px;
+    padding: 10px 16px 10px 12px; border-radius: 15px;
+    cursor: pointer; border: 1px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+  .tile:hover{ background: rgba(255,255,255,0.05); transform: translateY(-2px); }
+  .tile.active{ background: rgba(255,255,255,0.09); border-color: var(--glass-line); }
+  .tile .sw{
+    width: 30px; height: 30px; border-radius: 9px; flex: none;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16), 0 4px 12px rgba(0,0,0,0.4);
+  }
+  .tile .lab{ display: flex; flex-direction: column; line-height: 1.15; }
+  .tile .lab .n{ font-size: 14px; font-weight: 600; }
+  .tile .lab .k{ font-size: 10px; color: var(--dim); letter-spacing: 1.5px; text-transform: uppercase; }
+  .tile .idx{
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--dim);
+    border: 1px solid var(--glass-line); border-radius: 5px; padding: 1px 5px; margin-left: 2px;
+  }
+  .tile.active .idx{ color: var(--gold); border-color: rgba(216,177,90,0.5); }
+
+  /* ---- hint (bottom-left) ---- */
+  #hint{
+    bottom: 34px; left: 34px;
+    font-size: 12px; color: var(--dim); letter-spacing: 0.4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  #hint kbd{
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink);
+    background: var(--glass); border: 1px solid var(--glass-line);
+    border-radius: 5px; padding: 2px 6px;
+  }
+
+  /* hide labels on small screens, keep swatches */
+  @media (max-width: 720px){
+    #time{ font-size: 44px; } #time .sec{ font-size: 24px; }
+    #sys{ display: none; }
+    #hint{ display: none; }
+    .tile{ padding: 9px; }
+    .tile .lab, .tile .idx{ display: none; }
+    #dock{ gap: 4px; border-radius: 18px; }
+    #nowName{ bottom: 116px; }
+  }
 </style>
 </head>
 <body>
@@ -329,38 +463,36 @@ h3{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:600;margin-bottom:12px}
 
 <!-- HERO -->
 <section class="hero" id="top" style="overflow:hidden;position:relative">
-  <div class="hero-bg">
-    <!-- LIVING CANVAS — Aether OS style, 5 carbon-themed wallpapers -->
-    <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block"></canvas>
+    <div class="hero-bg" style="position:absolute;inset:0;z-index:0">
+    <!-- ═══ EXACT AETHER OS WEBGL ENGINE ═══ -->
+    <canvas id="gl" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    <div id="vignette"></div>
+    <div id="flash"></div>
 
-    <!-- Wallpaper picker — bottom center, glassmorphic -->
-    <div id="wpPicker" style="
-      position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:10;
-      display:flex;gap:10px;padding:10px 14px;
-      background:rgba(255,255,255,0.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-      border:1px solid rgba(255,255,255,0.12);border-radius:20px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.4);
-    ">
+    <div id="clock" class="clt-ui">
+      <div id="time">--:--<span class="sec">00</span></div>
+      <div id="meta"><span id="day"></span><span class="dot"></span><span id="date"></span></div>
     </div>
 
-    <!-- Top-left clock -->
-    <div id="wpClock" style="
-      position:absolute;top:24px;left:28px;z-index:10;
-      pointer-events:none;
-    ">
-      <div style="font-family:'IBM Plex Mono','JetBrains Mono',monospace;font-size:52px;font-weight:200;color:rgba(255,255,255,0.88);line-height:1;letter-spacing:-1px"></div>
-      <div style="font-family:'IBM Plex Mono','JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;margin-top:4px"></div>
+    <div id="sys" class="clt-ui" aria-hidden="true">
+      <span>CARBON&nbsp;<b>TREES</b></span>
+      <span class="pip" id="signal"></span>
+      <span><b id="gpu">GPU</b></span>
     </div>
 
-    <!-- Bottom-left hint -->
-    <div style="position:absolute;bottom:32px;left:28px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.08em;pointer-events:none">
-      move to disturb · click to ripple
+    <div id="nowName" class="clt-ui"><div class="t"></div><div class="s"></div></div>
+
+    <nav id="dock" class="clt-ui" aria-label="Wallpaper picker"></nav>
+
+    <div id="hint" class="clt-ui">
+      <span>Move to disturb · click to ripple</span>
+      <kbd>1</kbd><kbd>–</kbd><kbd>5</kbd>
     </div>
 
-    <!-- Dark nav overlay so text stays readable -->
-    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,37,69,0.82) 40%,rgba(11,37,69,0.3) 100%);z-index:3;pointer-events:none"></div>
+    <!-- gradient overlay so headline text stays readable -->
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,37,69,0.80) 40%,rgba(11,37,69,0.28) 100%);pointer-events:none;z-index:3"></div>
   </div>
-  <div class="container" style="position:relative;z-index:4">
+<div class="container" style="position:relative;z-index:4">
     <div class="hero-content">
 
       <img src="images/logo-primary.png" alt="Carbon Legacy Trees" style="height:80px;width:auto;margin-bottom:36px;filter:brightness(0) invert(1);opacity:.92">
@@ -1035,515 +1167,511 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.hero-badge-dot').forEach(d => d.style.animation = 'none');
 }
 </script>
-<!-- ═══════════════════════════════════════════════════════════════
-     CARBON LEGACY TREES — Living Hero Canvas (Aether OS style)
-     5 wallpapers: Canopy, Carbon, Roots, Graphene, Credits
-     Pure 2D canvas — zero dependencies, full interactive
-═══════════════════════════════════════════════════════════════ -->
+
+
+<!-- Carbon Trees WebGL Shaders (exact Aether OS engine) -->
 <script>
-(function(){
-'use strict';
+// Shader wallpapers — fragment shader sources.
+// Each entry is a fragment-shader main(); the COMMON prelude (uniforms + helpers)
+// is prepended by the engine. Coordinate space helper toP() returns
+// aspect-corrected centered coords (y in roughly -0.5..0.5).
 
-const canvas = document.getElementById('heroCanvas');
-const ctx    = canvas.getContext('2d');
-const picker = document.getElementById('wpPicker');
-const clockEl = document.getElementById('wpClock');
+window.SHADER_COMMON = `
+precision highp float;
+uniform float u_time;
+uniform vec2  u_res;
+uniform vec2  u_mouse;   // framebuffer px, y-up
+uniform float u_mDown;   // 0..1 pressed
+uniform vec3  u_ripple[6]; // xy = px (y-up), z = age secs (<0 inactive)
 
-let W, H, mx = 0.5, my = 0.5, ripples = [], t = 0;
+vec2 toP(vec2 px){ return (px - 0.5*u_res)/u_res.y; }
 
-// ── Resize ──────────────────────────────────────────────────────
-function resize() {
-  const rect = canvas.parentElement.getBoundingClientRect();
-  W = canvas.width  = rect.width  || window.innerWidth;
-  H = canvas.height = rect.height || window.innerHeight;
+float hash21(vec2 p){
+  p = fract(p*vec2(123.34, 456.21));
+  p += dot(p, p+45.32);
+  return fract(p.x*p.y);
 }
-resize();
-window.addEventListener('resize', resize);
+vec2 hash22(vec2 p){
+  vec3 a = fract(vec3(p.xyx)*vec3(123.34, 234.34, 345.65));
+  a += dot(a, a+34.45);
+  return fract(vec2(a.x*a.y, a.y*a.z));
+}
+float vnoise(vec2 p){
+  vec2 i = floor(p), f = fract(p);
+  vec2 u = f*f*(3.0-2.0*f);
+  float a = hash21(i), b = hash21(i+vec2(1,0));
+  float c = hash21(i+vec2(0,1)), d = hash21(i+vec2(1,1));
+  return mix(mix(a,b,u.x), mix(c,d,u.x), u.y);
+}
+float fbm(vec2 p){
+  float s = 0.0, a = 0.5;
+  mat2 m = mat2(1.6, 1.2, -1.2, 1.6);
+  for(int i=0;i<5;i++){ s += a*vnoise(p); p = m*p; a *= 0.5; }
+  return s;
+}
+vec3 pal(float t, vec3 a, vec3 b, vec3 c, vec3 d){
+  return a + b*cos(6.28318*(c*t + d));
+}
+// oscillating ring field from active click ripples
+float ripples(vec2 p){
+  float s = 0.0;
+  for(int i=0;i<6;i++){
+    if(u_ripple[i].z < 0.0) continue;
+    vec2 rp = toP(u_ripple[i].xy);
+    float age = u_ripple[i].z;
+    float d = length(p - rp);
+    float radius = age*0.9;
+    float ring = sin((d - radius)*26.0);
+    float env = exp(-age*2.2) * exp(-pow((d - radius)*5.0, 2.0));
+    s += ring*env;
+  }
+  return s;
+}
+// summed inward "speed" from ripples (for warp shader)
+float rippleBurst(vec2 p){
+  float s = 0.0;
+  for(int i=0;i<6;i++){
+    if(u_ripple[i].z < 0.0) continue;
+    s += exp(-u_ripple[i].z*1.6);
+  }
+  return s;
+}
+`;
 
-// ── Mouse / touch ────────────────────────────────────────────────
-canvas.addEventListener('mousemove', e => {
-  const r = canvas.getBoundingClientRect();
-  mx = (e.clientX - r.left) / W;
-  my = (e.clientY - r.top)  / H;
-});
-canvas.addEventListener('click', e => {
-  const r = canvas.getBoundingClientRect();
-  ripples.push({ x: e.clientX - r.left, y: e.clientY - r.top, r: 0, life: 1 });
-});
-canvas.addEventListener('touchmove', e => {
-  const r = canvas.getBoundingClientRect();
-  mx = (e.touches[0].clientX - r.left) / W;
-  my = (e.touches[0].clientY - r.top)  / H;
-}, { passive: true });
+window.SHADERS = {};
 
-// ══════════════════════════════════════════════════════════
-// WALLPAPER ENGINES
-// ══════════════════════════════════════════════════════════
+/* ---------- 1. MERCURY — liquid chrome ---------- */
+window.SHADERS.mercury = `
+float H(vec2 p){
+  float t = u_time*0.08;
+  vec2 q = vec2(fbm(p*1.8 + t), fbm(p*1.8 + vec2(5.2,1.3) - t));
+  float h = fbm(p*2.2 + q*1.6 + t*0.5);
+  vec2 m = toP(u_mouse);
+  float md = length(p - m);
+  h -= exp(-md*md*5.0)*(0.35 + 0.3*u_mDown);
+  h += ripples(p)*0.14;
+  return h;
+}
+void main(){
+  vec2 p = toP(gl_FragCoord.xy);
+  float e = 0.0022;
+  float hx = H(p+vec2(e,0.0)) - H(p-vec2(e,0.0));
+  float hy = H(p+vec2(0.0,e)) - H(p-vec2(0.0,e));
+  vec3 n = normalize(vec3(-hx, -hy, e*4.0));
+  vec3 vdir = vec3(0.0, 0.0, 1.0);
+  vec3 rd = reflect(-vdir, n);
 
-// ── 1. CANOPY — liquid chlorophyll mercury ─────────────────
-function drawCanopy() {
-  const img = ctx.createImageData(W, H);
-  const data = img.data;
-  const px = mx * W, py = my * H;
-  for (let y = 0; y < H; y += 2) {
-    for (let x = 0; x < W; x += 2) {
-      const nx = x / W, ny = y / H;
-      const dx = nx - mx, dy = ny - my;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      const wave = Math.sin(nx*14 + t) * Math.cos(ny*10 - t*0.7) +
-                   Math.sin(dist*18 - t*1.6) * 0.5 +
-                   Math.sin(nx*7 - t*0.5 + ny*9) * 0.3;
-      const rippleAdd = ripples.reduce((a, rp) => {
-        const rd = Math.sqrt((x-rp.x)**2+(y-rp.y)**2);
-        return a + Math.sin(rd*0.12 - t*4) * rp.life * 0.6 / (1 + rd*0.02);
-      }, 0);
-      const v = (wave + rippleAdd + 2.5) / 5;
-      // Liquid chrome green palette
-      const r = Math.floor(v * 15 + 5);
-      const g = Math.floor(v * 80 + 30);
-      const b = Math.floor(v * 45 + 10);
-      const i = (y * W + x) * 4;
-      data[i]=r; data[i+1]=g; data[i+2]=b; data[i+3]=255;
-      // 2x upscale
-      if (x+1 < W) { data[i+4]=r; data[i+5]=g; data[i+6]=b; data[i+7]=255; }
-      if (y+1 < H) {
-        const i2 = ((y+1)*W+x)*4;
-        data[i2]=r; data[i2+1]=g; data[i2+2]=b; data[i2+3]=255;
-        if (x+1 < W) { data[i2+4]=r; data[i2+5]=g; data[i2+6]=b; data[i2+7]=255; }
-      }
+  float yy = rd.y*0.5 + 0.5;
+  vec3 sky = mix(vec3(0.03,0.05,0.12), vec3(0.58,0.66,0.76), smoothstep(-0.1,1.0,yy));
+  vec3 col = sky;
+
+  float fres = pow(1.0 - max(dot(n, vdir), 0.0), 3.0);
+  col += vec3(0.74,0.55,0.20)*fres*0.85;          // earned gold rim
+
+  vec3 L = normalize(vec3(0.35, 0.7, 0.65));
+  float spec = pow(max(dot(rd, L), 0.0), 48.0);
+  col += vec3(1.0,0.96,0.88)*spec*0.7;
+
+  float h0 = H(p);
+  col = mix(col, vec3(0.03,0.06,0.15), smoothstep(0.55,-0.25,h0)*0.45); // navy pools
+
+  col *= 1.0 - 0.22*dot(p,p);
+  gl_FragColor = vec4(col, 1.0);
+}
+`;
+
+/* ---------- 2. NEBULA — deep field plasma ---------- */
+window.SHADERS.nebula = `
+void main(){
+  vec2 p = toP(gl_FragCoord.xy)*1.25;
+  vec2 m = toP(u_mouse)*1.25;
+  float t = u_time*0.06;
+
+  // swirl space around cursor (gravity well)
+  vec2 d = p - m; float r = length(d);
+  float ang = exp(-r*1.4)*2.6*(1.0 + 0.7*u_mDown);
+  float ca = cos(ang), sa = sin(ang);
+  vec2 ps = m + mat2(ca,-sa,sa,ca)*d;
+
+  vec2 q  = vec2(fbm(ps + t), fbm(ps + vec2(3.1,1.7) - t));
+  vec2 rr = vec2(fbm(ps + q*2.0 + t*0.5), fbm(ps + q*2.0 + vec2(8.3) - t*0.4));
+  float f = fbm(ps + rr*2.2);
+  f += ripples(p)*0.22;
+
+  // bright filament structure from the warped field
+  float fil = pow(smoothstep(0.42, 0.78, f), 2.0);
+
+  vec3 deep   = vec3(0.015, 0.02, 0.065);
+  vec3 violet = vec3(0.30, 0.16, 0.52);
+  vec3 teal   = vec3(0.08, 0.46, 0.58);
+  vec3 col = deep;
+  col = mix(col, violet, smoothstep(0.28, 0.72, f));
+  col = mix(col, teal, fil*0.85);
+  col += vec3(0.85, 0.95, 1.0) * pow(fil, 3.0) * 0.45;   // hot cores
+
+  // cursor: a glowing nebula heart
+  col += vec3(0.18, 0.52, 0.62) * exp(-r*2.8) * 0.9;
+  col += vec3(0.9, 0.85, 1.0)  * exp(-r*9.0) * 0.5;
+
+  // sparse stars
+  vec2 sg = toP(gl_FragCoord.xy)*150.0;
+  vec2 sid = floor(sg);
+  float star = step(0.992, hash21(sid));
+  float tw = 0.6 + 0.4*sin(u_time*3.0 + hash21(sid+5.0)*30.0);
+  col += star*tw*vec3(0.85, 0.92, 1.0)*0.9;
+
+  gl_FragColor = vec4(col, 1.0);
+}
+`;
+
+/* ---------- 3. LATTICE — living crystal voronoi ---------- */
+window.SHADERS.lattice = `
+void main(){
+  vec2 p = toP(gl_FragCoord.xy);
+  vec2 m = toP(u_mouse);
+  float t = u_time*0.25;
+  float scale = 4.5;
+  vec2 g = p*scale;
+  vec2 ii = floor(g), f = fract(g);
+
+  float d1 = 8.0, d2 = 8.0;
+  vec2 id1 = vec2(0.0);
+  for(int y=-1;y<=1;y++){
+    for(int x=-1;x<=1;x++){
+      vec2 o = vec2(float(x), float(y));
+      vec2 rnd = hash22(ii + o);
+      vec2 pt = o + 0.5 + 0.42*sin(t + 6.28318*rnd);
+      vec2 diff = pt - f;
+      float dd = dot(diff, diff);
+      if(dd < d1){ d2 = d1; d1 = dd; id1 = ii + o; }
+      else if(dd < d2){ d2 = dd; }
     }
   }
-  ctx.putImageData(img, 0, 0);
+  d1 = sqrt(d1); d2 = sqrt(d2);
+  float border = d2 - d1;
 
-  // Specular highlight streaks
-  ctx.globalAlpha = 0.18;
-  for (let i = 0; i < 6; i++) {
-    const sx = W * (0.1 + i * 0.15 + Math.sin(t * 0.3 + i) * 0.08);
-    const sy = H * (0.2 + Math.cos(t * 0.4 + i * 0.9) * 0.3);
-    const gr = ctx.createRadialGradient(sx, sy, 0, sx, sy, W * 0.18);
-    gr.addColorStop(0, 'rgba(180,255,200,0.9)');
-    gr.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = gr;
-    ctx.fillRect(0, 0, W, H);
-  }
-  ctx.globalAlpha = 1;
+  float md = length(p - m);
+  float ml = exp(-md*2.2);                 // cursor light pool
+  float rip = ripples(p);
+  float edge = smoothstep(0.18, 0.0, border);
+
+  float cid = hash21(id1);
+  vec3 cellA = mix(vec3(0.035,0.06,0.11), vec3(0.05,0.11,0.10), cid);
+  vec3 col = cellA*(0.45 + 0.55*d1);
+
+  vec3 edgeCol = mix(vec3(0.20,0.72,0.62), vec3(0.86,0.66,0.26), step(0.5, fract(cid*7.0)));
+  col += edgeCol*edge*(0.45 + 1.4*ml + 0.7*abs(rip));
+
+  col += vec3(0.14,0.5,0.5)*ml*0.45;
+  col *= 1.0 - 0.18*dot(p,p);
+  gl_FragColor = vec4(col, 1.0);
 }
+`;
 
-// ── 2. CARBON — deep dark field molecular ──────────────────
-const carbonParticles = Array.from({length: 320}, () => ({
-  x: Math.random(), y: Math.random(),
-  vx: (Math.random()-.5)*0.0008, vy: (Math.random()-.5)*0.0008,
-  r: 1 + Math.random()*3,
-  alpha: 0.2 + Math.random()*0.7,
-  type: Math.floor(Math.random()*3) // 0=carbon, 1=gold, 2=white
-}));
+/* ---------- 4. VELOCITY — hyperspace lightfold ---------- */
+window.SHADERS.velocity = `
+void main(){
+  vec2 p = toP(gl_FragCoord.xy);
+  vec2 m = toP(u_mouse);
+  vec2 c = m*0.7;                          // vanishing point steers with cursor
+  vec2 d = p - c;
+  float a = atan(d.y, d.x);
+  float r = length(d);
 
-function drawCarbon() {
-  // Deep space bg
-  ctx.fillStyle = '#020508';
-  ctx.fillRect(0, 0, W, H);
+  float speed = 0.55 + 1.6*u_mDown + 1.2*rippleBurst(p);
+  float z = u_time*speed + 0.5/(r + 0.04);
 
-  // Nebula glow
-  const gx = mx * W, gy = my * H;
-  const g1 = ctx.createRadialGradient(gx, gy, 0, gx, gy, W*0.7);
-  g1.addColorStop(0, 'rgba(11,40,80,0.5)');
-  g1.addColorStop(0.5, 'rgba(5,20,40,0.2)');
-  g1.addColorStop(1, 'rgba(0,0,0,0)');
-  ctx.fillStyle = g1;
-  ctx.fillRect(0, 0, W, H);
+  // thin, crisp light streaks: high angular frequency, stretched along radius
+  float s1 = fbm(vec2(a*5.0, z*1.2));
+  float s2 = fbm(vec2(a*5.0 + 9.0, z*1.2 + 0.4));   // 2nd sample -> motion-blur feel
+  float streak = max(s1, s2);
+  streak = pow(smoothstep(0.5, 0.92, streak), 1.4);
+  float depth = smoothstep(0.0, 0.22, r);
+  float bright = streak*depth;
 
-  // Molecular network
-  carbonParticles.forEach(p => {
-    p.x += p.vx + (mx - p.x) * 0.00008;
-    p.y += p.vy + (my - p.y) * 0.00008;
-    if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
-    if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
-  });
+  vec3 col = vec3(0.012, 0.02, 0.05);
+  col += mix(vec3(0.18,0.42,0.95), vec3(0.62,0.85,1.0), streak) * bright * 1.5;
+  col += vec3(0.5,0.72,1.0) * exp(-r*5.5) * 0.8;                 // core flash
+  col += vec3(0.95,0.74,0.34) * pow(streak,4.0) * depth * 0.5;   // gold sparks
+  col *= 1.0 - 0.15*dot(p,p);
+  gl_FragColor = vec4(col, 1.0);
+}
+`;
 
-  // Draw connections
-  ctx.lineWidth = 0.5;
-  for (let i = 0; i < carbonParticles.length; i++) {
-    const a = carbonParticles[i];
-    for (let j = i+1; j < carbonParticles.length; j++) {
-      const b = carbonParticles[j];
-      const dx = (a.x - b.x) * W, dy = (a.y - b.y) * H;
-      const d = Math.sqrt(dx*dx + dy*dy);
-      if (d < 80) {
-        ctx.beginPath();
-        const alpha = (1 - d/80) * 0.4;
-        ctx.strokeStyle = a.type === 1 ? `rgba(184,138,34,${alpha})` : `rgba(30,143,120,${alpha})`;
-        ctx.moveTo(a.x*W, a.y*H);
-        ctx.lineTo(b.x*W, b.y*H);
-        ctx.stroke();
-      }
-    }
+/* ---------- 5. SILK — caustic drift ---------- */
+window.SHADERS.silk = `
+void main(){
+  vec2 p = toP(gl_FragCoord.xy);
+  vec2 m = toP(u_mouse);
+  float t = u_time*0.2;
+
+  vec2 q = p;
+  for(int i=0;i<4;i++){
+    float fi = float(i);
+    vec2 pull = (m - q)*exp(-length(m-q)*1.8)*0.25*(1.0 + u_mDown);
+    q += pull;
+    q += 0.28*vec2(sin(q.y*3.0 + t + fi), cos(q.x*3.0 - t + fi))/(fi + 1.0);
   }
+  float v = 0.5 + 0.5*sin(q.x*3.0 + q.y*3.0 + t*2.0);
+  v += ripples(p)*0.3;
 
-  // Draw nodes
-  carbonParticles.forEach(p => {
-    const px = p.x * W, py = p.y * H;
-    const colors = [
-      `rgba(30,143,120,${p.alpha})`,
-      `rgba(184,138,34,${p.alpha})`,
-      `rgba(200,220,255,${p.alpha})`
+  float md = length(p - m);
+  float light = exp(-md*md*1.6);
+  float caustic = pow(max(v,0.0), 3.0);
+
+  vec3 col = mix(vec3(0.05,0.08,0.15), vec3(0.10,0.36,0.31), clamp(v,0.0,1.0));
+  col += vec3(0.90,0.80,0.50)*caustic*0.4;       // gold caustic glints
+  col += vec3(0.55,0.80,0.90)*light*0.55;        // cursor light
+  col *= 1.0 - 0.16*dot(p,p);
+  gl_FragColor = vec4(col, 1.0);
+}
+`;
+
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var WALLPAPERS = [
+      { key:'mercury',  name:'Canopy',   kind:'Liquid Growth', sw:'linear-gradient(135deg,#0a1f0c,#3d9a52 55%,#d8b15a)' },
+      { key:'nebula',   name:'Carbon',   kind:'Deep Field',    sw:'linear-gradient(135deg,#0a0f24,#1e8f78 50%,#c8a8d8)' },
+      { key:'lattice',  name:'Roots',    kind:'Living Lattice',sw:'linear-gradient(135deg,#091017,#1f8f78 60%,#d8b15a)' },
+      { key:'velocity', name:'Graphene', kind:'Lightfold',     sw:'linear-gradient(135deg,#070b16,#5aa0ff 60%,#f0c66a)' },
+      { key:'silk',     name:'Credits',  kind:'Caustic Drift', sw:'linear-gradient(135deg,#0a1018,#1a6f5e 55%,#e6cf8a)' }
     ];
-    const glow = ctx.createRadialGradient(px, py, 0, px, py, p.r*3);
-    glow.addColorStop(0, colors[p.type]);
-    glow.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = glow;
-    ctx.beginPath();
-    ctx.arc(px, py, p.r*3, 0, Math.PI*2);
-    ctx.fill();
-    ctx.fillStyle = colors[p.type].replace(/[\d.]+\)$/, '1)');
-    ctx.beginPath();
-    ctx.arc(px, py, p.r, 0, Math.PI*2);
-    ctx.fill();
-  });
 
-  // Ripple rings
-  ripples.forEach(rp => {
-    ctx.beginPath();
-    ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI*2);
-    ctx.strokeStyle = `rgba(30,143,120,${rp.life * 0.8})`;
-    ctx.lineWidth = 2;
-    ctx.stroke();
-  });
-}
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ── 3. ROOTS — living root network voronoi ─────────────────
-const rootSeeds = Array.from({length: 22}, () => ({
-  x: Math.random() * 2 - 0.5,
-  y: Math.random() * 2 - 0.5,
-  vx: (Math.random()-.5)*0.001,
-  vy: (Math.random()-.5)*0.001,
-}));
+    /* ---------------- WebGL ---------------- */
+    var canvas = document.getElementById('gl');
+    var gl = canvas.getContext('webgl', { antialias:false, alpha:false, preserveDrawingBuffer:true, powerPreference:'high-performance' })
+          || canvas.getContext('experimental-webgl');
+    if(!gl){ document.body.innerHTML = '<div style="padding:40px;font-family:monospace">WebGL not available.</div>'; return; }
 
-function drawRoots() {
-  ctx.fillStyle = '#030a05';
-  ctx.fillRect(0, 0, W, H);
+    var VERT = 'attribute vec2 p; void main(){ gl_Position = vec4(p,0.0,1.0); }';
 
-  // Move seeds with mouse
-  rootSeeds.forEach(s => {
-    s.x += s.vx + (mx - s.x - 0.5) * 0.0005;
-    s.y += s.vy + (my - s.y - 0.5) * 0.0005;
-  });
-
-  // Voronoi-style: for each pixel find nearest 2 seeds, color edge
-  const step = 4;
-  for (let y = 0; y < H; y += step) {
-    for (let x = 0; x < W; x += step) {
-      const nx = x / W, ny = y / H;
-      let d1 = 9e9, d2 = 9e9, ci = 0;
-      rootSeeds.forEach((s, i) => {
-        const d = (nx-s.x)**2 + (ny-s.y)**2;
-        if (d < d1) { d2 = d1; d1 = d; ci = i; }
-        else if (d < d2) { d2 = d; }
-      });
-      const edge = Math.sqrt(d2) - Math.sqrt(d1);
-      const isEdge = edge < 0.018;
-      const isNear = edge < 0.04;
-      let r=0,g=0,b=0,a=255;
-      if (isEdge) {
-        const pulse = 0.5 + Math.sin(t*1.2 + ci*0.7) * 0.5;
-        if (ci % 3 === 0) { r=Math.floor(184*pulse*0.4); g=Math.floor(255*pulse*0.6); b=Math.floor(100*pulse*0.3); }
-        else if (ci % 3 === 1) { r=Math.floor(184*pulse*0.5); g=Math.floor(138*pulse*0.5); b=Math.floor(34*pulse*0.3); }
-        else { r=Math.floor(20); g=Math.floor(120*pulse*0.4); b=Math.floor(60*pulse*0.3); }
-      } else if (isNear) {
-        const frac = (edge - 0.018) / 0.022;
-        g = Math.floor(15 * (1-frac));
-        b = Math.floor(8  * (1-frac));
-      } else {
-        r=2;g=6;b=3;
+    function compile(type, src){
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+        console.error('shader error:', gl.getShaderInfoLog(s), '\n', src);
+        return null;
       }
-      ctx.fillStyle = `rgb(${r},${g},${b})`;
-      ctx.fillRect(x, y, step, step);
+      return s;
     }
-  }
-
-  // Glow dots at seed points
-  rootSeeds.forEach((s, i) => {
-    const px = s.x * W, py = s.y * H;
-    const pulse = 0.6 + Math.sin(t * 0.8 + i) * 0.4;
-    const gr = ctx.createRadialGradient(px, py, 0, px, py, 18);
-    gr.addColorStop(0, `rgba(60,220,120,${pulse*0.9})`);
-    gr.addColorStop(0.5, `rgba(20,107,58,${pulse*0.4})`);
-    gr.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = gr;
-    ctx.fillRect(px-18, py-18, 36, 36);
-  });
-}
-
-// ── 4. GRAPHENE — hexagonal lattice light streaks ──────────
-function drawGraphene() {
-  ctx.fillStyle = '#020408';
-  ctx.fillRect(0, 0, W, H);
-
-  const HEX_SIZE = 38;
-  const cols = Math.ceil(W / (HEX_SIZE * 1.5)) + 2;
-  const rows = Math.ceil(H / (HEX_SIZE * Math.sqrt(3))) + 2;
-  const offX = (mx - 0.5) * 40;
-  const offY = (my - 0.5) * 30;
-
-  for (let row = -1; row < rows; row++) {
-    for (let col = -1; col < cols; col++) {
-      const cx = col * HEX_SIZE * 1.5 + offX * Math.sin(t*0.1);
-      const cy = row * HEX_SIZE * Math.sqrt(3) + (col % 2) * HEX_SIZE * Math.sqrt(3)/2 + offY * Math.cos(t*0.1);
-      const distToMouse = Math.sqrt((cx/W - mx)**2 + (cy/H - my)**2);
-      const pulse = Math.sin(t * 1.5 - row * 0.4 - col * 0.3) * 0.5 + 0.5;
-      const proximity = Math.max(0, 1 - distToMouse * 2.5);
-
-      // Hex outline
-      ctx.beginPath();
-      for (let i = 0; i < 6; i++) {
-        const angle = (Math.PI / 3) * i - Math.PI/6;
-        const hx = cx + HEX_SIZE * 0.85 * Math.cos(angle);
-        const hy = cy + HEX_SIZE * 0.85 * Math.sin(angle);
-        i === 0 ? ctx.moveTo(hx, hy) : ctx.lineTo(hx, hy);
-      }
-      ctx.closePath();
-
-      // Color based on position + pulse
-      const g = Math.floor(20 + pulse * 60 + proximity * 80);
-      const b = Math.floor(30 + pulse * 80 + proximity * 60);
-      const alpha = 0.12 + pulse * 0.25 + proximity * 0.5;
-      ctx.strokeStyle = `rgba(30,${g+80},${b+100},${alpha})`;
-      ctx.lineWidth = 0.8 + proximity * 1.5;
-      ctx.stroke();
-
-      // Fill subtle
-      if (proximity > 0.3) {
-        ctx.fillStyle = `rgba(20,107,58,${proximity * 0.08})`;
-        ctx.fill();
-      }
-    }
-  }
-
-  // Light beam sweep
-  const beamX = mx * W;
-  const beam = ctx.createLinearGradient(beamX - 120, 0, beamX + 120, H);
-  beam.addColorStop(0, 'rgba(20,107,58,0)');
-  beam.addColorStop(0.5, 'rgba(20,107,58,0.08)');
-  beam.addColorStop(1, 'rgba(20,107,58,0)');
-  ctx.fillStyle = beam;
-  ctx.fillRect(0, 0, W, H);
-
-  // Gold highlight stripe
-  const goldX = W * (0.3 + Math.sin(t*0.2)*0.2);
-  const gbeam = ctx.createLinearGradient(goldX-60, 0, goldX+60, H);
-  gbeam.addColorStop(0, 'rgba(184,138,34,0)');
-  gbeam.addColorStop(0.5, 'rgba(184,138,34,0.06)');
-  gbeam.addColorStop(1, 'rgba(184,138,34,0)');
-  ctx.fillStyle = gbeam;
-  ctx.fillRect(0, 0, W, H);
-}
-
-// ── 5. CREDITS — light trails / warp velocity ──────────────
-const trails = Array.from({length: 200}, () => ({
-  x: Math.random() * 2 - 0.5,
-  y: Math.random(),
-  speed: 0.003 + Math.random() * 0.015,
-  len: 0.04 + Math.random() * 0.12,
-  alpha: 0.2 + Math.random() * 0.7,
-  color: Math.random() > 0.7 ? 'gold' : Math.random() > 0.5 ? 'green' : 'white'
-}));
-
-function drawCredits() {
-  // Motion blur trail
-  ctx.fillStyle = 'rgba(2,3,12,0.15)';
-  ctx.fillRect(0, 0, W, H);
-
-  const vanishX = W * mx;
-  const vanishY = H * my;
-  const speedMult = 1 + (Math.abs(mx-0.5) + Math.abs(my-0.5)) * 3;
-
-  trails.forEach(tr => {
-    tr.x += (tr.x - mx) * tr.speed * speedMult;
-    tr.y += (tr.y - my) * tr.speed * speedMult * 0.7;
-
-    // Reset when off screen
-    if (tr.x < -0.5 || tr.x > 1.5 || tr.y < -0.1 || tr.y > 1.1) {
-      tr.x = mx + (Math.random()-.5)*0.15;
-      tr.y = my + (Math.random()-.5)*0.15;
-      tr.speed = 0.003 + Math.random()*0.015;
+    function buildProgram(fragMain){
+      var vs = compile(gl.VERTEX_SHADER, VERT);
+      var fs = compile(gl.FRAGMENT_SHADER, window.SHADER_COMMON + fragMain);
+      if(!vs || !fs) return null;
+      var p = gl.createProgram();
+      gl.attachShader(p, vs); gl.attachShader(p, fs);
+      gl.bindAttribLocation(p, 0, 'p');
+      gl.linkProgram(p);
+      if(!gl.getProgramParameter(p, gl.LINK_STATUS)){ console.error('link error:', gl.getProgramInfoLog(p)); return null; }
+      return p;
     }
 
-    const sx = tr.x * W, sy = tr.y * H;
-    const ex = sx - (sx - vanishX) * tr.len;
-    const ey = sy - (sy - vanishY) * tr.len;
+    // fullscreen triangle
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
-    const len = Math.sqrt((sx-ex)**2+(sy-ey)**2);
-    if (len < 1) return;
-
-    const grad = ctx.createLinearGradient(ex, ey, sx, sy);
-    const cols = {
-      gold:  [`rgba(184,138,34,0)`, `rgba(255,200,60,${tr.alpha})`],
-      green: [`rgba(20,107,58,0)`,  `rgba(100,255,150,${tr.alpha})`],
-      white: [`rgba(120,180,255,0)`,`rgba(200,230,255,${tr.alpha})`]
-    };
-    grad.addColorStop(0, cols[tr.color][0]);
-    grad.addColorStop(1, cols[tr.color][1]);
-
-    ctx.beginPath();
-    ctx.moveTo(ex, ey);
-    ctx.lineTo(sx, sy);
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = 1 + tr.alpha * 1.5;
-    ctx.stroke();
-  });
-
-  // Central glow at vanish point
-  const vg = ctx.createRadialGradient(vanishX, vanishY, 0, vanishX, vanishY, 200);
-  vg.addColorStop(0, 'rgba(30,143,120,0.25)');
-  vg.addColorStop(0.4, 'rgba(11,37,69,0.1)');
-  vg.addColorStop(1, 'rgba(0,0,0,0)');
-  ctx.fillStyle = vg;
-  ctx.fillRect(0, 0, W, H);
-}
-
-// ══════════════════════════════════════════════════════════
-// WALLPAPER DEFINITIONS
-// ══════════════════════════════════════════════════════════
-const WALLPAPERS = [
-  { id: 0, name: 'Canopy',   sub: 'LIQUID CHLOROPHYLL', draw: drawCanopy,
-    grad: ['#0a3d1a','#1db954'], icon: '🌿' },
-  { id: 1, name: 'Carbon',   sub: 'MOLECULAR FIELD',    draw: drawCarbon,
-    grad: ['#020c18','#1e8f78'], icon: '⬡' },
-  { id: 2, name: 'Roots',    sub: 'LIVING LATTICE',     draw: drawRoots,
-    grad: ['#030a05','#146B3A'], icon: '⊕' },
-  { id: 3, name: 'Graphene', sub: 'HEX CRYSTAL',        draw: drawGraphene,
-    grad: ['#020408','#B88A22'], icon: '◈' },
-  { id: 4, name: 'Credits',  sub: 'LIGHT TRAILS',       draw: drawCredits,
-    grad: ['#02030c','#4488cc'], icon: '✦' },
-];
-
-let active = 0;
-
-// ── Build picker UI ────────────────────────────────────────
-WALLPAPERS.forEach((wp, i) => {
-  const card = document.createElement('button');
-  card.style.cssText = `
-    display:flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;
-    background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;cursor:pointer;transition:all 0.2s;
-    font-family:-apple-system,system-ui,sans-serif;min-width:120px;
-    position:relative;
-  `;
-
-  // Color swatch
-  const swatch = document.createElement('div');
-  swatch.style.cssText = `
-    width:32px;height:32px;border-radius:8px;flex-shrink:0;
-    background:linear-gradient(135deg,${wp.grad[0]},${wp.grad[1]});
-    display:flex;align-items:center;justify-content:center;
-    font-size:14px;
-  `;
-  swatch.textContent = wp.icon;
-
-  const info = document.createElement('div');
-  info.innerHTML = `<div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:0.01em">${wp.name}</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;margin-top:1px">${wp.sub}</div>`;
-
-  const num = document.createElement('div');
-  num.style.cssText = `
-    position:absolute;top:6px;right:8px;
-    width:16px;height:16px;border-radius:50%;
-    background:rgba(255,255,255,0.12);
-    font-size:9px;font-weight:700;color:rgba(255,255,255,0.5);
-    display:flex;align-items:center;justify-content:center;
-    font-family:monospace;
-  `;
-  num.textContent = i+1;
-
-  card.appendChild(swatch);
-  card.appendChild(info);
-  card.appendChild(num);
-  picker.appendChild(card);
-
-  card.addEventListener('click', (e) => { e.stopPropagation(); active = i; updatePicker(); });
-  card._wp = i;
-  wp._card = card;
-});
-
-function updatePicker() {
-  WALLPAPERS.forEach((wp, i) => {
-    const c = wp._card;
-    if (i === active) {
-      c.style.background = 'rgba(255,255,255,0.14)';
-      c.style.borderColor = 'rgba(255,255,255,0.28)';
-      c.style.boxShadow = `0 0 20px ${wp.grad[1]}44`;
-    } else {
-      c.style.background = 'rgba(255,255,255,0.05)';
-      c.style.borderColor = 'rgba(255,255,255,0.08)';
-      c.style.boxShadow = 'none';
-    }
-  });
-}
-updatePicker();
-
-// Keyboard number keys to switch
-document.addEventListener('keydown', e => {
-  const n = parseInt(e.key);
-  if (n >= 1 && n <= 5) { active = n-1; updatePicker(); }
-});
-
-// ── Clock ─────────────────────────────────────────────────
-const timeEl = clockEl?.children[0];
-const dateEl = clockEl?.children[1];
-function updateClock() {
-  const now = new Date();
-  const h = String(now.getHours()).padStart(2,'0');
-  const m = String(now.getMinutes()).padStart(2,'0');
-  const s = String(now.getSeconds()).padStart(2,'0');
-  if (timeEl) timeEl.textContent = `${h}:${m}`;
-  if (dateEl) {
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    dateEl.textContent = `${days[now.getDay()]} · ${months[now.getMonth()]} ${now.getDate()}`;
-  }
-}
-updateClock();
-setInterval(updateClock, 1000);
-
-// ── Ripple physics ────────────────────────────────────────
-function updateRipples() {
-  ripples = ripples.filter(r => r.life > 0.01);
-  ripples.forEach(r => { r.r += 8; r.life *= 0.93; });
-}
-
-// ── Main loop ─────────────────────────────────────────────
-function loop() {
-  t += 0.012;
-  updateRipples();
-  WALLPAPERS[active].draw();
-
-  // Draw ripple overlays on top
-  if (ripples.length) {
-    ripples.forEach(rp => {
-      ctx.beginPath();
-      ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI*2);
-      ctx.strokeStyle = `rgba(255,255,255,${rp.life * 0.5})`;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      if (rp.r > 20) {
-        ctx.beginPath();
-        ctx.arc(rp.x, rp.y, rp.r * 0.6, 0, Math.PI*2);
-        ctx.strokeStyle = `rgba(255,255,255,${rp.life * 0.25})`;
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
+    var programs = {}, uniforms = {};
+    WALLPAPERS.forEach(function(w){
+      var prog = buildProgram(window.SHADERS[w.key]);
+      programs[w.key] = prog;
+      if(prog){
+        uniforms[w.key] = {
+          time:   gl.getUniformLocation(prog, 'u_time'),
+          res:    gl.getUniformLocation(prog, 'u_res'),
+          mouse:  gl.getUniformLocation(prog, 'u_mouse'),
+          mDown:  gl.getUniformLocation(prog, 'u_mDown'),
+          ripple: gl.getUniformLocation(prog, 'u_ripple[0]')
+        };
       }
     });
-  }
 
-  requestAnimationFrame(loop);
-}
-loop();
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 1, H = 1;
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.floor(window.innerWidth * dpr);
+      H = Math.floor(window.innerHeight * dpr);
+      canvas.width = W; canvas.height = H;
+      gl.viewport(0, 0, W, H);
+    }
+    window.addEventListener('resize', resize);
+    resize();
 
-// Fade canvas in
-canvas.style.opacity = '0';
-canvas.style.transition = 'opacity 1.2s ease';
-setTimeout(() => { canvas.style.opacity = '1'; }, 200);
+    /* ---------------- interaction state ---------------- */
+    // mouse in framebuffer px, y-up
+    var tgt = { x: W*0.5, y: H*0.5 };
+    var cur = { x: W*0.5, y: H*0.5 };
+    var down = 0, downTarget = 0;
 
-})();
-</script>
+    function setPointer(clientX, clientY){
+      tgt.x = clientX * dpr;
+      tgt.y = H - clientY * dpr;   // flip to y-up
+    }
+    window.addEventListener('pointermove', function(e){ setPointer(e.clientX, e.clientY); }, { passive:true });
+
+    // ripples: 6 slots, each [x, y, t0]; z packed as age at draw time
+    var ripple = new Float32Array(18);
+    for(var i=0;i<6;i++) ripple[i*3+2] = -1;
+    var rT0 = [-1,-1,-1,-1,-1,-1];
+    var rNext = 0;
+    function addRipple(clientX, clientY){
+      var x = clientX * dpr, y = H - clientY * dpr;
+      ripple[rNext*3+0] = x;
+      ripple[rNext*3+1] = y;
+      rT0[rNext] = nowSec();
+      rNext = (rNext + 1) % 6;
+    }
+    window.addEventListener('pointerdown', function(e){
+      if(e.target.closest('.ui')) return;   // don't ripple when using the dock/UI
+      downTarget = 1;
+      setPointer(e.clientX, e.clientY);
+      cur.x = tgt.x; cur.y = tgt.y;          // snap so ripple originates exactly under cursor
+      addRipple(e.clientX, e.clientY);
+    });
+    window.addEventListener('pointerup', function(){ downTarget = 0; });
+    window.addEventListener('pointercancel', function(){ downTarget = 0; });
+
+    /* ---------------- selection ---------------- */
+    var current = 0;
+    var saved = +localStorage.getItem('carbon_trees_wallpaper');
+    if(!isNaN(saved) && saved >= 0 && saved < WALLPAPERS.length) current = saved;
+
+    var flash = document.getElementById('flash');
+    var nowName = document.getElementById('nowName');
+    var nameTimer = null;
+    function select(idx, announce){
+      current = (idx + WALLPAPERS.length) % WALLPAPERS.length;
+      localStorage.setItem('carbon_trees_wallpaper', current);
+      [].forEach.call(document.querySelectorAll('.tile'), function(t, i){
+        t.classList.toggle('active', i === current);
+        t.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
+      flash.classList.add('on');
+      setTimeout(function(){ flash.classList.remove('on'); }, 90);
+      if(announce){
+        var w = WALLPAPERS[current];
+        nowName.querySelector('.t').textContent = w.name;
+        nowName.querySelector('.s').textContent = w.kind;
+        nowName.classList.add('show');
+        clearTimeout(nameTimer);
+        nameTimer = setTimeout(function(){ nowName.classList.remove('show'); }, 1700);
+      }
+    }
+
+    // build dock
+    var dock = document.getElementById('dock');
+    WALLPAPERS.forEach(function(w, i){
+      var tile = document.createElement('button');
+      tile.className = 'tile';
+      tile.type = 'button';
+      tile.setAttribute('role', 'tab');
+      tile.setAttribute('aria-label', w.name + ', ' + w.kind);
+      tile.innerHTML =
+        '<span class="sw" style="background:'+w.sw+'"></span>' +
+        '<span class="lab"><span class="n">'+w.name+'</span><span class="k">'+w.kind+'</span></span>' +
+        '<span class="idx">'+(i+1)+'</span>';
+      tile.addEventListener('click', function(){ select(i, true); });
+      dock.appendChild(tile);
+    });
+
+    window.addEventListener('keydown', function(e){
+      if(e.key >= '1' && e.key <= '5'){ select(+e.key - 1, true); }
+      else if(e.key === 'ArrowRight'){ select(current + 1, true); }
+      else if(e.key === 'ArrowLeft'){ select(current - 1, true); }
+    });
+
+    /* ---------------- clock ---------------- */
+    var timeEl = document.getElementById('time'),
+        dayEl = document.getElementById('day'),
+        dateEl = document.getElementById('date');
+    function tick(){
+      var d = new Date();
+      var hh = String(d.getHours()).padStart(2,'0');
+      var mm = String(d.getMinutes()).padStart(2,'0');
+      var ss = String(d.getSeconds()).padStart(2,'0');
+      timeEl.innerHTML = hh + ':' + mm + '<span class="sec">' + ss + '</span>';
+      dayEl.textContent = d.toLocaleDateString(undefined, { weekday:'long' });
+      dateEl.textContent = d.toLocaleDateString(undefined, { month:'long', day:'numeric' });
+    }
+    tick(); setInterval(tick, 1000);
+
+    // fake signal bars + gpu label for OS flavor
+    (function(){
+      var sig = document.getElementById('signal');
+      [7,11,15,19].forEach(function(h){
+        var b = document.createElement('span'); b.className = 'bar'; b.style.height = h + 'px';
+        sig.appendChild(b);
+      });
+      try{
+        var dbg = gl.getExtension('WEBGL_debug_renderer_info');
+        var r = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : '';
+        document.getElementById('gpu').textContent = r ? r.split(/[(,]/)[0].trim().slice(0,18) : 'GPU';
+      }catch(e){ document.getElementById('gpu').textContent = 'GPU'; }
+    })();
+
+    /* ---------------- render loop ---------------- */
+    var t0 = performance.now();
+    var __frames = 0;
+    function nowSec(){ return (performance.now() - t0) / 1000; }
+    var timeScale = reduceMotion ? 0.22 : 1.0;
+
+    function frame(){
+      var w = WALLPAPERS[current];
+      var prog = programs[w.key], u = uniforms[w.key];
+
+      // smoothing
+      cur.x += (tgt.x - cur.x) * 0.12;
+      cur.y += (tgt.y - cur.y) * 0.12;
+      down  += (downTarget - down) * 0.18;
+
+      // update ripple ages
+      var ns = nowSec();
+      for(var i=0;i<6;i++){
+        if(rT0[i] < 0){ ripple[i*3+2] = -1; continue; }
+        var age = ns - rT0[i];
+        if(age > 3.2){ rT0[i] = -1; ripple[i*3+2] = -1; }
+        else ripple[i*3+2] = age;
+      }
+
+      if(prog){
+        gl.useProgram(prog);
+        gl.uniform1f(u.time, (__ovr!=null?__ovr:ns) * timeScale);
+        gl.uniform2f(u.res, W, H);
+        gl.uniform2f(u.mouse, cur.x, cur.y);
+        gl.uniform1f(u.mDown, down);
+        if(u.ripple) gl.uniform3fv(u.ripple, ripple);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+      }
+      requestAnimationFrame(frame);
+      __frames++;
+    }
+
+    select(current, false);
+    frame(); // draw first frame synchronously (rAF is paused while hidden)
+
+    // debug hook
+    window.__step = function(t){ if(t!=null){ __ovr = t; } frame(); };
+    var __ovr = null;
+    window.__dbg = function(){
+      var w = WALLPAPERS[current];
+      return {
+        prog: !!programs[w.key],
+        link: programs[w.key] ? gl.getProgramParameter(programs[w.key], gl.LINK_STATUS) : null,
+        glerr: gl.getError(),
+        size: [W,H],
+        frames: __frames
+      };
+    };
+  })();
+  </script>
 </body>
 </html>
