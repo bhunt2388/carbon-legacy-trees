@@ -1475,10 +1475,16 @@ void main(){
       }
     });
 
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    /* Mobile/low-power GPUs pay a much higher per-pixel cost for this shader than
+       desktop — cap DPR harder on coarse-pointer (touch) devices so we don't render
+       at full retina density on phones. */
+    var isMobile = window.matchMedia('(pointer: coarse)').matches;
+    var MAX_DPR = isMobile ? 1.25 : 2;
+
+    var dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
     var W = 1, H = 1;
     function resize(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
       var hero = canvas.closest('section') || canvas.parentElement;
       W = Math.floor((hero ? hero.offsetWidth  : window.innerWidth)  * dpr);
       H = Math.floor((hero ? hero.offsetHeight : window.innerHeight) * dpr);
@@ -1487,6 +1493,29 @@ void main(){
     }
     window.addEventListener('resize', resize);
     resize();
+
+    /* Hard FPS cap — don't rely solely on the browser to throttle a hidden/
+       backgrounded tab. Some mobile WebViews keep pumping rAF at full rate even
+       when the tab is backgrounded or the device is under multitasking pressure,
+       which is what was pegging the whole phone's GPU. Also cut real render cost
+       (not just simulated speed) under prefers-reduced-motion. */
+    var TARGET_FPS = isMobile ? 30 : 60;
+    if (reduceMotion) TARGET_FPS = 15;
+    var FRAME_MIN_MS = 1000 / TARGET_FPS;
+    var lastFrameTime = 0;
+    var rafHandle = null;
+    var paused = false;
+
+    document.addEventListener('visibilitychange', function(){
+      if (document.hidden) {
+        paused = true;
+        if (rafHandle) { cancelAnimationFrame(rafHandle); rafHandle = null; }
+      } else if (paused) {
+        paused = false;
+        lastFrameTime = 0;
+        rafHandle = requestAnimationFrame(frame);
+      }
+    });
 
     /* ---------------- interaction state ---------------- */
     // mouse in framebuffer px, y-up
@@ -1611,7 +1640,14 @@ void main(){
     function nowSec(){ return (performance.now() - t0) / 1000; }
     var timeScale = reduceMotion ? 0.22 : 1.0;
 
-    function frame(){
+    function frame(timestamp){
+      // FPS cap — skip work if we're being asked to render faster than TARGET_FPS
+      if (timestamp && lastFrameTime && (timestamp - lastFrameTime) < FRAME_MIN_MS) {
+        rafHandle = requestAnimationFrame(frame);
+        return;
+      }
+      lastFrameTime = timestamp || performance.now();
+
       var w = WALLPAPERS[current];
       var prog = programs[w.key], u = uniforms[w.key];
 
@@ -1638,7 +1674,7 @@ void main(){
         if(u.ripple) gl.uniform3fv(u.ripple, ripple);
         gl.drawArrays(gl.TRIANGLES, 0, 3);
       }
-      requestAnimationFrame(frame);
+      if (!paused) rafHandle = requestAnimationFrame(frame);
       __frames++;
     }
 
