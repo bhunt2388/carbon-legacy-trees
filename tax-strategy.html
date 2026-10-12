@@ -2,653 +2,574 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0B2545">
+<meta name="description" content="How Carbon Legacy Trees investors capture immediate tax value via &sect;168(k)(5) specified plant election, plus the full creative tax stack.">
+<link rel="canonical" href="https://www.carbonlegacytrees.com/tax-strategy.html">
+<link rel="icon" type="image/png" href="images/logo-icon.png">
+<link rel="apple-touch-icon" href="images/logo-icon.png">
 <title>Tax Strategy | Carbon Legacy Trees</title>
-<meta name="description" content="How Carbon Legacy Trees investors capture immediate tax value via §168(k)(5) specified plant election, plus the full creative tax stack.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-:root{
-  --navy:#0B2545;--green:#146B3A;--gold:#8a6210;--gold-fill:#B88A22;--stone:#F7F5F0;--slate:#334155;--ink:#1E2428;
-  --dark:#F7F5F0;--forest:#EEF0EC;--canopy:#fff;--mid:#EEF0EC;--vine:#0B2545;
-  --leaf:#146B3A;--bright:#2f9a5c;--earth:#8b6940;
-  --cream:#1E2428;--muted:#334155;--border:rgba(11,37,69,.14);
-  --red:#a8322a;--blue:#1d5a96;
-  --sans:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono","Courier New",monospace;
-  --serif:"Playfair Display",Georgia,serif;--ease:cubic-bezier(.22,1,.36,1);
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0B2545;--navy2:#0F2F57;--navy0:#071A33;--green:#146B3A;--greend:#0C3B22;--greend2:#11492B;--gold:#B88A22;--goldl:#D4A83A;--stone:#F7F5F0;--canopy:#EEF0EC;--slate:#334155;--ink:#1E2428;--leaf:#6ee8a2;
+--serif:'Playfair Display',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--ease:cubic-bezier(.32,.72,0,1)}
+html{background:var(--navy);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--stone);color:var(--ink);overflow-x:hidden;font-size:16px;line-height:1.6}
+a{color:inherit}
+img{max-width:100%}
+::selection{background:var(--green);color:#fff}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.dk a:focus-visible,.gr a:focus-visible,nav a:focus-visible,nav button:focus-visible,footer a:focus-visible,.dk button:focus-visible{outline-color:var(--leaf)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px;position:relative}
+/* surfaces */
+.st{--bg:var(--stone);--bg2:#fff;--fg:var(--ink);--mute:var(--slate);--line:rgba(11,37,69,.16);--card:rgba(11,37,69,.045);--acc:var(--green);--gl:#7a5608;--chip:var(--green);--chipfg:#fff;--btnbg:var(--navy);--btnfg:#fff}
+.cn{--bg:var(--canopy);--bg2:#fff;--fg:var(--ink);--mute:var(--slate);--line:rgba(11,37,69,.14);--card:rgba(11,37,69,.05);--acc:var(--green);--gl:#8a6210;--chip:var(--green);--chipfg:#fff;--btnbg:var(--navy);--btnfg:#fff}
+.dk{--bg:var(--navy);--bg2:var(--navy2);--fg:#fff;--mute:rgba(255,255,255,.7);--line:rgba(255,255,255,.14);--card:rgba(255,255,255,.04);--acc:var(--leaf);--gl:var(--goldl);--chip:var(--green);--chipfg:#fff;--btnbg:var(--stone);--btnfg:var(--navy)}
+.gr{--bg:var(--greend);--bg2:var(--greend2);--fg:#fff;--mute:rgba(255,255,255,.72);--line:rgba(255,255,255,.16);--card:rgba(255,255,255,.05);--acc:var(--leaf);--gl:var(--goldl);--chip:var(--goldl);--chipfg:var(--navy);--btnbg:var(--stone);--btnfg:var(--navy)}
+.sec{position:relative;background:var(--bg);color:var(--fg);padding:clamp(72px,9vw,128px) 0;overflow:hidden}
+.sec.tight{padding-top:0}
+.sec>.wrap{z-index:2}
+/* kicker: plain ruled editorial label, no container */
+.kicker{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin:0}
+.kicker::before{content:"";width:34px;height:2px;background:var(--acc);flex:none}
+.kicker.gold::before{background:var(--gl)}
+/* nav */
+nav.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:80;width:min(1240px,calc(100% - 28px));border-radius:20px;background:rgba(11,37,69,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 18px 50px -20px rgba(7,26,51,.6);transition:background .6s var(--ease)}
+nav.nav.scrolled{background:rgba(11,37,69,.94)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 8px 8px 20px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:-.005em;white-space:nowrap}
+.mark img{height:34px;width:auto;filter:brightness(0) invert(1);display:block}
+nav .links{display:flex;gap:24px;align-items:center;list-style:none}
+nav .links a.t{font-size:13px;text-decoration:none;color:rgba(255,255,255,.7);transition:color .5s var(--ease);white-space:nowrap}
+nav .links a.t:hover,nav .links a.t.act{color:#fff}
+nav .links a.t.act{box-shadow:0 2px 0 var(--leaf);padding-bottom:3px}
+.nav-toggle{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);cursor:pointer;position:relative;color:#fff}
+.nav-toggle span{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:#fff;transition:transform .5s var(--ease),opacity .3s}
+.nav-toggle span:nth-child(1){top:16px}.nav-toggle span:nth-child(2){top:21px}.nav-toggle span:nth-child(3){top:26px}
+nav.menu-open .nav-toggle span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+nav.menu-open .nav-toggle span:nth-child(2){opacity:0}
+nav.menu-open .nav-toggle span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+#progress-bar{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--green),var(--leaf));z-index:95}
+/* buttons: label + nested rounded-square chip */
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--btnbg);color:var(--btnfg)!important;padding:8px 8px 8px 24px;border-radius:14px;font-family:var(--sans);font-weight:600;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:transform .6s var(--ease),background .6s var(--ease),box-shadow .6s var(--ease);will-change:transform}
+.btn .ic{width:36px;height:36px;border-radius:9px;background:var(--chip);color:var(--chipfg);display:grid;place-items:center;flex:none;transition:transform .6s var(--ease)}
+.btn .ic svg{width:15px;height:15px}
+.btn:hover .ic{transform:translate(3px,-2px) scale(1.06)}
+.btn:active{transform:scale(.98)}
+.btn.sm{padding:6px 6px 6px 18px;font-size:13px}.btn.sm .ic{width:30px;height:30px}
+.btn.gold{--chip:var(--gold);--chipfg:#fff}
+.dk .btn.gold,.gr .btn.gold{--chip:var(--goldl);--chipfg:var(--navy)}
+.btn.ghost{background:transparent;color:var(--fg)!important;box-shadow:inset 0 0 0 1px var(--line);padding-right:24px}
+.btn.ghost:hover{background:var(--card)}
+.nav-cta{--btnbg:var(--stone);--btnfg:var(--navy);--chip:var(--green);--chipfg:#fff}
+button.btn[type=submit]{width:100%;justify-content:space-between}
+button.btn:disabled{opacity:.7;cursor:not-allowed}
+/* reveal: blur-up with stagger, visible when JS fails */
+.js .rv{opacity:0;transform:translateY(46px);filter:blur(10px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease),filter 1.1s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+.js .rv.on{opacity:1;transform:none;filter:none}
+/* ambient layer */
+.orb{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform;pointer-events:none;z-index:1}
+.og{background:radial-gradient(circle,rgba(20,107,58,.7),transparent 65%)}
+.og2{background:radial-gradient(circle,rgba(110,232,162,.32),transparent 65%)}
+.oy{background:radial-gradient(circle,rgba(184,138,34,.34),transparent 65%)}
+.ob{background:radial-gradient(circle,rgba(30,90,170,.4),transparent 65%)}
+.o1{width:60vw;height:60vw;max-width:760px;max-height:760px;left:-14%;top:-20%;animation:fl1 16s var(--ease) infinite alternate}
+.o2{width:50vw;height:50vw;max-width:640px;max-height:640px;right:-10%;top:12%;animation:fl2 19s var(--ease) infinite alternate}
+.o3{width:38vw;height:38vw;max-width:480px;max-height:480px;left:38%;bottom:-24%;animation:fl1 22s var(--ease) infinite alternate-reverse}
+@keyframes fl1{to{transform:translate3d(8vw,6vh,0) scale(1.18)}}
+@keyframes fl2{to{transform:translate3d(-9vw,8vh,0) scale(1.12)}}
+.gridbg{position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;opacity:.55;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent 75%)}
+.cn .orb,.st .orb{filter:blur(100px);opacity:.5}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:112px 0 72px;background:var(--navy);color:#fff}
+.hero-bg{position:absolute;inset:0;z-index:0;background:var(--navy)}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-wash{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(11,37,69,.94) 0%,rgba(11,37,69,.8) 46%,rgba(11,37,69,.34) 100%),linear-gradient(0deg,var(--navy) 0%,transparent 28%)}
+#vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 120% at 50% 38%,transparent 52%,rgba(0,0,0,.38) 100%);z-index:2}
+#flash{position:absolute;inset:0;pointer-events:none;z-index:2;background:#05070d;opacity:0;transition:opacity .42s ease}
+#flash.on{opacity:.55;transition:opacity .08s ease}
+.clt-ui{display:none!important}
+.hero .orb,.hero .gridbg{z-index:2}
+.hero .wrap{z-index:4}
+.hwm{position:absolute;right:-4%;top:50%;width:min(44vw,620px);height:auto;transform:translateY(-52%);opacity:.07;filter:brightness(0) invert(1);pointer-events:none;z-index:3;animation:kf 14s var(--ease) infinite alternate}
+@keyframes kf{to{transform:translateY(-56%) rotate(2.5deg)}}
+.hero .kicker{color:rgba(255,255,255,.78)}
+.hero .kicker::before{background:var(--leaf)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500}
+h1{font-size:clamp(42px,min(9vw,10.5vh),128px);line-height:.94;letter-spacing:-.03em;margin:26px 0 30px;max-width:11.5em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.04em}
+h1 .ln span{display:block}
+.js h1 .ln span{transform:translateY(112%);transition:transform 1.4s var(--ease);transition-delay:calc(var(--d,0)*120ms + 200ms)}
+.js.on-load h1 .ln span,.on-load h1 .ln span{transform:none}
+h1 em{font-style:italic;font-weight:500;background:linear-gradient(100deg,#B88A22,#E3BE5C 55%,#B88A22);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.65;color:var(--mute);max-width:62ch}
+.hero .lead{color:rgba(255,255,255,.8);max-width:70ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero .rv{transition-delay:calc(var(--d,0)*110ms + 500ms)}
+.js .on-load .hero .rv,.on-load .hero .rv{opacity:1;transform:none;filter:none}
+.hero .btn.ghost{box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);background:rgba(11,37,69,.35)}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(28px,5vh,56px);border-top:1px solid rgba(255,255,255,.18)}
+.hstat{padding:22px 24px 0 0;position:relative}
+.hstat+.hstat{padding-left:24px;border-left:1px solid rgba(255,255,255,.12)}
+.hstat b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.2vw,60px);line-height:1;letter-spacing:-.02em;color:#fff}
+.hstat b.gold{color:var(--goldl)}
+.hstat span{display:block;margin-top:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.scrollcue{position:absolute;left:32px;bottom:34px;z-index:4;font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:12px}
+.scrollcue::after{content:"";width:46px;height:1px;background:linear-gradient(90deg,#fff,transparent);transform-origin:left;animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleX(0)}60%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+/* marquee */
+.marq{background:var(--navy0);border-block:1px solid rgba(255,255,255,.12);overflow:hidden;padding:30px 0;color:#fff;position:relative;z-index:3}
+.track{display:flex;gap:56px;width:max-content;animation:mq 46s linear infinite}
+.track span{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(30px,4vw,56px);letter-spacing:-.015em;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.track span::after{content:"";width:44px;height:2px;background:var(--goldl);flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* headings */
+h2{font-size:clamp(36px,5.6vw,88px);line-height:1.02;letter-spacing:-.025em;margin:22px 0 26px;text-wrap:balance}
+h2 em{font-style:italic;color:var(--acc)}
+h2 em.g{color:var(--gl)}
+.big{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,66px);line-height:1.08;letter-spacing:-.02em}
+/* scroll-lit statement */
+.statement{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.5vw,52px);line-height:1.18;letter-spacing:-.015em;max-width:30ch}
+.statement .w{color:color-mix(in srgb,var(--fg) 20%,transparent);transition:color .9s var(--ease)}
+.statement .w.on{color:var(--fg)}
+.statement .w.hl.on{color:var(--acc);font-style:italic}
+.wide-st{max-width:28ch}
+/* split + stats strip */
+.split{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);border-block:1px solid var(--line)}
+.strip>div{padding:38px 26px 34px 0}
+.strip>div+div{padding-left:26px;border-left:1px solid var(--line)}
+.strip b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.2vw,78px);line-height:1;letter-spacing:-.03em;color:var(--fg)}
+.strip b.gold{color:var(--gl)}
+.strip span{display:block;margin-top:14px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.6}
+/* bezel + bento */
+.bezel{padding:7px;border-radius:2rem;background:var(--card);border:1px solid var(--line)}
+.core2{border-radius:calc(2rem - 7px);background:var(--bg2);box-shadow:inset 0 1px 1px rgba(255,255,255,.14);padding:34px;height:100%;position:relative;overflow:hidden}
+.st .core2,.cn .core2{box-shadow:inset 0 1px 1px #fff,0 1px 2px rgba(11,37,69,.05)}
+.core2::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,-30%),color-mix(in srgb,var(--acc) 22%,transparent),transparent 60%);opacity:0;transition:opacity .6s var(--ease);pointer-events:none}
+.bezel:hover .core2::before{opacity:1}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:64px}
+.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
+.r2{grid-row:span 2}
+.core2 .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--acc);margin-bottom:22px;display:block;text-transform:uppercase}
+.st .core2 .n,.cn .core2 .n{color:var(--green)}
+.core2 h3{font-size:clamp(24px,2.5vw,36px);line-height:1.08;margin-bottom:14px;letter-spacing:-.015em}
+.core2 h3.lg{font-size:clamp(30px,3.6vw,52px)}
+.core2 p{font-size:15px;line-height:1.7;color:var(--mute);max-width:52ch}
+.core2 p+p{margin-top:14px}
+.cstat{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);line-height:1.6}
+.cstat.gd{color:var(--gl)}
+.core2 .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);margin-bottom:24px;color:var(--acc)}
+.st .core2 .ico,.cn .core2 .ico{color:var(--green)}
+.core2 .ico.gd{color:var(--gl)}
+.core2 .ico svg{width:22px;height:22px}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:30px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.loop div{padding:18px 18px;font-family:var(--serif);font-weight:500;font-size:19px;line-height:1.2;border-left:1px solid var(--line)}
+.loop div:first-child{border-left:0}
+.loop div small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--acc);margin-bottom:8px;font-weight:400}
+.st .loop small,.cn .loop small{color:var(--green)}
+/* feature (image) */
+.feat{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
+.feat.flip{grid-template-columns:5fr 7fr}
+.feat.flip .fimg{order:2}
+.fimg{position:relative}
+.fimg .bezel{padding:8px;border-radius:2.2rem}
+.fimg .imgcore{border-radius:calc(2.2rem - 8px);overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.2);aspect-ratio:16/10;background:var(--navy)}
+.fimg img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);transition:transform 1.6s var(--ease)}
+.fimg:hover img{transform:scale(1.14)}
+.fimg .tag{position:absolute;left:28px;bottom:28px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.rows{margin-top:34px;border-top:1px solid var(--line)}
+.rows>div{display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.rows .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rows .v{font-family:var(--serif);font-weight:500;font-size:19px;text-align:right;color:var(--fg)}
+.rows .v.gd{color:var(--gl)}.rows .v.gn{color:var(--acc)}
+.st .rows .v.gn,.cn .rows .v.gn{color:var(--green)}
+/* hub diagram */
+.hubwrap{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.hub{position:relative;width:100%;max-width:600px;aspect-ratio:1;margin:0 auto}
+.hub svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.hub .spoke{stroke:rgba(110,232,162,.7);stroke-width:.28;stroke-dasharray:1.2 1.6;animation:flow 3s linear infinite}
+.hub .spoke.gd{stroke:rgba(212,168,58,.8)}
+@keyframes flow{to{stroke-dashoffset:-5.6}}
+.hub .ringa{transform-origin:50% 50%;animation:spin 60s linear infinite}
+.hub .ringb{transform-origin:50% 50%;animation:spin 90s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hcore{position:absolute;left:50%;top:50%;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#1a8a4c,#146B3A 58%,#0C3B22);box-shadow:0 0 0 10px rgba(110,232,162,.1),0 0 90px rgba(20,107,58,.7);animation:pulse 4s var(--ease) infinite}
+.hcore img{width:62%;height:auto;display:block;filter:brightness(0) invert(1)}
+@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(110,232,162,.06),0 0 120px rgba(20,107,58,.9)}}
+.node{position:absolute;transform:translate(-50%,-50%);padding:11px 16px;border-radius:14px;background:rgba(15,47,87,.88);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .6s var(--ease),border-color .6s var(--ease);width:max-content;max-width:42%}
+.node:hover{transform:translate(-50%,-50%) scale(1.06);border-color:var(--leaf)}
+.node small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--leaf);margin-bottom:4px}
+.node.gd small{color:var(--goldl)}
+.node b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(13px,1.35vw,17px);line-height:1.15;color:#fff}
+/* revenue cards */
+.revs{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:84px}
+.rfig{margin-top:26px;font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.8vw,40px);line-height:1.05;letter-spacing:-.02em;color:var(--fg)}
+.rfig small{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:400}
+.rtype{position:absolute;top:34px;right:34px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.rtype.gd{color:var(--gl)}
+/* table */
+.tblbox{margin-top:70px}
+.tblbox h3{font-size:clamp(26px,3vw,40px);margin:18px 0 26px;letter-spacing:-.02em}
+.tbl-wrap{overflow-x:auto;border-radius:1.6rem;border:1px solid var(--line);background:var(--card);padding:7px;-webkit-overflow-scrolling:touch}
+.tbl-wrap table{width:100%;min-width:780px;border-collapse:separate;border-spacing:0;background:var(--bg2);border-radius:calc(1.6rem - 7px);overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.14)}
+.tbl-wrap th{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;text-align:left;padding:18px 20px;color:var(--mute);border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl-wrap td{padding:17px 20px;font-size:14.5px;line-height:1.5;border-bottom:1px solid var(--line);color:var(--fg);vertical-align:top}
+.tbl-wrap tr:last-child td{border-bottom:0}
+.tbl-wrap td:first-child{font-family:var(--serif);font-weight:500;font-size:16.5px}
+.tbl-wrap td.gn{color:var(--acc)}.tbl-wrap td.gd{color:var(--gl)}
+.tbl-wrap tr.hl td{background:color-mix(in srgb,var(--acc) 9%,transparent)}
+.tbl-wrap tr.tot td{font-family:var(--serif);font-weight:500;font-size:17px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--gl) 12%,transparent)}
+.nil{display:inline-block;width:18px;height:2px;background:var(--mute);vertical-align:middle;opacity:.6}
+.fine{font-size:12.5px;line-height:1.7;color:var(--mute);margin-top:16px;max-width:80ch}
+.note{margin-top:22px;padding:18px 22px;border-radius:16px;border:1px solid var(--line);background:var(--card);font-size:13.5px;line-height:1.7;color:var(--mute)}
+.note.gold{border-color:color-mix(in srgb,var(--gl) 55%,transparent)}
+/* timeline */
+.tl{position:relative;margin-top:84px;display:grid;gap:0}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--line)}
+.tl::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:linear-gradient(90deg,var(--green),var(--gl));transform:scaleX(0);transform-origin:left;transition:transform 2.6s var(--ease) .3s}
+.dk .tl::after,.gr .tl::after{background:linear-gradient(90deg,var(--leaf),var(--goldl))}
+.tl.on::after{transform:scaleX(1)}
+.tl.c7{grid-template-columns:repeat(7,1fr)}
+.tl.c8{grid-template-columns:repeat(8,1fr)}
+.tn{position:relative;padding-right:14px}
+.td{width:19px;height:19px;border-radius:6px;background:var(--bg);border:2px solid var(--acc);position:relative;z-index:2;margin-bottom:26px;transition:transform .6s var(--ease)}
+.st .td,.cn .td{border-color:var(--green)}
+.td.major{background:var(--acc);transform:rotate(45deg)}
+.st .td.major,.cn .td.major{background:var(--green)}
+.td.gd{border-color:var(--gl);background:var(--gl)}
+.tn .y{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--acc);text-transform:uppercase;margin-bottom:8px}
+.st .tn .y,.cn .tn .y{color:var(--green)}
+.tn .y.gd{color:var(--gl)}
+.tn h4{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.2;letter-spacing:-.01em;margin-bottom:8px}
+.tn p{font-size:13.5px;line-height:1.6;color:var(--mute)}
+.tn .tv{font-family:var(--serif);font-weight:500;font-size:17px;line-height:1.25;margin-top:10px;color:var(--acc)}
+.st .tn .tv,.cn .tn .tv{color:var(--green)}
+.tn .tv.gd{color:var(--gl)}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:70px;position:relative}
+.proc::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line)}
+.proc::after{content:"";position:absolute;left:0;top:27px;height:2px;width:100%;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 2.4s var(--ease) .3s}
+.proc.on::after{transform:scaleX(1)}
+.ps{position:relative;padding-right:28px}
+.psn{width:55px;height:55px;border-radius:14px;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:13px;position:relative;z-index:2;margin-bottom:26px;color:var(--acc);box-shadow:0 0 0 6px var(--bg)}
+.ps h4{font-size:25px;line-height:1.15;margin-bottom:12px;letter-spacing:-.015em}
+.ps p{font-size:15px;line-height:1.7;color:var(--mute)}
+/* audience tabs */
+.tabs{display:inline-flex;gap:6px;margin:54px 0 30px;padding:6px;border-radius:18px;background:var(--card);border:1px solid var(--line);flex-wrap:wrap}
+.tab{font-family:var(--sans);font-weight:600;font-size:14px;padding:12px 22px;border-radius:12px;border:0;background:transparent;color:var(--mute);cursor:pointer;transition:background .5s var(--ease),color .5s var(--ease)}
+.tab:hover{color:var(--fg)}
+.tab.active{background:var(--navy);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.pane{display:none}
+.pane.active{display:block;animation:paneIn .8s var(--ease)}
+@keyframes paneIn{from{opacity:0;transform:translateY(18px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.aud{display:grid;grid-template-columns:7fr 5fr;gap:16px}
+.aud h3{font-size:clamp(28px,3.4vw,48px);line-height:1.05;letter-spacing:-.02em;margin:20px 0 18px}
+.points{list-style:none;margin:28px 0 34px;border-top:1px solid var(--line)}
+.points li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6;color:var(--ink)}
+.points li::before{content:"";position:absolute;left:0;top:25px;width:18px;height:2px;background:var(--green)}
+.boxt{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.pane .rows{margin-top:10px}
+/* about */
+.mlead{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,68px);line-height:1.06;letter-spacing:-.025em;max-width:20ch;margin-top:44px}
+.mlead em{color:var(--green)}
+.mbody{display:grid;grid-template-columns:1fr 1fr;gap:28px 64px;margin-top:64px}
+.mbody p{font-size:16.5px;line-height:1.8;color:var(--slate)}
+.mbody p strong{color:var(--ink);font-weight:600}
+.mbody p.mclose{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.2vw,30px);line-height:1.3;color:var(--ink);grid-column:1/-1;max-width:34ch}
+.distilled{margin-top:70px}
+.distilled .core2{padding:clamp(28px,4vw,56px)}
+.distilled p{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2.3vw,32px);line-height:1.35;color:#fff;max-width:46ch;letter-spacing:-.01em}
+.distilled .core2{background:var(--navy);box-shadow:inset 0 1px 1px rgba(255,255,255,.14)}
+.distilled .bezel{background:rgba(11,37,69,.08)}
+.pnum{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:block}
+.core2 .pt{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.9vw,26px);line-height:1.18;letter-spacing:-.01em;margin-bottom:12px;color:var(--fg)}
+/* closing statement */
+.closing{padding:clamp(110px,15vw,210px) 0}
+.closing .sub{margin-top:44px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);line-height:1.8;max-width:70ch}
+/* contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.cinfo{margin-top:38px;border-top:1px solid var(--line)}
+.cinfo div{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
+.cinfo svg{width:20px;height:20px;color:var(--green);flex:none}
+.formin{padding:36px}
+.formhead{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.015em;margin-bottom:8px}
+.formsub{font-size:14.5px;color:var(--mute);margin-bottom:26px}
+form{display:flex;flex-direction:column;gap:18px}
+label.l{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:8px}
+input[type=text],input[type=tel],input[type=email],select,textarea{width:100%;background:var(--stone);border:1px solid var(--line);padding:14px 16px;font-family:var(--sans);font-size:15px;color:var(--ink);outline:none;border-radius:14px;transition:border-color .5s var(--ease),background .5s var(--ease);-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23334155' stroke-width='1.6'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+input:focus,select:focus,textarea:focus{border-color:var(--green);background:#fff}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* footer */
+footer.foot{background:var(--navy);color:rgba(255,255,255,.72);padding:96px 0 40px;position:relative;overflow:hidden}
+footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;position:relative;z-index:2}
+footer .brand img{height:64px;width:auto;max-width:240px;object-fit:contain;filter:brightness(0) invert(1);display:block;margin-bottom:20px}
+footer .brand p{font-size:14.5px;line-height:1.75;max-width:38ch;color:rgba(255,255,255,.7)}
+footer h4{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+footer ul{list-style:none;display:grid;gap:11px}
+footer ul a{font-size:14px;color:rgba(255,255,255,.66);text-decoration:none;transition:color .5s var(--ease)}
+footer ul a:hover{color:var(--leaf)}
+footer .bot{padding-top:26px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;position:relative;z-index:2}
+footer .bot p{font-size:12.5px;color:rgba(255,255,255,.55)}
+footer .legal{font-size:12px;line-height:1.8;color:rgba(255,255,255,.5);margin-top:14px;max-width:110ch;position:relative;z-index:2}
+/* tax page */
+.thero{padding:128px 0 90px}
+.thero h1{font-size:clamp(38px,min(7.2vw,12.5vh),104px);max-width:none}
+.thero h1 .ln{white-space:nowrap}
+@media(max-width:700px){.thero h1 .ln{white-space:normal}.thero h1{font-size:clamp(36px,10vw,60px)}}
+.stack{margin-top:50px}
+.srow{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.5fr) minmax(0,.7fr);gap:28px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}
+.srow.head{padding:0 0 14px;border-top:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.srow .lab strong{font-family:var(--serif);font-weight:500;font-size:19px;line-height:1.2;display:block;margin-bottom:4px;color:var(--fg)}
+.srow .lab span{font-size:13px;color:var(--mute);line-height:1.5}
+.sbar{height:46px;border-radius:12px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
+.sbar i{display:flex;align-items:center;height:100%;padding:0 16px;font-style:normal;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;white-space:nowrap;border-radius:12px;transform-origin:left;transform:scaleX(0);transition:transform 1.8s var(--ease) calc(var(--d,0)*140ms + 300ms);overflow:hidden}
+.stack.on .sbar i{transform:scaleX(1)}
+.sval{text-align:right;font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em}
+.sval.gd{color:var(--gl)}.sval.gn{color:var(--acc)}.sval.bl{color:#8fc0ec}
+.st .sval.gn,.cn .sval.gn{color:var(--green)}.st .sval.bl,.cn .sval.bl{color:#1d5a96}
+.snote{font-size:13px;line-height:1.7;color:var(--mute);padding:0 0 22px;max-width:72ch}
+.srow.total{border-top:2px solid var(--fg);margin-top:8px}
+.srow.total .sval{font-size:clamp(26px,3vw,42px)}
+.plays{margin-top:70px}
+.ghost-n{position:absolute;right:26px;top:6px;font-family:var(--serif);font-weight:500;font-size:150px;line-height:1;color:var(--fg);opacity:.06;pointer-events:none;letter-spacing:-.04em}
+.ptag{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:18px}
+.st .ptag,.cn .ptag{color:var(--green)}
+.ptag.gd{color:var(--gl)}.ptag.bl{color:#1d5a96}
+.pirc{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mute);margin:-4px 0 16px;line-height:1.6}
+.prow{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-top:1px solid var(--line);font-size:13.5px;line-height:1.5}
+.prow span:first-child{color:var(--mute)}
+.prow span:last-child{text-align:right;color:var(--fg);font-weight:500}
+.prow.hi span:last-child{color:var(--gl);font-family:var(--serif);font-size:17px}
+.prows{margin-top:26px}
+.anchor-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:64px}
+.steps4{list-style:none;display:grid;gap:0;margin-top:6px}
+.steps4 li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.65;color:var(--mute)}
+.steps4 li b.i{font-family:var(--mono);font-size:11px;color:var(--green);width:30px;height:30px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;font-weight:500}
+.steps4 li strong{color:var(--ink)}
+.quote{font-style:italic;color:var(--ink)}
+.callout{margin-top:22px;padding:16px 18px;border-radius:14px;background:rgba(184,138,34,.1);box-shadow:inset 0 0 0 1px rgba(184,138,34,.35);font-size:14px;line-height:1.65;color:var(--slate)}
+.callout strong{color:#8a6210}
+/* responsive */
+@media(max-width:1100px){
+ nav .links{position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px 18px;border-radius:20px;background:rgba(11,37,69,.97);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .4s var(--ease),transform .5s var(--ease)}
+ nav.menu-open .links{opacity:1;pointer-events:auto;transform:none}
+ nav .links li{border-bottom:1px solid rgba(255,255,255,.1)}
+ nav .links li:last-child{border:0;padding-top:14px}
+ nav .links a.t{display:block;padding:14px 0;font-size:16px}
+ nav .links a.t.act{box-shadow:none;color:var(--leaf)}
+ .nav-toggle{display:block}
+ .nav-cta-d{display:none}
 }
-/* dark-context scopes (navy) */
-nav,.hero,footer,.sec-band{color:#fff;--cream:#fff;--muted:rgba(255,255,255,.74);--gold:#d4a83a;--leaf:#6ee8a2;--border:rgba(255,255,255,.14);--blue:#8fc0ec}
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--stone);color:var(--ink);-webkit-font-smoothing:antialiased;font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(11,37,69,.96);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);padding:12px 40px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo{height:34px;width:auto;display:block;}
-.nav-name{font-family:var(--serif);font-size:1rem;color:var(--cream);}
-.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center;flex-wrap:wrap;}
-.nav-links a{color:var(--muted);font-size:.83rem;letter-spacing:.03em;text-decoration:none;transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--cream);}
-.nav-cta{background:var(--green);color:#fff!important;padding:9px 20px;border-radius:10px;font-weight:600;font-size:.82rem!important;transition:background .25s,transform .25s!important;}
-.nav-cta:hover{background:#0d4f2a;transform:translateY(-1px);}
-.nav-links a:hover{color:#fff;}
-.nav-links a.active{box-shadow:0 2px 0 var(--leaf);padding-bottom:2px;}
-
-/* HERO */
-
-.hero{background:var(--navy);padding:96px 48px 76px;text-align:center;position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.hero-bg{position:absolute;inset:0;overflow:hidden;}
-.orb{position:absolute;border-radius:50%;filter:blur(90px);}
-.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(110,232,162,.12),transparent);top:-120px;right:-60px;animation:drift1 14s ease-in-out infinite alternate;}
-.orb2{width:380px;height:380px;background:radial-gradient(circle,rgba(212,168,58,.08),transparent);bottom:20px;left:-80px;animation:drift2 18s ease-in-out infinite alternate;}
-@keyframes drift1{to{transform:translate(-40px,30px);}}
-@keyframes drift2{to{transform:translate(50px,-20px);}}
-.hero-tag{display:flex;justify-content:center;align-items:center;gap:14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:22px;position:relative;}
-.hero-tag::before,.sec-tag::before{content:'';width:32px;height:1px;background:currentColor;opacity:.55;flex-shrink:0;}
-.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-bottom:18px;position:relative;max-width:800px;}
-.hero h1 em{color:var(--gold);font-style:italic;font-weight:600;}
-.hero-lead{color:var(--muted);font-size:1rem;max-width:620px;margin:0 auto 36px;position:relative;line-height:1.65;}
-.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:36px 56px;position:relative;padding-top:32px;border-top:1px solid rgba(255,255,255,.14);width:100%;max-width:900px;}
-.hstat{text-align:center;}
-.hstat-val{font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--gold);}
-.hstat-lbl{font-size:.75rem;color:var(--muted);letter-spacing:.06em;margin-top:3px;}
-
-/* SECTIONS */
-.sec{padding:88px max(48px,calc((100% - 1144px)/2));}
-.sec-band{background:var(--navy);color:#fff;}
-.sec-band .sec-h{color:#fff;}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 30px;border-radius:14px;font-weight:700;font-size:.9rem;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s,background .25s,border-color .25s;}
-.btn-gold{background:var(--gold-fill);color:#fff;}
-.btn-gold:hover{background:#9a7218;transform:translateY(-2px);box-shadow:0 8px 28px rgba(184,138,34,.3);}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff;}
-.btn-ghost:hover{border-color:#fff;transform:translateY(-2px);}
-a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:3px;}
-nav a:focus-visible,footer a:focus-visible,.sec-band a:focus-visible{outline-color:#6ee8a2;}
-
-.sec.alt{background:var(--forest);}
-.sec-tag{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
-.sec-tag.green{color:var(--green);}
-.sec-tag.gold{color:var(--gold);}
-.sec-tag.blue{color:var(--blue);}
-.sec-h{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.5rem);font-weight:700;margin-bottom:12px;line-height:1.15;letter-spacing:-.01em;color:var(--ink);}
-.sec-sub{color:var(--slate);font-size:1rem;max-width:700px;margin-bottom:40px;line-height:1.75;}
-
-/* PLAY CARDS */
-.plays-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
-.play{background:var(--canopy);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s var(--ease),box-shadow .3s;box-shadow:0 1px 3px rgba(11,37,69,.05);}
-.play:hover{border-color:rgba(20,107,58,.45);transform:translateY(-4px);box-shadow:0 16px 40px rgba(11,37,69,.09);}
-.play.featured{border-color:rgba(184,138,34,.55);background:linear-gradient(135deg,#fff,rgba(184,138,34,.06));}
-.play-ghost{position:absolute;top:-10px;right:6px;font-family:var(--serif);font-size:6rem;line-height:1;font-weight:700;color:rgba(20,107,58,.07);user-select:none;}
-.play.featured .play-ghost{color:rgba(184,138,34,.1);}
-.play-badge{display:block;font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
-.pb-gold{color:var(--gold);}
-.pb-green{color:var(--green);}
-.pb-blue{color:var(--blue);}
-.pb-red{color:var(--red);}
-.pb-gray{color:var(--muted);}
-.play-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;margin-bottom:6px;line-height:1.3;}
-.play-irc{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:10px;}
-.play-body{font-size:.86rem;color:var(--muted);line-height:1.55;margin-bottom:14px;}
-.play-rows{display:flex;flex-direction:column;gap:0;}
-.pr{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(11,37,69,.08);font-size:.8rem;}
-.pr:last-child{border-bottom:none;}
-.pr span:first-child{color:var(--muted);}
-.pr.hi span:last-child{color:var(--gold);font-weight:600;font-family:var(--mono);}
-.pr span:last-child{font-family:var(--mono);font-size:.76rem;}
-
-/* STACKED BAR VISUAL */
-.stack-chart{margin-top:8px;}
-.stack-row{display:grid;grid-template-columns:220px 1fr 130px;gap:12px;align-items:center;padding:6px 0;}
-.stack-label{font-size:.8rem;color:var(--cream);}
-.stack-bar-wrap{background:rgba(11,37,69,.06);border-radius:4px;height:28px;overflow:hidden;position:relative;}
-.stack-bar{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-family:var(--mono);font-size:.68rem;font-weight:600;transition:width 1.2s cubic-bezier(.16,1,.3,1);}
-.stack-val{font-family:var(--mono);font-size:.82rem;font-weight:700;}
-.stack-note{font-size:.72rem;color:var(--muted);grid-column:2/4;margin-top:-4px;padding-bottom:4px;border-bottom:1px solid rgba(11,37,69,.08);}
-
-/* TIMELINE */
-.timeline-h{position:relative;padding:0 0 40px;margin-top:8px;overflow-x:auto;}
-.tl-track{display:flex;gap:0;position:relative;min-width:700px;}
-.tl-track::before{content:"";position:absolute;top:18px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--leaf),var(--gold),var(--blue));z-index:0;}
-.tl-node{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;padding:0 8px;}
-.tl-dot{width:20px;height:20px;border-radius:50%;border:3px solid var(--forest);margin-bottom:10px;flex-shrink:0;}
-.tl-dot.g{background:var(--leaf);}
-.tl-dot.gd{background:var(--gold-fill);}
-.tl-dot.b{background:var(--blue);}
-.tl-dot.big{width:26px;height:26px;box-shadow:0 0 0 1px var(--gold-fill),0 0 12px rgba(184,138,34,.35);}
-.tl-label{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.06em;text-align:center;margin-bottom:4px;}
-.tl-label.g{color:var(--leaf);}
-.tl-label.gd{color:var(--gold);}
-.tl-label.b{color:var(--blue);}
-.tl-title{font-size:.82rem;font-weight:600;color:var(--ink);text-align:center;margin-bottom:4px;}
-.tl-val{font-family:var(--mono);font-size:.74rem;text-align:center;line-height:1.3;}
-.tl-val.g{color:var(--leaf);}
-.tl-val.gd{color:var(--gold);}
-.tl-val.b{color:var(--blue);}
-
-/* TABLE */
-.tbl-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--border);background:#fff;box-shadow:0 2px 16px rgba(11,37,69,.05);}
-table{width:100%;border-collapse:collapse;font-size:.82rem;}
-th{background:var(--navy);padding:14px 16px;text-align:left;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#F7F5F0;white-space:nowrap;}
-td{padding:12px 16px;border-bottom:1px solid rgba(11,37,69,.08);}
-td:first-child{font-weight:600;}
-tr:hover td{background:rgba(20,107,58,.05);}
-tr.hi td{background:rgba(184,138,34,.08);color:var(--gold);}
-tr.hi td:first-child{color:var(--gold);}
-tr.total td{background:rgba(11,37,69,.05);font-weight:700;color:var(--gold);border-top:1px solid var(--border);}
-
-/* NOTE BLOCKS */
-.note{font-size:.84rem;color:var(--slate);padding:14px 18px;border-left:3px solid var(--green);background:rgba(20,107,58,.05);border-radius:0 6px 6px 0;margin-top:16px;line-height:1.55;}
-.note.gold{border-left-color:var(--gold);}
-.note.red{border-left-color:var(--red);}
-strong.g{color:var(--green);}
-strong.gd{color:var(--gold);}
-
-/* DISCLAIMER */
-footer{background:var(--navy);padding:48px 48px;border-top:none;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
-.footer-brand{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:4px;}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
-.footer-links a{color:rgba(255,255,255,.78);font-size:.82rem;text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:var(--leaf);}
-.footer-disc{font-size:.78rem;color:var(--muted);max-width:500px;line-height:1.5;}
-
-@media(max-width:768px){
-  .sec,.hero{padding:56px 20px;}
-  nav{padding:12px 20px;gap:10px 16px;}
-  .nav-links{margin-left:0;width:100%;gap:6px 16px;}
-  .nav-links a{padding:8px 0;font-size:.85rem;}
-  .nav-cta{padding:9px 18px!important;}
-  footer{padding:40px 20px;}
-  .hero-stats{gap:24px 32px;}
-  .stack-row{grid-template-columns:1fr;}
-  .stack-bar-wrap,.stack-val{display:none;}
-  .plays-grid{grid-template-columns:1fr;}
+@media(max-width:1100px){
+ .tl.c7,.tl.c8{grid-template-columns:1fr;gap:34px;margin-top:60px;padding-left:38px}
+ .tl::before{left:9px;right:auto;top:0;bottom:0;width:1px;height:auto}
+ .tl::after{left:9px;top:0;width:2px;height:100%;transform:scaleY(0);transform-origin:top;background:linear-gradient(180deg,var(--green),var(--gl))}
+ .dk .tl::after,.gr .tl::after{background:linear-gradient(180deg,var(--leaf),var(--goldl))}
+ .tl.on::after{transform:scaleY(1)}
+ .td{position:absolute;left:-38px;top:2px;margin:0}
+ .td.major{transform:rotate(45deg)}
+ .tn{padding-right:0}
 }
-
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.orb{animation:none!important;}.fade-up,.stagger>*{opacity:1!important;transform:none!important;transition:none!important;}.stack-bar{transition:none;}}
-/* SCROLL ANIMATIONS */
-.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-.fade-up.in{opacity:1;transform:none;}
-.stagger>*{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
-.stagger>*.in{opacity:1;transform:none;}
+@media(max-width:900px){
+ .wrap{padding:0 22px}
+ .split,.hubwrap,.feat,.feat.flip,.aud,.two,.net-top,.anchor-two,.mbody{grid-template-columns:1fr;gap:38px}
+ .feat.flip .fimg{order:0}
+ .bento,.revs{grid-template-columns:1fr;margin-top:48px}
+ .s3,.s4,.s5,.s6,.s7,.s8,.s12{grid-column:auto}.r2{grid-row:auto}
+ .strip{grid-template-columns:1fr 1fr}
+ .strip>div{padding:28px 14px 26px 0}
+ .strip>div:nth-child(odd){padding-left:0;border-left:0}
+ .strip>div:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}
+ .strip>div:nth-child(n+3){border-top:1px solid var(--line)}
+ .strip>div:last-child{grid-column:1/-1;border-left:0;padding-left:0}
+ .hstats{grid-template-columns:1fr 1fr;margin-top:48px}
+ .hstat:nth-child(3){padding-left:0;border-left:0}
+ .hstat:nth-child(n+3){margin-top:22px;border-top:1px solid rgba(255,255,255,.12)}
+ .hstat+.hstat{padding-left:20px}
+ .hstat:nth-child(3){padding-left:0}
+ .hero{padding:124px 0 130px}
+ .core2,.formin{padding:26px}
+ .loop{grid-template-columns:1fr 1fr}.loop div{border-left:0;border-top:1px solid var(--line)}.loop div:first-child{border-top:0}
+ .proc{grid-template-columns:1fr;gap:38px;margin-top:50px;padding-left:0}
+ .proc::before,.proc::after{display:none}
+ .net-grid{grid-template-columns:1fr}
+ .net-grid .bezel,.net-grid .bezel:nth-child(1),.net-grid .bezel:nth-child(2){grid-column:auto}
+ footer .grid{grid-template-columns:1fr 1fr}
+ .row{grid-template-columns:1fr}
+ .srow{grid-template-columns:1fr;gap:12px}
+ .srow.head{display:none}
+ .sval{text-align:left}
+ .hub{max-width:460px}
+ .node{padding:8px 11px;border-radius:12px}
+ .rtype{position:static;display:block;margin-bottom:16px}
+ .scrollcue{display:none}
+ .ghost-n{font-size:110px}
+ .tabs{display:flex;width:100%}
+ .tab{flex:1 1 auto;padding:12px 10px;font-size:13px}
+}
+@media(max-width:560px){
+ footer .grid{grid-template-columns:1fr}
+ .mark span{font-size:16px}
+ .cta .btn{width:100%;justify-content:space-between}
+ .cta .btn.ghost{justify-content:space-between}
+ .hstat span{font-size:9.5px}
+ .strip b{font-size:42px}
+ .tbl-wrap td{padding:14px 14px}
+}
+@media(max-width:380px){.mark span{display:none}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .js .rv{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+ .js h1 .ln span{transform:none!important;transition:none!important}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .statement .w{color:var(--fg)!important}
+ .tl::after,.proc::after{transform:none!important}
+ .sbar i{transform:none!important}
+ .track{animation:none}
+}
+</style>
+<style id="net-css">/* network (our companies) */
+.net-k{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.net-k::before{content:"";width:34px;height:2px;background:var(--green);flex:none}
+.net-top{display:grid;grid-template-columns:7fr 5fr;gap:0 64px;align-items:end;margin-bottom:56px}
+.net-top h2{margin:22px 0 0;font-size:clamp(34px,4.8vw,70px)}
+.net-top p{color:var(--slate);font-size:17px;line-height:1.7;max-width:40ch}
+.net-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.net-grid .bezel{grid-column:span 2;padding:7px;border-radius:2rem;background:var(--card);border:1px solid var(--line);transition:transform .6s var(--ease)}
+.net-grid .bezel:nth-child(1),.net-grid .bezel:nth-child(2){grid-column:span 3}
+.net-grid .bezel:hover{transform:translateY(-4px)}
+.net-card{display:flex;flex-direction:column;gap:12px;height:100%;padding:32px;border-radius:calc(2rem - 7px);background:#fff;color:var(--navy);text-decoration:none;position:relative;overflow:hidden;box-shadow:inset 0 1px 1px #fff,0 1px 2px rgba(11,37,69,.05)}
+.net-card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,-30%),rgba(20,107,58,.14),transparent 60%);opacity:0;transition:opacity .6s var(--ease);pointer-events:none}
+.net-grid .bezel:hover .net-card::before{opacity:1}
+.net-card:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.net-n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--green)}
+.net-name{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.4vw,34px);line-height:1.1;letter-spacing:-.015em;color:var(--navy)}
+.net-desc{font-size:15px;line-height:1.7;color:var(--slate);max-width:44ch}
+.net-go{margin-top:auto;padding-top:22px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--navy)}
+.net-go::after{content:"";width:34px;height:34px;border-radius:9px;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center/15px no-repeat;transition:transform .6s var(--ease)}
+.net-card:hover .net-go::after{transform:translate(3px,-2px) scale(1.06)}
+@media(max-width:900px){.net-top{grid-template-columns:1fr;gap:28px}.net-grid{grid-template-columns:1fr}.net-grid .bezel,.net-grid .bezel:nth-child(1),.net-grid .bezel:nth-child(2){grid-column:auto}}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-brand" href="https://carbonlegacytrees.com">
-    <img class="nav-logo" src="images/logo-icon.png" alt="">
-    <span class="nav-name">Carbon Legacy Trees</span>
-  </a>
-  <div class="nav-links">
-    <a href="https://carbonlegacytrees.com">Home</a>
-    <a href="https://carbonlegacytrees.com#invest">Invest</a>
-    <a href="https://carbonlegacytrees.com#land">Plant</a>
-    <a href="/tax-strategy.html" class="active">Tax Strategy</a>
-    <a href="https://carbonlegacytrees.com#contact" class="nav-cta">Get Started</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-bg">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-  </div>
-  <div class="hero-tag">Investor Tax Strategy. OBBBA 2025</div>
-  <h1>The Tax Play That Makes<br>Your Investment Work <em>Twice.</em></h1>
-  <p class="hero-lead">Two IRS-confirmed strategies, §168(k)(5) Specified Plant Election and the full tax leverage stack, let you capture hundreds of thousands in tax value the same year you invest. Before the first carbon credit is ever sold.</p>
-  <div class="hero-stats">
-    <div class="hstat">
-      <div class="hstat-val" data-count="100" data-suffix="%">100%</div>
-      <div class="hstat-lbl">Bonus Dep.. Year 1</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val" data-count="259" data-prefix="$" data-suffix="K+">$259K+</div>
-      <div class="hstat-lbl">Tax Savings on $700K Plant Cost</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val" data-count="15">15</div>
-      <div class="hstat-lbl">Harvest Cycles Per Tree</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val" data-count="350" data-prefix="$" data-suffix="K+">$350K+</div>
-      <div class="hstat-lbl">Combined Year 1 Tax Stack</div>
-    </div>
-  </div>
-</section>
-
-<!-- THE ANCHOR PLAY -->
-<section class="sec alt">
-  <div class="sec-tag gold">THE ANCHOR PLAY, §168(k)(5)</div>
-  <h2 class="sec-h">Specified Plant Election: 100% Deduction the Year You Plant</h2>
-  <p class="sec-sub">Under the One Big Beautiful Bill Act (signed July 4, 2025), Congress permanently restored 100% bonus depreciation under §168(k). For investors in Carbon Legacy Trees, this unlocks a specific election that changes the entire return profile of the investment.</p>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;">
-
-    <div style="background:var(--canopy);border:1px solid rgba(184,138,34,.45);border-radius:16px;padding:28px;">
-      <div class="sec-tag gold" style="margin-bottom:10px;">THE LEGAL BASIS</div>
-      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:12px;">What Is a "Specified Plant"?</h3>
-      <p style="font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:14px;">IRC §168(k)(5)(B) defines a specified plant as: <em style="color:var(--cream)">"(i) any tree or vine which bears fruits or nuts, and (ii) any other plant which will have more than one crop or yield."</em></p>
-      <p style="font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:14px;">Carbon Legacy Trees are regenerative. The root system survives every harvest and produces <strong class="gd">15 harvest cycles</strong> per tree. By statute, any plant producing more than one yield qualifies as a specified plant.</p>
-      <div style="background:rgba(184,138,34,.09);border-radius:8px;padding:12px 14px;font-size:.8rem;color:var(--muted);">
-        <strong style="color:var(--gold);">Confirmed:</strong> 15-cycle regenerative harvest satisfies the §168(k)(5)(B)(ii) multi-yield requirement. CPA-verified.
-      </div>
-    </div>
-
-    <div style="background:var(--canopy);border:1px solid rgba(20,107,58,.3);border-radius:16px;padding:28px;">
-      <div class="sec-tag green" style="margin-bottom:10px;">HOW THE ELECTION WORKS</div>
-      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:12px;">Deduction in Year of Planting</h3>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;gap:10px;align-items:flex-start;">
-          <div style="width:22px;height:22px;background:rgba(20,107,58,.12);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--green);flex-shrink:0;margin-top:1px;">1</div>
-          <p style="font-size:.82rem;color:var(--muted);">Trees are planted on project land (all 2025–2026 plantings qualify).</p>
-        </div>
-        <div style="display:flex;gap:10px;align-items:flex-start;">
-          <div style="width:22px;height:22px;background:rgba(20,107,58,.12);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--green);flex-shrink:0;margin-top:1px;">2</div>
-          <p style="font-size:.82rem;color:var(--muted);">Investor's CPA attaches a §168(k)(5) election statement to the timely-filed tax return for the planting year.</p>
-        </div>
-        <div style="display:flex;gap:10px;align-items:flex-start;">
-          <div style="width:22px;height:22px;background:rgba(20,107,58,.12);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--green);flex-shrink:0;margin-top:1px;">3</div>
-          <p style="font-size:.82rem;color:var(--muted);"><strong class="g">100% of the tree planting cost</strong> is deducted in the year of planting, not depreciated over years. Full deduction, Year 1.</p>
-        </div>
-        <div style="display:flex;gap:10px;align-items:flex-start;">
-          <div style="width:22px;height:22px;background:rgba(20,107,58,.12);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--green);flex-shrink:0;margin-top:1px;">4</div>
-          <p style="font-size:.82rem;color:var(--muted);">Trees continue growing, generating carbon credits, lumber, and graphene, with zero remaining depreciation basis to recapture.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- THE MATH -->
-  <div class="sec-tag gold" style="margin-bottom:6px;">THE MATH, $1M INVESTMENT EXAMPLE</div>
-  <h3 style="font-size:1rem;font-weight:600;margin-bottom:20px;color:var(--muted);">How $1M invested produces $350K+ in Year 1 tax value</h3>
-
-  <div class="stack-chart fade-up">
-    <div class="stack-row" style="padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:8px;">
-      <div class="stack-label" style="font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.08em;">STRATEGY</div>
-      <div class="stack-label" style="font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.08em;">DEDUCTION / CREDIT VALUE</div>
-      <div class="stack-label" style="font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.08em;text-align:right;">TAX SAVED @ 37%</div>
-    </div>
-
-    <div class="stack-row">
-      <div class="stack-label"><strong>§168(k)(5) Specified Plant Deduction</strong><br><span style="font-size:.73rem;color:var(--muted);">100% of tree planting cost. Year 1</span></div>
-      <div class="stack-bar-wrap">
-        <div class="stack-bar" style="width:70%;background:linear-gradient(90deg,#B88A22,#d4a83a);color:#1E2428;">$700,000 deduction</div>
-      </div>
-      <div class="stack-val" style="color:var(--gold);text-align:right;"><strong>$259,000</strong></div>
-    </div>
-    <div class="stack-note">Assumes $700K of the $1M investment is allocable to tree planting costs (as documented in partnership allocation). CPA confirms exact allocation.</div>
-
-    <div class="stack-row">
-      <div class="stack-label"><strong>§168(k) Bonus Dep.. Infrastructure</strong><br><span style="font-size:.73rem;color:var(--muted);">Irrigation, roads, monitoring equipment. 100% Year 1</span></div>
-      <div class="stack-bar-wrap">
-        <div class="stack-bar" style="width:20%;background:linear-gradient(90deg,#146B3A,#2f9a5c);color:#fff;">$200K</div>
-      </div>
-      <div class="stack-val" style="color:var(--leaf);text-align:right;"><strong>$74,000</strong></div>
-    </div>
-    <div class="stack-note">Cost segregation study ($5K) accelerates infrastructure into 5–15 year MACRS property, all eligible for 100% first-year expensing.</div>
-
-    <div class="stack-row">
-      <div class="stack-label"><strong>§194 Reforestation Deduction</strong><br><span style="font-size:.73rem;color:var(--muted);">$10K/project × 10 projects, immediate</span></div>
-      <div class="stack-bar-wrap">
-        <div class="stack-bar" style="width:10%;background:rgba(20,107,58,.55);color:#fff;">$100K</div>
-      </div>
-      <div class="stack-val" style="color:var(--leaf);text-align:right;"><strong>$37,000</strong></div>
-    </div>
-    <div class="stack-note">Deductible in the year of planting via Form T. Remaining reforestation costs amortized over 84 months.</div>
-
-    <div class="stack-row">
-      <div class="stack-label"><strong>§48 Solar ITC</strong><br><span style="font-size:.73rem;color:var(--muted);">30% credit on solar installation, actual tax credit</span></div>
-      <div class="stack-bar-wrap">
-        <div class="stack-bar" style="width:3%;background:var(--blue);color:#fff;"></div>
-      </div>
-      <div class="stack-val" style="color:var(--blue);text-align:right;"><strong>$15–30K</strong></div>
-    </div>
-    <div class="stack-note">The one true IRS tax credit available. 30% of solar equipment cost dollar-for-dollar off tax owed. Applies to irrigation pumps, monitoring stations, and any grid-tied or off-grid solar on project land.</div>
-
-    <div class="stack-row" style="padding-top:12px;border-top:2px solid var(--border);margin-top:8px;">
-      <div class="stack-label" style="font-weight:700;">COMBINED YEAR 1 TAX VALUE</div>
-      <div class="stack-bar-wrap">
-        <div class="stack-bar" style="width:100%;background:linear-gradient(90deg,#B88A22,#146B3A);color:#fff;font-weight:700;">$1,000,000 invested → tax value</div>
-      </div>
-      <div class="stack-val" style="color:var(--gold);text-align:right;font-size:1.1rem;"><strong>$385–400K</strong></div>
-    </div>
-    <div class="stack-note" style="border-left-color:var(--gold);background:rgba(184,138,34,.07);"><strong style="color:var(--gold);">Net result:</strong> A $1M investment generates $385–400K in tax savings in Year 1 alone, before a single carbon credit is sold. The trees keep growing. Carbon credits begin at Month 18. All 15 harvest cycles and all future appreciation remain on the table.</div>
-  </div>
-</section>
-
-<!-- THE FULL TAX PLAYS -->
-<section class="sec">
-  <div class="sec-tag green">THE FULL TAX STACK. 6 PLAYS</div>
-  <h2 class="sec-h">Every Lever Available to Carbon Legacy Trees Investors</h2>
-  <p class="sec-sub">Ranked by Year 1 impact. Plays 1–4 stack in the same tax year. Plays 5–6 compound over time.</p>
-
-  <div class="plays-grid stagger">
-
-    <div class="play featured">
-      <div class="play-ghost">1</div>
-      <span class="play-badge pb-gold">HIGHEST IMPACT. YEAR 1</span>
-      <div class="play-title">§168(k)(5) Specified Plant. 100% Bonus Depreciation</div>
-      <div class="play-irc">IRC §168(k)(5)(B)(ii) · OBBBA July 4, 2025</div>
-      <p class="play-body">NF Trees produce 15 regenerative harvest cycles, satisfying the "more than one yield" requirement for specified plant status. 100% of tree planting costs deducted in the tax year of planting. No phaseout. Permanent law under OBBBA. Elect via §168(k)(5) statement attached to timely filed return.</p>
-      <div class="play-rows">
-        <div class="pr"><span>On $700K planting cost</span><span>$700,000 deduction</span></div>
-        <div class="pr hi"><span>Tax savings @ 37%</span><span>$259,000 Year 1</span></div>
-        <div class="pr"><span>Requires</span><span>CPA election statement</span></div>
-        <div class="pr"><span>Cost to execute</span><span>~$2K CPA time</span></div>
-        <div class="pr"><span>Law basis</span><span>Confirmed per OBBBA 2025</span></div>
-      </div>
-    </div>
-
-    <div class="play">
-      <div class="play-ghost">2</div>
-      <span class="play-badge pb-green">HIGH IMPACT. YEAR 1</span>
-      <div class="play-title">§168(k) Bonus Dep. on Infrastructure</div>
-      <div class="play-irc">IRC §168(k) · 100% first-year. OBBBA permanent</div>
-      <p class="play-body">Irrigation systems, access roads, monitoring equipment, fencing, and processing equipment all qualify for 100% first-year expensing. A cost segregation study ($5K) reclassifies assets into 5–15 year MACRS property to maximize the first-year deduction on every dollar of infrastructure spend.</p>
-      <div class="play-rows">
-        <div class="pr"><span>On $200K infrastructure</span><span>$200,000 deduction</span></div>
-        <div class="pr hi"><span>Tax savings @ 37%</span><span>$74,000 Year 1</span></div>
-        <div class="pr"><span>§179 stack</span><span>Up to $1.22M equipment expensing</span></div>
-        <div class="pr"><span>Cost seg study</span><span>~$5K, pays 15x in Year 1</span></div>
-      </div>
-    </div>
-
-    <div class="play">
-      <div class="play-ghost">3</div>
-      <span class="play-badge pb-green">YEAR 1. MINIMAL COST</span>
-      <div class="play-title">§194 Reforestation Deduction</div>
-      <div class="play-irc">IRC §194 · $10K/project immediate + 84-month amortization</div>
-      <p class="play-body">Available to all partners in the year of planting. $10,000 immediate deduction per qualified timber property. Remaining reforestation costs amortized over 84 months with no dollar limit. File Form T with your return. Applies to all 10 current projects simultaneously.</p>
-      <div class="play-rows">
-        <div class="pr"><span>10 projects × $10K</span><span>$100,000 Year 1</span></div>
-        <div class="pr hi"><span>Tax savings @ 37%</span><span>$37,000 Year 1</span></div>
-        <div class="pr"><span>Remainder</span><span>Amortized 84 months</span></div>
-        <div class="pr"><span>Filing</span><span>Form T + Schedule C/F</span></div>
-      </div>
-    </div>
-
-    <div class="play">
-      <div class="play-ghost">4</div>
-      <span class="play-badge pb-blue">YEAR 1. ACTUAL TAX CREDIT</span>
-      <div class="play-title">§48 Investment Tax Credit. Solar</div>
-      <div class="play-irc">IRC §48 · 30% of solar equipment cost · dollar-for-dollar credit</div>
-      <p class="play-body">The only direct IRS tax credit (not deduction) available to the project. 30% of the cost of solar equipment, irrigation pump motors, remote monitoring power, off-grid stations, reduces your tax owed dollar-for-dollar. Not a deduction. A credit. On a $100K solar install: $30K off your tax bill.</p>
-      <div class="play-rows">
-        <div class="pr"><span>Credit rate</span><span>30% of qualifying solar cost</span></div>
-        <div class="pr hi"><span>On $100K solar</span><span>$30,000 off tax owed, directly</span></div>
-        <div class="pr"><span>Difference from deduction</span><span>Dollar-for-dollar vs. rate-adjusted</span></div>
-        <div class="pr"><span>Stackable with</span><span>All other plays above</span></div>
-      </div>
-    </div>
-
-    <div class="play">
-      <div class="play-ghost">5</div>
-      <span class="play-badge pb-gold">ONGOING. HARVEST STAGE</span>
-      <div class="play-title">§631(b) Capital Gains + Timber Depletion</div>
-      <div class="play-irc">IRC §631(b) · IRC §611 depletion allowance</div>
-      <p class="play-body">When trees are harvested (Yr 7–10 and 15 subsequent cycles), §631(b) treats standing timber sale proceeds as long-term capital gains, not ordinary income. Save 17%+ vs. ordinary income rate on every harvest dollar. Layer the timber depletion allowance on top to further reduce taxable income at each harvest event.</p>
-      <div class="play-rows">
-        <div class="pr"><span>Ordinary income rate</span><span>37%</span></div>
-        <div class="pr hi"><span>LTCG rate (§631b)</span><span>20%, save 17 cents per dollar</span></div>
-        <div class="pr"><span>On $500K harvest</span><span>$85,000 saved vs. ordinary income</span></div>
-        <div class="pr"><span>Depletion allowance</span><span>Additional offset at each of 15 cycles</span></div>
-      </div>
-    </div>
-
-    <div class="play">
-      <div class="play-ghost">6</div>
-      <span class="play-badge pb-gold">LONG-TERM. ZERO TAX ON UPSIDE</span>
-      <div class="play-title">Rural Qualified Opportunity Fund (QROF)</div>
-      <div class="play-irc">IRC §1400Z-2 · OBBBA permanent extension · 30% rural step-up</div>
-      <p class="play-body">If project sites are in designated rural Qualified Opportunity Zones (new designations Jan 2027), investing via a Qualified Rural Opportunity Fund gives investors: deferred capital gains on invested amount, 30% basis step-up after 5 years, and complete exclusion of all appreciation after 10 years. All carbon credit income growth and appreciation, zero federal tax events at exit.</p>
-      <div class="play-rows">
-        <div class="pr"><span>Gain deferral</span><span>Until year 5 from investment</span></div>
-        <div class="pr hi"><span>Rural step-up</span><span>30% of deferred gain eliminated</span></div>
-        <div class="pr"><span>10-year benefit</span><span>Zero tax on all appreciation</span></div>
-        <div class="pr"><span>Check eligibility</span><span>MI, ID, CO, MT, TX project sites</span></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- RETURN TIMELINE -->
-<section class="sec alt">
-  <div class="sec-tag gold">THE FULL RETURN PICTURE</div>
-  <h2 class="sec-h">How $1M Compounds From Day One</h2>
-  <p class="sec-sub">Tax savings, carbon credits, and harvest events layered across a 10-year horizon. Every stream compounds independently.</p>
-
-  <div class="timeline-h fade-up">
-    <div class="tl-track">
-
-      <div class="tl-node">
-        <div class="tl-dot gd big"></div>
-        <div class="tl-label gd">DAY 1</div>
-        <div class="tl-title">Plant + Elect</div>
-        <div class="tl-val gd">$385–400K<br>tax value</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot g"></div>
-        <div class="tl-label g">MO. 1–6</div>
-        <div class="tl-title">Offtake LOI<br>+ Registry</div>
-        <div class="tl-val g">$300–500K<br>advance</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot g"></div>
-        <div class="tl-label g">MO. 6–18</div>
-        <div class="tl-title">Forward Sale<br>Yr 2–5 credits</div>
-        <div class="tl-val g">$990K–1.25M<br>upfront</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot g big"></div>
-        <div class="tl-label g">MO. 18</div>
-        <div class="tl-title">First VCUs<br>Issued</div>
-        <div class="tl-val g">$83–217K/yr<br>recurring</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot g"></div>
-        <div class="tl-label g">YR 2–5</div>
-        <div class="tl-title">Credits Grow<br>+15–18%/yr</div>
-        <div class="tl-val g">$83–374K<br>per year</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot gd big"></div>
-        <div class="tl-label gd">YR 7–10</div>
-        <div class="tl-title">First Harvest<br>Event</div>
-        <div class="tl-val gd">Lumber +<br>Graphene +<br>Biochar $164/t</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot b big"></div>
-        <div class="tl-label b">YR 10+</div>
-        <div class="tl-title">QOZ Exit<br>(if applicable)</div>
-        <div class="tl-val b">Zero tax on<br>all upside</div>
-      </div>
-
-      <div class="tl-node">
-        <div class="tl-dot gd"></div>
-        <div class="tl-label gd">YR 7–50+</div>
-        <div class="tl-title">15 Harvest Cycles<br>+ Annual Credits</div>
-        <div class="tl-val gd">Perpetual<br>income stack</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ROI TABLE -->
-  <div class="tbl-wrap fade-up" style="margin-top:32px;">
-  <table>
-    <thead>
-      <tr>
-        <th>When</th>
-        <th>Income/Value Stream</th>
-        <th>Mechanism</th>
-        <th>Conservative</th>
-        <th>Base Case</th>
-        <th>Tax Treatment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="hi">
-        <td>Year 1</td>
-        <td>§168(k)(5) Specified Plant Deduction</td>
-        <td>100% bonus dep on tree cost</td>
-        <td>$185K saved</td>
-        <td>$259K saved</td>
-        <td>Deduction, offsets any income</td>
-      </tr>
-      <tr class="hi">
-        <td>Year 1</td>
-        <td>Infrastructure Bonus Dep + §194 + §48</td>
-        <td>§168(k), §194, solar ITC</td>
-        <td>$90K saved</td>
-        <td>$126K saved</td>
-        <td>Deduction + actual credit</td>
-      </tr>
-      <tr>
-        <td>Mo. 1–6</td>
-        <td>Offtake advance payment</td>
-        <td>10-yr corporate buyer deal</td>
-        <td>$300K cash</td>
-        <td>$500K cash</td>
-        <td>Ordinary income when received</td>
-      </tr>
-      <tr>
-        <td>Mo. 6–18</td>
-        <td>Forward pre-issuance credit sale</td>
-        <td>Verra ex-ante sale</td>
-        <td>$990K cash</td>
-        <td>$1.25M cash</td>
-        <td>Ordinary income (spread over delivery)</td>
-      </tr>
-      <tr>
-        <td>Mo. 18+</td>
-        <td>Annual VCM ARR credits. Yr 1</td>
-        <td>Verra VCU issuance</td>
-        <td>$83K/yr</td>
-        <td>$217K/yr</td>
-        <td>Ordinary income</td>
-      </tr>
-      <tr>
-        <td>Yr 2–5</td>
-        <td>Annual credits, growing +15–18%/yr</td>
-        <td>Compounding canopy</td>
-        <td>$570K total</td>
-        <td>$1.48M total</td>
-        <td>Ordinary income</td>
-      </tr>
-      <tr class="hi">
-        <td>Yr 7–10</td>
-        <td>First harvest: lumber + graphene + biochar CDR</td>
-        <td>§631(b) + Puro.earth CDR</td>
-        <td>Significant</td>
-        <td>Significant</td>
-        <td>LTCG rate (§631b) + depletion offset</td>
-      </tr>
-      <tr>
-        <td>Yr 10+</td>
-        <td>QOZ exit gain exclusion</td>
-        <td>Rural QROF §1400Z-2</td>
-        <td>, </td>
-        <td>100% exclusion</td>
-        <td>Zero federal tax on appreciation</td>
-      </tr>
-      <tr class="total">
-        <td>Year 1 Combined</td>
-        <td>Tax savings + offtake + forward sale</td>
-        <td>All plays stacked</td>
-        <td>$1.56M</td>
-        <td>$2.13M</td>
-        <td>On a $1M investment</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  <div class="note gold">Year 1 combined assumes the forward credit sale ($990K–$1.25M upfront) closes within the first 18 months post-planting, which requires Verra registration. Tax savings are realized in the planting tax year regardless. All projections are estimates; actual results depend on individual tax situation, project scale, and market conditions.</div>
-</section>
-
-<!-- CTA + FOOTER -->
-<section class="sec-band navy" style="text-align:center;"><div class="sec">
-  <div class="sec-tag gold" style="justify-content:center;">READY TO INVEST</div>
-  <h2 class="sec-h" style="max-width:560px;margin:0 auto 12px;">Talk to Our Team About the Tax Strategy for Your Situation</h2>
-  <p style="color:var(--muted);font-size:.9rem;max-width:500px;margin:0 auto 32px;line-height:1.6;">Every investor's tax picture is different. We work with your CPA to document the §168(k)(5) election properly, identify your applicable QOZ projects, and structure the investment to maximize Year 1 value.</p>
-  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-    <a href="https://carbonlegacytrees.com#contact" class="btn btn-gold">Schedule a Call</a>
-    <a href="https://carbonlegacytrees.com#invest" class="btn btn-ghost">Learn About Investing</a>
-  </div>
+<div id="progress-bar"></div>
+<nav class="nav" id="main-nav"><div class="in"><a href="/" class="mark"><img src="images/logo-icon.png" alt="Carbon Legacy Trees"><span>Carbon Legacy Trees</span></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button><ul class="links" id="navLinks"><li><a class="t" href="/#about">About</a></li><li><a class="t" href="/#phoenix-tree">The Tree</a></li><li><a class="t" href="/#revenue">Revenue</a></li><li><a class="t" href="/#invest">Invest</a></li><li><a class="t" href="/#land">Land Partners</a></li><li><a class="t" href="/#credits">Credits</a></li><li><a class="t act" href="/tax-strategy.html">Tax Strategy</a></li><li><a class="btn sm nav-cta" href="/#contact">Get Started<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a></li></ul></div></nav>
+<section class="hero thero dk" id="top">
+<div class="hero-bg"></div>
+<div class="orb og o1"></div><div class="orb oy o2" style="opacity:.55"></div><div class="orb og2 o3"></div><div class="gridbg"></div>
+<img class="hwm" src="images/logo-icon.png" alt="" aria-hidden="true">
+<div class="wrap">
+<p class="kicker">Investor Tax Strategy. OBBBA 2025</p>
+<h1><span class="ln" style="--d:0"><span>The Tax Play That Makes</span></span><span class="ln" style="--d:1"><span>Your Investment Work</span></span><span class="ln" style="--d:2"><span><em>Twice.</em></span></span></h1>
+<p class="lead rv" style="--d:3">Two IRS-confirmed strategies, &sect;168(k)(5) Specified Plant Election and the full tax leverage stack, let you capture hundreds of thousands in tax value the same year you invest. Before the first carbon credit is ever sold.</p>
+<div class="cta rv" style="--d:4"><a class="btn gold" href="/#contact">Schedule a Call<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a><a class="btn ghost" href="#anchor">See the math<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a></div>
+<div class="hstats rv" style="--d:5"><div class="hstat"><b data-count="100" data-prefix="" data-suffix="%">100%</b><span>Bonus Dep.. Year 1</span></div><div class="hstat"><b class="gold" data-count="259" data-prefix="$" data-suffix="K+">$259K+</b><span>Tax Savings on $700K Plant Cost</span></div><div class="hstat"><b data-count="15" data-prefix="" data-suffix="">15</b><span>Harvest Cycles Per Tree</span></div><div class="hstat"><b class="gold" data-count="350" data-prefix="$" data-suffix="K+">$350K+</b><span>Combined Year 1 Tax Stack</span></div></div>
 </div></section>
 
-<footer>
-  <div>
-    <div class="footer-brand">Carbon Legacy Trees LLC</div>
-    <div class="footer-links">
-      <a href="https://carbonlegacytrees.com">Home</a>
-      <a href="https://carbonlegacytrees.com#invest">Invest</a>
-      <a href="https://carbonlegacytrees.com#land">Land Partners</a>
-      <a href="/tax-strategy.html">Tax Strategy</a>
-      <a href="https://carbonlegacytrees.com#contact">Contact</a>
-    </div>
-  </div>
-  <div class="footer-disc">
-    This page is for informational purposes only and does not constitute legal, tax, or investment advice. Tax strategies described are based on current IRS law (OBBBA 2025) and require individual CPA review. §168(k)(5) specified plant election eligibility should be confirmed with a qualified tax professional for your specific situation. Carbon credit valuations are market estimates and are not guaranteed.
-  </div>
-</footer>
+<section class="sec st" id="anchor"><div class="orb og o1" style="left:auto;right:-12%;opacity:.16"></div><div class="wrap">
+<div class="split"><div><p class="kicker gold rv">The Anchor Play, &sect;168(k)(5)</p><h2 class="rv" style="--d:1;font-size:clamp(34px,4.8vw,72px)">Specified Plant Election: <em class="g">100% Deduction</em> the Year You Plant</h2></div>
+<div style="padding-top:clamp(0px,3vw,46px)"><p class="lead rv" style="--d:2">Under the One Big Beautiful Bill Act (signed July 4, 2025), Congress permanently restored 100% bonus depreciation under &sect;168(k). For investors in Carbon Legacy Trees, this unlocks a specific election that changes the entire return profile of the investment.</p></div></div>
+<div class="anchor-two">
+<div class="bezel rv"><div class="core2"><span class="ptag gd">The Legal Basis</span><h3>What Is a &quot;Specified Plant&quot;?</h3>
+<p>IRC &sect;168(k)(5)(B) defines a specified plant as: <span class="quote">&quot;(i) any tree or vine which bears fruits or nuts, and (ii) any other plant which will have more than one crop or yield.&quot;</span></p>
+<p>Carbon Legacy Trees are regenerative. The root system survives every harvest and produces <strong style="color:var(--gl)">15 harvest cycles</strong> per tree. By statute, any plant producing more than one yield qualifies as a specified plant.</p>
+<div class="callout"><strong>Confirmed:</strong> 15-cycle regenerative harvest satisfies the &sect;168(k)(5)(B)(ii) multi-yield requirement. CPA-verified.</div></div></div>
+<div class="bezel rv" style="--d:1"><div class="core2"><span class="ptag">How the Election Works</span><h3>Deduction in Year of Planting</h3>
+<ol class="steps4"><li><b class="i">1</b><span>Trees are planted on project land (all 2025&ndash;2026 plantings qualify).</span></li><li><b class="i">2</b><span>Investor's CPA attaches a &sect;168(k)(5) election statement to the timely-filed tax return for the planting year.</span></li><li><b class="i">3</b><span><strong>100% of the tree planting cost</strong> is deducted in the year of planting, not depreciated over years. Full deduction, Year 1.</span></li><li><b class="i">4</b><span>Trees continue growing, generating carbon credits, lumber, and graphene, with zero remaining depreciation basis to recapture.</span></li></ol></div></div>
+</div></div></section>
 
+<section class="sec dk" id="math"><div class="orb og o1" style="top:auto;bottom:-20%;left:-10%"></div><div class="orb oy o2" style="opacity:.35"></div><div class="gridbg"></div>
+<div class="wrap">
+<p class="kicker gold rv">The Math, $1M Investment Example</p>
+<h2 class="rv" style="--d:1;max-width:16ch">How $1M invested produces <em class="g">$350K+</em> in Year 1 tax value</h2>
+<div class="stack rv">
+<div class="srow head"><span>Strategy</span><span>Deduction / Credit Value</span><span style="text-align:right">Tax Saved @ 37%</span></div>
+<div class="srow" style="--d:0"><div class="lab"><strong>&sect;168(k)(5) Specified Plant Deduction</strong><span>100% of tree planting cost. Year 1</span></div><div class="sbar"><i style="width:70%;background:linear-gradient(90deg,#B88A22,#d4a83a);color:#1E2428;--d:0">$700,000 deduction</i></div><div class="sval gd"><strong>$259,000</strong></div></div><p class="snote">Assumes $700K of the $1M investment is allocable to tree planting costs (as documented in partnership allocation). CPA confirms exact allocation.</p>
+<div class="srow" style="--d:1"><div class="lab"><strong>&sect;168(k) Bonus Dep.. Infrastructure</strong><span>Irrigation, roads, monitoring equipment. 100% Year 1</span></div><div class="sbar"><i style="width:20%;background:linear-gradient(90deg,#146B3A,#2f9a5c);color:#fff;--d:1">$200K</i></div><div class="sval gn"><strong>$74,000</strong></div></div><p class="snote">Cost segregation study ($5K) accelerates infrastructure into 5&ndash;15 year MACRS property, all eligible for 100% first-year expensing.</p>
+<div class="srow" style="--d:2"><div class="lab"><strong>&sect;194 Reforestation Deduction</strong><span>$10K/project &times; 10 projects, immediate</span></div><div class="sbar"><i style="width:10%;background:rgba(110,232,162,.55);color:#fff;--d:2">$100K</i></div><div class="sval gn"><strong>$37,000</strong></div></div><p class="snote">Deductible in the year of planting via Form T. Remaining reforestation costs amortized over 84 months.</p>
+<div class="srow" style="--d:3"><div class="lab"><strong>&sect;48 Solar ITC</strong><span>30% credit on solar installation, actual tax credit</span></div><div class="sbar"><i style="width:3%;background:#5fa4de;color:#fff;--d:3"></i></div><div class="sval bl"><strong>$15&ndash;30K</strong></div></div><p class="snote">The one true IRS tax credit available. 30% of solar equipment cost dollar-for-dollar off tax owed. Applies to irrigation pumps, monitoring stations, and any grid-tied or off-grid solar on project land.</p>
+
+<div class="srow total" style="--d:5"><div class="lab"><strong>COMBINED YEAR 1 TAX VALUE</strong></div><div class="sbar"><i style="width:100%;background:linear-gradient(90deg,#B88A22,#146B3A);color:#fff;font-weight:700;--d:5">$1,000,000 invested &rarr; tax value</i></div><div class="sval gd">$385&ndash;400K</div></div>
+</div>
+<div class="note gold rv" style="margin-top:34px"><strong style="color:var(--goldl)">Net result:</strong> A $1M investment generates $385&ndash;400K in tax savings in Year 1 alone, before a single carbon credit is sold. The trees keep growing. Carbon credits begin at Month 18. All 15 harvest cycles and all future appreciation remain on the table.</div>
+</div></section>
+
+<section class="sec cn" id="plays"><div class="wrap">
+<div class="split"><div><p class="kicker rv">The Full Tax Stack. 6 Plays</p><h2 class="rv" style="--d:1;font-size:clamp(34px,4.8vw,72px)">Every Lever Available to Carbon Legacy Trees <em>Investors</em></h2></div>
+<div style="padding-top:clamp(0px,3vw,46px)"><p class="lead rv" style="--d:2">Ranked by Year 1 impact. Plays 1&ndash;4 stack in the same tax year. Plays 5&ndash;6 compound over time.</p></div></div>
+<div class="bento"><div class="bezel rv s8 r2" style="--d:1"><div class="core2"><div class="ghost-n">1</div><span class="ptag gd">Highest Impact. Year 1</span><h3 class="lg">&sect;168(k)(5) Specified Plant. 100% Bonus Depreciation</h3><div class="pirc">IRC &sect;168(k)(5)(B)(ii) &middot; OBBBA July 4, 2025</div><p>NF Trees produce 15 regenerative harvest cycles, satisfying the &quot;more than one yield&quot; requirement for specified plant status. 100% of tree planting costs deducted in the tax year of planting. No phaseout. Permanent law under OBBBA. Elect via &sect;168(k)(5) statement attached to timely filed return.</p><div class="prows"><div class="prow"><span>On $700K planting cost</span><span>$700,000 deduction</span></div><div class="prow hi"><span>Tax savings @ 37%</span><span>$259,000 Year 1</span></div><div class="prow"><span>Requires</span><span>CPA election statement</span></div><div class="prow"><span>Cost to execute</span><span>~$2K CPA time</span></div><div class="prow"><span>Law basis</span><span>Confirmed per OBBBA 2025</span></div></div></div></div>
+<div class="bezel rv s4" style="--d:2"><div class="core2"><div class="ghost-n">2</div><span class="ptag ">High Impact. Year 1</span><h3 class="">&sect;168(k) Bonus Dep. on Infrastructure</h3><div class="pirc">IRC &sect;168(k) &middot; 100% first-year. OBBBA permanent</div><p>Irrigation systems, access roads, monitoring equipment, fencing, and processing equipment all qualify for 100% first-year expensing. A cost segregation study ($5K) reclassifies assets into 5&ndash;15 year MACRS property to maximize the first-year deduction on every dollar of infrastructure spend.</p><div class="prows"><div class="prow"><span>On $200K infrastructure</span><span>$200,000 deduction</span></div><div class="prow hi"><span>Tax savings @ 37%</span><span>$74,000 Year 1</span></div><div class="prow"><span>&sect;179 stack</span><span>Up to $1.22M equipment expensing</span></div><div class="prow"><span>Cost seg study</span><span>~$5K, pays 15x in Year 1</span></div></div></div></div>
+<div class="bezel rv s4" style="--d:0"><div class="core2"><div class="ghost-n">3</div><span class="ptag ">Year 1. Minimal Cost</span><h3 class="">&sect;194 Reforestation Deduction</h3><div class="pirc">IRC &sect;194 &middot; $10K/project immediate + 84-month amortization</div><p>Available to all partners in the year of planting. $10,000 immediate deduction per qualified timber property. Remaining reforestation costs amortized over 84 months with no dollar limit. File Form T with your return. Applies to all 10 current projects simultaneously.</p><div class="prows"><div class="prow"><span>10 projects &times; $10K</span><span>$100,000 Year 1</span></div><div class="prow hi"><span>Tax savings @ 37%</span><span>$37,000 Year 1</span></div><div class="prow"><span>Remainder</span><span>Amortized 84 months</span></div><div class="prow"><span>Filing</span><span>Form T + Schedule C/F</span></div></div></div></div>
+<div class="bezel rv s4" style="--d:1"><div class="core2"><div class="ghost-n">4</div><span class="ptag bl">Year 1. Actual Tax Credit</span><h3 class="">&sect;48 Investment Tax Credit. Solar</h3><div class="pirc">IRC &sect;48 &middot; 30% of solar equipment cost &middot; dollar-for-dollar credit</div><p>The only direct IRS tax credit (not deduction) available to the project. 30% of the cost of solar equipment, irrigation pump motors, remote monitoring power, off-grid stations, reduces your tax owed dollar-for-dollar. Not a deduction. A credit. On a $100K solar install: $30K off your tax bill.</p><div class="prows"><div class="prow"><span>Credit rate</span><span>30% of qualifying solar cost</span></div><div class="prow hi"><span>On $100K solar</span><span>$30,000 off tax owed, directly</span></div><div class="prow"><span>Difference from deduction</span><span>Dollar-for-dollar vs. rate-adjusted</span></div><div class="prow"><span>Stackable with</span><span>All other plays above</span></div></div></div></div>
+<div class="bezel rv s4" style="--d:2"><div class="core2"><div class="ghost-n">5</div><span class="ptag gd">Ongoing. Harvest Stage</span><h3 class="">&sect;631(b) Capital Gains + Timber Depletion</h3><div class="pirc">IRC &sect;631(b) &middot; IRC &sect;611 depletion allowance</div><p>When trees are harvested (Yr 7&ndash;10 and 15 subsequent cycles), &sect;631(b) treats standing timber sale proceeds as long-term capital gains, not ordinary income. Save 17%+ vs. ordinary income rate on every harvest dollar. Layer the timber depletion allowance on top to further reduce taxable income at each harvest event.</p><div class="prows"><div class="prow"><span>Ordinary income rate</span><span>37%</span></div><div class="prow hi"><span>LTCG rate (&sect;631b)</span><span>20%, save 17 cents per dollar</span></div><div class="prow"><span>On $500K harvest</span><span>$85,000 saved vs. ordinary income</span></div><div class="prow"><span>Depletion allowance</span><span>Additional offset at each of 15 cycles</span></div></div></div></div>
+<div class="bezel rv s8" style="--d:0"><div class="core2"><div class="ghost-n">6</div><span class="ptag gd">Long-Term. Zero Tax on Upside</span><h3 class="">Rural Qualified Opportunity Fund (QROF)</h3><div class="pirc">IRC &sect;1400Z-2 &middot; OBBBA permanent extension &middot; 30% rural step-up</div><p>If project sites are in designated rural Qualified Opportunity Zones (new designations Jan 2027), investing via a Qualified Rural Opportunity Fund gives investors: deferred capital gains on invested amount, 30% basis step-up after 5 years, and complete exclusion of all appreciation after 10 years. All carbon credit income growth and appreciation, zero federal tax events at exit.</p><div class="prows"><div class="prow"><span>Gain deferral</span><span>Until year 5 from investment</span></div><div class="prow hi"><span>Rural step-up</span><span>30% of deferred gain eliminated</span></div><div class="prow"><span>10-year benefit</span><span>Zero tax on all appreciation</span></div><div class="prow"><span>Check eligibility</span><span>MI, ID, CO, MT, TX project sites</span></div></div></div></div></div>
+</div></section>
+
+<section class="sec gr" id="return"><div class="orb og2 o1" style="opacity:.28"></div><div class="orb oy o2" style="opacity:.3;top:auto;bottom:-10%"></div><div class="gridbg"></div>
+<div class="wrap">
+<div class="split"><div><p class="kicker gold rv">The Full Return Picture</p><h2 class="rv" style="--d:1">How $1M Compounds <em class="g">From Day One</em></h2></div>
+<div style="padding-top:clamp(0px,3vw,46px)"><p class="lead rv" style="--d:2">Tax savings, carbon credits, and harvest events layered across a 10-year horizon. Every stream compounds independently.</p></div></div>
+<div class="tl c8"><div class="tn rv" style="--d:0"><div class="td major gd"></div><div class="y gd">Day 1</div><h4>Plant + Elect</h4><div class="tv gd">$385&ndash;400K<br>tax value</div></div><div class="tn rv" style="--d:1"><div class="td"></div><div class="y">Mo. 1&ndash;6</div><h4>Offtake LOI<br>+ Registry</h4><div class="tv">$300&ndash;500K<br>advance</div></div><div class="tn rv" style="--d:2"><div class="td"></div><div class="y">Mo. 6&ndash;18</div><h4>Forward Sale<br>Yr 2&ndash;5 credits</h4><div class="tv">$990K&ndash;1.25M<br>upfront</div></div><div class="tn rv" style="--d:3"><div class="td major"></div><div class="y">Mo. 18</div><h4>First VCUs<br>Issued</h4><div class="tv">$83&ndash;217K/yr<br>recurring</div></div><div class="tn rv" style="--d:0"><div class="td"></div><div class="y">Yr 2&ndash;5</div><h4>Credits Grow<br>+15&ndash;18%/yr</h4><div class="tv">$83&ndash;374K<br>per year</div></div><div class="tn rv" style="--d:1"><div class="td major gd"></div><div class="y gd">Yr 7&ndash;10</div><h4>First Harvest<br>Event</h4><div class="tv gd">Lumber +<br>Graphene +<br>Biochar $164/t</div></div><div class="tn rv" style="--d:2"><div class="td major"></div><div class="y">Yr 10+</div><h4>QOZ Exit<br>(if applicable)</h4><div class="tv">Zero tax on<br>all upside</div></div><div class="tn rv" style="--d:3"><div class="td gd"></div><div class="y gd">Yr 7&ndash;50+</div><h4>15 Harvest Cycles<br>+ Annual Credits</h4><div class="tv gd">Perpetual<br>income stack</div></div></div>
+<div class="tbl-wrap rv" style="margin-top:80px"><table>
+<thead><tr><th>When</th><th>Income/Value Stream</th><th>Mechanism</th><th>Conservative</th><th>Base Case</th><th>Tax Treatment</th></tr></thead>
+<tbody><tr class="hl"><td>Year 1</td><td>&sect;168(k)(5) Specified Plant Deduction</td><td>100% bonus dep on tree cost</td><td>$185K saved</td><td>$259K saved</td><td>Deduction, offsets any income</td></tr><tr class="hl"><td>Year 1</td><td>Infrastructure Bonus Dep + &sect;194 + &sect;48</td><td>&sect;168(k), &sect;194, solar ITC</td><td>$90K saved</td><td>$126K saved</td><td>Deduction + actual credit</td></tr><tr class=""><td>Mo. 1&ndash;6</td><td>Offtake advance payment</td><td>10-yr corporate buyer deal</td><td>$300K cash</td><td>$500K cash</td><td>Ordinary income when received</td></tr><tr class=""><td>Mo. 6&ndash;18</td><td>Forward pre-issuance credit sale</td><td>Verra ex-ante sale</td><td>$990K cash</td><td>$1.25M cash</td><td>Ordinary income (spread over delivery)</td></tr><tr class=""><td>Mo. 18+</td><td>Annual VCM ARR credits. Yr 1</td><td>Verra VCU issuance</td><td>$83K/yr</td><td>$217K/yr</td><td>Ordinary income</td></tr><tr class=""><td>Yr 2&ndash;5</td><td>Annual credits, growing +15&ndash;18%/yr</td><td>Compounding canopy</td><td>$570K total</td><td>$1.48M total</td><td>Ordinary income</td></tr><tr class="hl"><td>Yr 7&ndash;10</td><td>First harvest: lumber + graphene + biochar CDR</td><td>&sect;631(b) + Puro.earth CDR</td><td>Significant</td><td>Significant</td><td>LTCG rate (&sect;631b) + depletion offset</td></tr><tr class=""><td>Yr 10+</td><td>QOZ exit gain exclusion</td><td>Rural QROF &sect;1400Z-2</td><td><span class="nil"></span></td><td>100% exclusion</td><td>Zero federal tax on appreciation</td></tr><tr class="tot"><td>Year 1 Combined</td><td>Tax savings + offtake + forward sale</td><td>All plays stacked</td><td>$1.56M</td><td>$2.13M</td><td>On a $1M investment</td></tr></tbody></table></div>
+<div class="note gold rv">Year 1 combined assumes the forward credit sale ($990K&ndash;$1.25M upfront) closes within the first 18 months post-planting, which requires Verra registration. Tax savings are realized in the planting tax year regardless. All projections are estimates; actual results depend on individual tax situation, project scale, and market conditions.</div>
+</div></section>
+
+<section class="sec st closing"><div class="orb og o1" style="left:auto;right:-12%;opacity:.16"></div><div class="wrap">
+<p class="kicker gold rv">Ready to Invest</p>
+<h2 class="rv" style="--d:1;font-size:clamp(34px,5.6vw,84px);max-width:16ch">Talk to Our Team About the Tax Strategy for <em>Your Situation</em></h2>
+<p class="lead rv" style="--d:2">Every investor's tax picture is different. We work with your CPA to document the &sect;168(k)(5) election properly, identify your applicable QOZ projects, and structure the investment to maximize Year 1 value.</p>
+<div class="cta rv" style="--d:3"><a class="btn gold" href="/#contact">Schedule a Call<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a><a class="btn ghost" href="/#invest">Learn About Investing<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a></div>
+</div></section>
+<footer class="foot dk"><div class="orb og o2" style="opacity:.35"></div><div class="wrap"><div class="grid"><div class="brand"><img src="images/logo-primary.png" alt="Carbon Legacy Trees"><p>Exclusive commercial rights to the Phoenix Tree, an epigenetically enhanced species generating four revenue streams per acre: carbon credits, tax credits, premium hardwood, and graphene.</p></div><div><h4>The Tree</h4><ul><li><a href="/#phoenix-tree">Phoenix Tree Science</a></li><li><a href="/#phoenix-tree">10x Carbon Capture</a></li><li><a href="/#phoenix-tree">Self-Water System</a></li><li><a href="/#phoenix-tree">15 Harvest Cycles</a></li><li><a href="/#phoenix-tree">Graphene Byproduct</a></li></ul></div><div><h4>Revenue</h4><ul><li><a href="/#revenue">Voluntary Credits</a></li><li><a href="/#revenue">Carbon Tax Credits</a></li><li><a href="/#revenue">Premium Lumber</a></li><li><a href="/#revenue">Graphene Stream</a></li></ul></div><div><h4>Participate</h4><ul><li><a href="/#invest">Investor Access</a></li><li><a href="/#land">Land Partners</a></li><li><a href="/#credits">Buy Credits</a></li><li><a href="/tax-strategy.html">Tax Strategy</a></li><li><a href="/#contact">Contact Us</a></li></ul></div></div><div class="bot"><p>&copy; 2026 Carbon Legacy Trees LLC. All rights reserved. Exclusive Phoenix Tree commercial rights holder.</p><p>South Dakota Phase 1. National expansion ongoing</p></div><p class="legal">This page is for informational purposes only and does not constitute legal, tax, or investment advice. Tax strategies described are based on current IRS law (OBBBA 2025) and require individual CPA review. &sect;168(k)(5) specified plant election eligibility should be confirmed with a qualified tax professional for your specific situation. Carbon credit valuations are market estimates and are not guaranteed.</p></div></footer>
 <script>
-setTimeout(function(){document.querySelectorAll('.fade-up:not(.in)').forEach(function(e){if(e.getBoundingClientRect().top<innerHeight*1.2)e.classList.add('in')});document.querySelectorAll('.stagger').forEach(function(p){if(p.getBoundingClientRect().top<innerHeight*1.2)Array.prototype.forEach.call(p.children,function(c){c.classList.add('in')})})},2500);
-// Count-up
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const obs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseInt(el.dataset.count.replace(/,/g,''));
-      const prefix = el.dataset.prefix||'';
-      const suffix = el.dataset.suffix||'';
-      const start = Math.max(0, target - Math.round(target*.35));
-      const dur = 1400;
-      const t0 = performance.now();
-      function step(now){
-        const t = Math.min((now-t0)/dur,1);
-        const v = Math.round(start+(target-start)*(1-Math.pow(1-t,3)));
-        el.textContent = prefix+v.toLocaleString()+suffix;
-        if(t<1) requestAnimationFrame(step);
-        else el.textContent = prefix+target.toLocaleString()+suffix;
-      }
-      requestAnimationFrame(step);
-      obs.unobserve(el);
-    });
-  },{threshold:.5});
-  document.querySelectorAll('[data-count]').forEach(el=>obs.observe(el));
-
-  // Fade-up / stagger
-  const fadeObs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting) return;
-      e.target.classList.add('in');
-      fadeObs.unobserve(e.target);
-    });
-  },{threshold:.12});
-  document.querySelectorAll('.fade-up').forEach(el=>fadeObs.observe(el));
-
-  // Stagger children
-  const stagObs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting) return;
-      const children = e.target.querySelectorAll(':scope > *');
-      children.forEach((c,i)=>setTimeout(()=>c.classList.add('in'),i*100));
-      stagObs.unobserve(e.target);
-    });
-  },{threshold:.08});
-  document.querySelectorAll('.stagger').forEach(el=>stagObs.observe(el));
+(function(){
+var d=document,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,rt=d.documentElement;
+requestAnimationFrame(function(){setTimeout(function(){rt.classList.add('on-load')},60)});
+/* nav: scrolled state, progress bar, mobile menu */
+var nv=d.getElementById('main-nav'),bar=d.getElementById('progress-bar');
+function onScroll(){var h=d.documentElement;if(nv)nv.classList.toggle('scrolled',scrollY>50);if(bar)bar.style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)*100)+'%'}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+var tg=d.getElementById('navToggle'),lk=d.getElementById('navLinks');
+if(tg&&lk){function setM(o){nv.classList.toggle('menu-open',o);tg.setAttribute('aria-expanded',o?'true':'false')}
+ tg.addEventListener('click',function(){setM(!nv.classList.contains('menu-open'))});
+ lk.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setM(false)})});
+ addEventListener('keydown',function(e){if(e.key==='Escape')setM(false)});
+ addEventListener('resize',function(){if(innerWidth>1100)setM(false)})}
+/* blur-up reveals with stagger */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+d.querySelectorAll('.rv,.tl,.proc,.stack,.statement .w').forEach(function(el){io.observe(el)});
+setTimeout(function(){d.querySelectorAll('.rv:not(.on),.tl:not(.on),.proc:not(.on),.stack:not(.on)').forEach(function(e){if(e.getBoundingClientRect().top<innerHeight*1.2)e.classList.add('on')})},2500);
+/* scroll-driven statements: each word lights up */
+var sts=[].slice.call(d.querySelectorAll('.statement'));
+function so(){sts.forEach(function(st){var ws=st.querySelectorAll('.w'),r=st.getBoundingClientRect(),h=innerHeight;var p=Math.min(1,Math.max(0,(h*.85-r.top)/(r.height+h*.35)));var n=Math.round(p*ws.length);ws.forEach(function(w,i){w.classList.toggle('on',i<n)})})}
+if(sts.length){var tk=false;addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(function(){so();tk=false})}},{passive:true});so()}
+/* count-up */
+function ease(t){return 1-Math.pow(2,-10*t)}
+function countUp(el){var t=parseFloat(el.dataset.count),sx=el.dataset.suffix||'',px=el.dataset.prefix||'',dur=t>=1000?2000:1200,sv=t>=1000?t-8:(t>=100?Math.round(t*.35):0),t0=Date.now();
+ (function tick(){var p=Math.min((Date.now()-t0)/dur,1),v=sv+(t-sv)*ease(p);el.textContent=px+Math.round(v).toLocaleString()+sx;if(p<1)requestAnimationFrame(tick);else el.textContent=px+t.toLocaleString()+sx})()}
+if(!reduce){var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);countUp(e.target)})},{threshold:.5});d.querySelectorAll('[data-count]').forEach(function(el){co.observe(el)})}
+/* audience tabs */
+function tab(name){d.querySelectorAll('.tab').forEach(function(t){var a=t.dataset.pane===name;t.classList.toggle('active',a);t.setAttribute('aria-selected',a?'true':'false')});d.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('active',p.id==='pane-'+name)})}
+d.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){tab(t.dataset.pane)})});
+var map={'#land':'land','#invest':'investors','#credits':'credits'};
+d.querySelectorAll('a[href="#land"],a[href="#invest"],a[href="#credits"],a[href="/#land"],a[href="/#invest"],a[href="/#credits"]').forEach(function(a){a.addEventListener('click',function(e){var h=a.getAttribute('href').replace('/','');if(!d.querySelector('.tab'))return;e.preventDefault();tab(map[h]);setTimeout(function(){var s=d.getElementById('land');if(!s)return;var top=s.getBoundingClientRect().top+scrollY-80;scrollTo({top:top,behavior:reduce?'auto':'smooth'})},30)})});
+if(!reduce){
+ /* magnetic buttons */
+ d.querySelectorAll('.btn:not(button)').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});
+ /* cursor spotlight on bezel cards */
+ d.querySelectorAll('.bezel').forEach(function(c){var k=c.querySelector('.core2,.net-card');if(!k)return;c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();k.style.setProperty('--mx',(e.clientX-r.left)+'px');k.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+ /* hero pointer parallax */
+ var h=d.querySelector('.hero');if(h){var o=h.querySelectorAll('.orb'),wm=h.querySelector('.hwm');h.addEventListener('pointermove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;o.forEach(function(el,i){el.style.translate=(x*(30+i*24))+'px '+(y*(24+i*18))+'px'});if(wm)wm.style.translate=(x*-26)+'px '+(y*-18)+'px'})}
 }
+})();
 </script>
 </body>
 </html>
