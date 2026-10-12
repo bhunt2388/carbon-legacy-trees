@@ -399,7 +399,7 @@ function handleSubmit(e) {
   const label = btn.innerHTML;
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  fetch('https://formspree.io/f/xdarooko', {
+  fetch('/api/lead', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify(data)

@@ -1,14 +1,43 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "tax-strategy.html", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" }
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "tax-strategy.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/lead.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/images/(.*)", "dest": "/images/$1" },
-    { "src": "/tax-strategy", "dest": "/tax-strategy.html" },
-    { "src": "/tax-strategy.html", "dest": "/tax-strategy.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/api/lead",
+      "dest": "/api/lead.js"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/tax-strategy",
+      "dest": "/tax-strategy.html"
+    },
+    {
+      "src": "/tax-strategy.html",
+      "dest": "/tax-strategy.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
